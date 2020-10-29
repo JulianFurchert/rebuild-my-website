@@ -1,16 +1,23 @@
 import { styled } from '../stitches.config'
-import { Flex, Container, Link} from '../components'
+import { Flex, Container, Link, Text, ThemeToggle } from '../components'
 
-export const Header: React.FC = () => (
+type HeaderProps = {
+  toggleTheme: () => void
+}
+
+export const Header: React.FC<HeaderProps> = ({ toggleTheme }) => (
   <Wrappper>
     <Container>
       <Flex css={{ justifyContent: 'space-between', alignItems: 'center', height: 60 }}>
         <Link href="/">
           Julian Furchert
         </Link>
-        <Link href="/">
-          Menu
-        </Link>
+        <Flex>
+          <Text css={{marginRight: '$2'}}>
+            Menu
+          </Text>
+          <ThemeToggle toggleTheme={toggleTheme} />
+        </Flex>
       </Flex>
     </Container>
   </Wrappper>
