@@ -18,14 +18,14 @@ const darkThemeColors = {
   $primary: '#007aff',
   $loContrast: '#000000',
   $hiContrast: '#FFFFFF',
-  $gray1: '212124',
-  $gray2: '4F5156',
-  $gray3: '7F8288',
-  $gray4: '999CA2',
-  $gray5: 'B3B6BB',
-  $gray6: 'D0D1D4',
-  $gray7: 'EDEDED',
-  $gray8: 'FCFCFD',
+  $gray1: '#212124',
+  $gray2: '#4F5156',
+  $gray3: '#7F8288',
+  $gray4: '#999CA2',
+  $gray5: '#B3B6BB',
+  $gray6: '#D0D1D4',
+  $gray7: '#EDEDED',
+  $gray8: '#FCFCFD',
 }
 
 const theme = {
