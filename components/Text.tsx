@@ -4,6 +4,8 @@ export const Text = styled('p', {
   fontFamily: '$body',
   color: '$hiContrast',
   lineHeight: 1.5,
+  fontSize: '$3',
+  fontWeight: '$body',
   variants: {
     variant: {
       headline: {

@@ -13,6 +13,7 @@ export const Footer: React.FC = () => (
       <Flex css={{alignItems: 'center', height: 100}}>
         {data.map(entry => (
           <Link 
+            key={entry.href}
             external={true} 
             href={entry.href} 
             css={{marginRight: '$3'}} 
