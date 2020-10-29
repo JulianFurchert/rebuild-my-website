@@ -6,11 +6,11 @@ export default function Home() {
       css={{
         justifyContent: 'center',
         alignItems: 'center',
-        height: '80vh'
+        height: '60vh'
       }}
     >
       <Text as="h1" variant="headline" >
-        Hello, from Stitches.
+        Hello, from Julian Furchert.
       </Text>
     </Flex>
   );
