@@ -1,8 +1,8 @@
-# Project: Rebuild my portfolio
+# Rebuild my website
 
 ## Steps
 
-- [Sep 1: Setup Nextjs with stitches](https://codesandbox.io/s/github/JulianFurchert/julianfurchert2020/tree/part-1/setup-nextjs-with-stitches) 
+- [Sep 1: Setup Nextjs with stitches](https://codesandbox.io/s/github/JulianFurchert/rebuild-my-website/tree/part-1/setup-nextjs-with-stitches) 
 
 ## Getting Started
 
