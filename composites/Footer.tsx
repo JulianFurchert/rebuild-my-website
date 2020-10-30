@@ -26,5 +26,5 @@ export const Footer: React.FC = () => (
 )
 
 const Wrappper = styled('div', {
-  backgroundColor: '$gray2'
+  backgroundColor: '$gray1'
 })
