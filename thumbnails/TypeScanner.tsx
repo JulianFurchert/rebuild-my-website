@@ -92,15 +92,8 @@ export const TypeScanner: React.FC<Partial<ThumbnailProps>> = props => {
   )
 }
 
-type IndexProp = {
-  index: number
-}
-
-const Grid: React.FC<IndexProp> = ({ index }) => (
-  <g
-    stroke="currentColor" 
-    strokeWidth="1px"  
-  >
+const Grid: React.FC<{ index: number }> = ({ index }) => (
+  <g stroke="currentColor" strokeWidth="1px">
     {index === 0 && (
       <>
       <line x1="480" y1="44" x2="20" y2="44"/>
