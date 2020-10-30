@@ -3,29 +3,29 @@ import { createStyled } from '@stitches/react'
 const lightThemeColors = {
   $primary: '#007aff',
   $loContrast: '#FFFFFF',
-  $hiContrast: '#000000',
-  $gray1: '#FCFCFD',
-  $gray2: '#EDEDED',
-  $gray3: '#D0D1D4',
+  $hiContrast: '#17171A',
+  $gray1: '#F0F2F5',
+  $gray2: '#E2E6E9',
+  $gray3: '#E2E6E9',
   $gray4: '#B3B6BB',
   $gray5: '#999CA2',
   $gray6: '#7F8288',
   $gray7: '#4F5156',
-  $gray8: '#212124',
+  $gray8: '#17171A',
 }
 
 const darkThemeColors = {
   $primary: '#007aff',
-  $loContrast: '#000000',
-  $hiContrast: '#FFFFFF',
-  $gray1: '#212124',
+  $loContrast: '#141517',
+  $hiContrast: '#F0F2F5',
+  $gray1: '#212123',
   $gray2: '#4F5156',
   $gray3: '#7F8288',
   $gray4: '#999CA2',
   $gray5: '#B3B6BB',
   $gray6: '#D0D1D4',
   $gray7: '#EDEDED',
-  $gray8: '#FCFCFD',
+  $gray8: '#F0F2F5',
 }
 
 const theme = {
