@@ -29,7 +29,7 @@ export const PrettyPaper: React.FC<Partial<ThumbnailProps>> = props => {
       name="Pretty Paper - Gatsby Starter"
       href='/projects/prettypaper'
     >
-      <Svg viewBox="0 0 640 420" width="100%" css={{ backgroundColor: '$gray2' }}>
+      <Svg viewBox="0 0 640 420" width="100%" css={{ backgroundColor: '$gray1' }}>
         <motion.circle cx={x} cy={y} r="50" stroke="none" fill="currentColor" />
         <path d="M 0,150 C 350,150 300,350 640,350 L 640,420 L 0,420 Z" stroke="none" fill="currentColor" />
       </Svg>
