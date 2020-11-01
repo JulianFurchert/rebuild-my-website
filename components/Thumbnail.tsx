@@ -1,6 +1,6 @@
 import { default as NextLink, LinkProps as NextLinkProps } from 'next/link'
 import { styled } from '../stitches.config'
-import { Text } from "./Text"
+import { Link } from "./Link"
 import { Box } from "./Box"
 
 export type ThumbnailProps = NextLinkProps & {
@@ -10,16 +10,16 @@ export type ThumbnailProps = NextLinkProps & {
 
 export const Thumbnail: React.FC<ThumbnailProps> = ({ children, css, name, ...props }) => {
   return(
-    <NextLink {...props} passHref>
-      <Container css={css}>
-        <Box>
-          {children}
-        </Box>
-        <Text css={{ marginTop: '$2' }}>
+      <Box css={css}>
+        <NextLink {...props} passHref>
+          <Container >
+              {children}
+          </Container>
+        </NextLink>
+        <Link css={{ marginTop: '$2', display: 'block' }} href={props.href}>
           {name}
-        </Text>
-      </Container>
-    </NextLink>
+        </Link>
+      </Box>
   )
 }
 

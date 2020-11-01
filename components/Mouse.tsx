@@ -14,15 +14,16 @@ export const mouseTransition = {
 export const Mouse: React.FC<MouseProps> = ({variant, ...props}) => {
   return (
     <motion.div
+      transition={mouseTransition}
+      {...props}
       style={{
         top: '-200%',
         left: '-200%',
         zIndex: 100, 
         position: 'absolute',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
+        ...props.style
       }}
-      transition={mouseTransition}
-      {...props}
     >
       <Cursor variant={variant} />
     </motion.div>

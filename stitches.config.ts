@@ -2,7 +2,7 @@ import { createStyled } from '@stitches/react'
 
 const lightThemeColors = {
   $primary: '#007aff',
-  $loContrast: '#FFFFFF',
+  $loContrast: '#FCFCFD',
   $hiContrast: '#17171A',
   $gray1: '#F0F2F5',
   $gray2: '#E2E6E9',

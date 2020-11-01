@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, animate } from "framer-motion"
-import { Thumbnail, ThumbnailProps, Svg } from "../components"
+import { Thumbnail, ThumbnailProps, Svg, Path, Circle } from "../components"
 import { svgPathProperties } from "svg-path-properties";
 
 const animationPath = new svgPathProperties("M -100, 100 L 0,100 C 350,100 300,300 640,300 L 740,300");
@@ -30,8 +30,8 @@ export const PrettyPaper: React.FC<Partial<ThumbnailProps>> = props => {
       href='/projects/prettypaper'
     >
       <Svg viewBox="0 0 640 420" width="100%" css={{ backgroundColor: '$gray1' }}>
-        <motion.circle cx={x} cy={y} r="50" stroke="none" fill="currentColor" />
-        <path d="M 0,150 C 350,150 300,350 640,350 L 640,420 L 0,420 Z" stroke="none" fill="currentColor" />
+        <Circle cx={x} cy={y} r="50" stroke="none" fill="currentColor" />
+        <Path stroke="none" fill="currentColor" d="M 0,150 C 350,150 300,350 640,350 L 640,420 L 0,420 Z" />
       </Svg>
     </Thumbnail>
   )

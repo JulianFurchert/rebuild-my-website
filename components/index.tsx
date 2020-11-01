@@ -7,7 +7,8 @@ export { IconButton } from './IconButton'
 export { ThemeToggle } from './ThemeToggle'
 export { Thumbnail } from './Thumbnail'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
-export { Svg } from './Svg'
+export { Svg, Rect, Path, G, Circle } from './Svg'
 
 // Props
 export type { ThumbnailProps } from "./Thumbnail"
+export type { CursorVariants } from "./Cursor"
