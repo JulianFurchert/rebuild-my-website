@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useAnimation, AnimatePresence, transform } from "framer-motion"
+import { lightThemeColors } from '../stitches.config'
+import { useAnimation, AnimatePresence } from "framer-motion"
 import { Thumbnail, ThumbnailProps, Svg, Path, Rect, Mouse, outsidePosition, G, CursorVariants } from "../components"
 
 const transition = {
   x: { 
     type: "spring", 
-    stiffness: 500, 
-    damping: 90,
+    stiffness: 300, 
+    damping: 30,
     mass: 1 
   },
   opacity: { 
@@ -95,6 +96,7 @@ export const ReproFont: React.FC<Partial<ThumbnailProps>> = props => {
             <G
               key={imageIndex}
               variants={variants}
+              transition={transition}
               initial="enter"
               animate="center"
               exit="exit"
@@ -106,7 +108,6 @@ export const ReproFont: React.FC<Partial<ThumbnailProps>> = props => {
                     d="M308,75H492a8,8,0,0,1,8,8V517a8,8,0,0,1-8,8H308a8,8,0,0,1-8-8V83A8,8,0,0,1,308,75Z"
                   />
                   <Path 
-                    id="LetterA"
                     css={{ fill: '$hiContrast'}}    
                     d="M417,328.08h23.32V240.73H417Zm-5.57,0V271.92H388.34v56.16Zm0-62.4V209.53H388.34v56.15Zm-28.89,68.41V271.92h-23.1v87.35h86.45v31.2h23.31V334.09Zm-52,31.2v25.18h23.32V365.29Zm144.22,31.2H440.34v-31.2H359.46v31.2H325V359.27h28.89V265.68h28.88V203.51h34.46v31.2h28.88v93.37H475v68.41Z"
                   />
@@ -119,7 +120,6 @@ export const ReproFont: React.FC<Partial<ThumbnailProps>> = props => {
                     d="M308,75H492a8,8,0,0,1,8,8V517a8,8,0,0,1-8,8H308a8,8,0,0,1-8-8V83A8,8,0,0,1,308,75Z"
                   />
                   <Path 
-                    id="LetterB"
                     css={{ fill: '$hiContrast'}}   
                     d="M411.66,328.08V240.73H388.34v87.35Zm0-93.37V209.53H388.34v25.18Zm28.68,99.38V240.73H417v93.36H382.56V240.73h-23.1v93.36H330.78v56.16h23.31v-31.2h92v31.2h23.32V334.09Zm34.45,62.4H440.34v-31.2H359.46v31.2H325V328.08h28.89V234.71h28.88v-31.2h34.46v31.2h28.88v93.37H475v68.41Z"
                   />
@@ -132,7 +132,6 @@ export const ReproFont: React.FC<Partial<ThumbnailProps>> = props => {
                     d="M308,75H492a8,8,0,0,1,8,8V517a8,8,0,0,1-8,8H308a8,8,0,0,1-8-8V83A8,8,0,0,1,308,75Z"
                   />
                   <Path 
-                    id="LetterC"
                     css={{ fill: '$hiContrast'}}  
                     d="M440.34,328.08V302.9H411.45V271.7H388.14v56.15h52.2Zm-28.68-62.4V237.6h5.57v59.28h23.31V209.53h-52v56.15Zm34.45,37.22v31.19H382.77V271.92H359.46v87.35h86.45v31.2h23.31V302.9ZM330.78,365.29v25.18h23.31V365.29Zm144,31.2H440.34v-31.2H359.46v31.2H325V359.27h28.89V265.68h28.88V203.51h63.34v93.37H475v99.61Z"
                   />

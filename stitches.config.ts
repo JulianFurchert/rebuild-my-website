@@ -1,6 +1,6 @@
 import { createStyled } from '@stitches/react'
 
-const lightThemeColors = {
+export const lightThemeColors = {
   $primary: '#007aff',
   $loContrast: '#FCFCFD',
   $hiContrast: '#17171A',
@@ -14,7 +14,7 @@ const lightThemeColors = {
   $gray8: '#17171A',
 }
 
-const darkThemeColors = {
+export const darkThemeColors = {
   $primary: '#007aff',
   $loContrast: '#141517',
   $hiContrast: '#F0F2F5',
