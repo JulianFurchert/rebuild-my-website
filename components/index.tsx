@@ -1,4 +1,5 @@
 export { Box } from './Box'
+export { Paragraph } from './Paragraph'
 export { Container } from './Container'
 export { Flex } from './Flex'
 export { Text } from './Text'

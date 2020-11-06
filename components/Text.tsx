@@ -1,6 +1,6 @@
 import { styled } from '../stitches.config'
 
-export const Text = styled('p', {
+export const Text = styled('div', {
   fontFamily: '$body',
   color: '$hiContrast',
   lineHeight: 1.5,
@@ -15,6 +15,15 @@ export const Text = styled('p', {
       headline2: {
         fontWeight: '$heading',
         fontSize: '$6',
+      },
+      bodyLarge: {
+        fontSize: '$5',
+        fontWeight: '$body'
+      },
+      paragraph: {
+        fontSize: '$5',
+        fontWeight: '$body',
+        marginBottom: '$2',
       },
       body: {
         fontSize: '$3',
