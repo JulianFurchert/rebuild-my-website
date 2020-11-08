@@ -9,8 +9,10 @@ export { IconButton } from './IconButton'
 export { ThemeToggle } from './ThemeToggle'
 export { Thumbnail } from './Thumbnail'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
+export { Svg, Path, Circle, Rect, G } from './Svg'
 export { Mockup } from './Mockup'
-export type { Showcase } from "./Showcase"
+export { Showcase } from "./Showcase"
+export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow } from "./Tooltip"
 
 // cases
 export type { ImageCase } from "./cases/ImageCase"

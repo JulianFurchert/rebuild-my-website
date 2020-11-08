@@ -112,6 +112,7 @@ export const darkTheme= css.theme({
 css.global({
   body: { 
     backgroundColor: '$loContrast',
-    color: '$hiContrast'
+    color: '$hiContrast',
+    fontFamily: '$body',
   },
 });

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@interop-ui/react-tooltip": "0.0.1-10",
     "@stitches/react": "0.0.2",
     "framer-motion": "^2.9.4",
     "next": "10.0.0",
