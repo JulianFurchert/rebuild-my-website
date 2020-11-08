@@ -24,36 +24,35 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
       }}
     >
       <motion.div
-        style={{
-          display: 'flex'
-        }}
         animate={{
-          x: '-200%'
+          x: '-100%'
         }}
         transition={{ 
-          duration: 10 
+          duration: 20 
         }}
       >
-        {images.map(image => (
-          <Box
-            key={image.src}
-            css={{
-              height: '600px',
-              marginX: '64px'
-            }}
-          >
-            <AspectRatio
-              ratio={[image.width, image.height]}
-              stretch="height"
+        <Flex>
+          {images.map(image => (
+            <Box
+              key={image.src}
+              css={{
+                height: '600px',
+                marginX: '64px'
+              }}
             >
-              <Image  
-                src={image.src}
-                layout="fill"
-                objectFit="cover"
-              />
-            </AspectRatio>
-          </Box>
-        ))}
+              <AspectRatio
+                ratio={[image.width, image.height]}
+                stretch="height"
+              >
+                <Image  
+                  src={image.src}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </AspectRatio>
+            </Box>
+          ))}
+        </Flex>
       </motion.div>
     </Box>
   )
