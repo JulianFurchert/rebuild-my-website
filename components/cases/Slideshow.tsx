@@ -20,7 +20,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
     >
       <Flex>
         {images.map(image => (
-          <Image {...image}/>
+          <Image key={image.src} {...image}/>
         ))}
       </Flex>
     </div>
