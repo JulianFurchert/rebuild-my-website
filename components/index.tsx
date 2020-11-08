@@ -9,7 +9,6 @@ export { IconButton } from './IconButton'
 export { ThemeToggle } from './ThemeToggle'
 export { Thumbnail } from './Thumbnail'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
-export { Mouse, mouseTransition, outsidePosition } from './Mouse'
 export { Mockup } from './Mockup'
 export type { Showcase } from "./Showcase"
 
