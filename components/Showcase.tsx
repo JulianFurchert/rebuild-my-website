@@ -43,10 +43,10 @@ export const Showcase: React.FC<ShowcaseProps> = ({
               animate={{ y: 0, opacity: 1 }}
               style={{ width: '100%' }}
               transition={{
-                  type: "spring",
-                  damping: 50,
-                  stiffness: 300,
-                  mass: 3,
+                type: "spring",
+                damping: 50,
+                stiffness: 300,
+                mass: 3,
               }} 
             >
               <Mockup template={size === 'full' ? 'none' : 'default'} {...mockup} >

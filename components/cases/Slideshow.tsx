@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Flex } from '../Flex'
 import { Box } from '../Box'
 import { AspectRatio } from '../AspectRatio'
+import { motion } from 'framer-motion'
 
 type SlideshowProps = {
   images: {
@@ -22,16 +23,26 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
         marginY: '120px',
       }}
     >
-      <Flex>
+      <motion.div
+        style={{
+          display: 'flex'
+        }}
+        animate={{
+          x: '-200%'
+        }}
+        transition={{ 
+          duration: 10 
+        }}
+      >
         {images.map(image => (
           <Box
+            key={image.src}
             css={{
               height: '600px',
               marginX: '64px'
             }}
           >
             <AspectRatio
-              key={image.src}
               ratio={[image.width, image.height]}
               stretch="height"
             >
@@ -43,7 +54,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
             </AspectRatio>
           </Box>
         ))}
-      </Flex>
+      </motion.div>
     </Box>
   )
 }
