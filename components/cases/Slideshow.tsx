@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image'
 import { Flex } from '../Flex'
+import { Box } from '../Box'
+import { AspectRatio } from '../AspectRatio'
 
 type SlideshowProps = {
   images: {
@@ -12,17 +14,36 @@ type SlideshowProps = {
 
 export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
   return (
-    <div
-      style={{
+    <Box
+      css={{
+        position: 'relative',
         width: '100%',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        marginY: '120px',
       }}
     >
       <Flex>
         {images.map(image => (
-          <Image key={image.src} {...image}/>
+          <Box
+            css={{
+              height: '600px',
+              marginX: '64px'
+            }}
+          >
+            <AspectRatio
+              key={image.src}
+              ratio={[image.width, image.height]}
+              stretch="height"
+            >
+              <Image  
+                src={image.src}
+                layout="fill"
+                objectFit="cover"
+              />
+            </AspectRatio>
+          </Box>
         ))}
       </Flex>
-    </div>
+    </Box>
   )
 }

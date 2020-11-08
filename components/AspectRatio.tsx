@@ -3,13 +3,15 @@ import { styled } from '../stitches.config'
 
 type AspectRatioProps =  {
   ratio?: [number, number],
-  css?: CssProps
+  css?: CssProps,
+  stretch?: 'width' | 'height'
 }
 
-export const AspectRatio: React.FC<AspectRatioProps> = ({ratio, ...props}) => {
+export const AspectRatio: React.FC<AspectRatioProps> = ({ratio, stretch = 'width', ...props}) => {
+  const svgStyle = stretch === 'height' ? {height: '100%'} : undefined
   return (
-    <Container>
-      <svg viewBox={`0 0 ${ratio[0]} ${ratio[1]}`}></svg>
+    <Container stretch={stretch}>
+      <svg style={svgStyle} viewBox={`0 0 ${ratio[0]} ${ratio[1]}`}></svg>
       <Content {...props}/>
     </Container>
   );
@@ -17,7 +19,16 @@ export const AspectRatio: React.FC<AspectRatioProps> = ({ratio, ...props}) => {
 
 const Container = styled('div', {
   position: 'relative',
-  width: '100%'
+  variants:{
+    stretch: {
+      width: {
+        width: '100%',
+      },
+      height: {
+        height: '100%',
+      }
+    }
+  }
 })
 
 type CssProps = React.ComponentProps<typeof Content>['css']
