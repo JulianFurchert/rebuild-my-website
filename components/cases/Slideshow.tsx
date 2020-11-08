@@ -22,10 +22,10 @@ export const Slideshow: React.FC<SlideshowProps> = ({
 }) =>  {
   const [state, setState] = React.useState(startPosition)
   const toggleState = () => setState(state === 'flex-start' ? 'flex-end' : 'flex-start')
+  useEffect(()=> toggleState(),[])
 
   return (
       <Box
-        onClick={toggleState}
         css={{
           position: 'relative',
           width: '100%',

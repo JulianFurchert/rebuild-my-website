@@ -41,42 +41,26 @@ export default function Framo() {
         />
         <Slideshow 
           startPosition="flex-end"
-          height="800px"
           images={[
             {
-              src: '/img/seading-poster-1.jpg',
-              width: 881,
-              height: 1200
-            },
-            {
-              src: '/img/seading-poster-2.jpg',
-              width: 848,
-              height: 1200
-            },
-            {
-              src: '/img/seading-poster-3.jpg',
-              width: 848,
-              height: 1200
-            },
-            {
-              src: '/img/seading-poster-4.jpg',
-              width: 848,
-              height: 1200
-            },
-            {
-              src: '/img/seading-poster-5.jpg',
+              src: '/img/seading-slideshow-a-1.jpg',
               width: 1920,
-              height: 2693
+              height: 1280
             },
             {
-              src: '/img/seading-poster-6.jpg',
-              width: 848,
-              height: 1200
+              src: '/img/seading-slideshow-a-4.jpg',
+              width: 1920,
+              height: 2880
             },
             {
-              src: '/img/seading-poster-7.jpg',
-              width: 848,
-              height: 1200
+              src: '/img/seading-slideshow-a-2.jpg',
+              width: 1920,
+              height: 1280
+            },
+            {
+              src: '/img/seading-slideshow-a-3.jpg',
+              width: 1920,
+              height: 1280
             }
           ]}
         />
