@@ -1,3 +1,4 @@
+export { AspectRatio } from './AspectRatio'
 export { Box } from './Box'
 export { Paragraph } from './Paragraph'
 export { Container } from './Container'
@@ -8,8 +9,14 @@ export { IconButton } from './IconButton'
 export { ThemeToggle } from './ThemeToggle'
 export { Thumbnail } from './Thumbnail'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
-export { Svg, Rect, Path, G, Circle } from './Svg'
+export { Mouse, mouseTransition, outsidePosition } from './Mouse'
+export { Mockup } from './Mockup'
+export type { Showcase } from "./Showcase"
+
+// cases
+export type { ImageCase } from "./cases/ImageCase"
 
 // Props
 export type { ThumbnailProps } from "./Thumbnail"
 export type { CursorVariants } from "./Cursor"
+export type { MockupProps } from "./Mockup"
