@@ -40,6 +40,8 @@ export default function Framo() {
           ]}
         />
         <Slideshow 
+          startPosition="flex-end"
+          height="800px"
           images={[
             {
               src: '/img/seading-poster-1.jpg',

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Image from 'next/image'
 import { Flex } from '../Flex'
 import { Box } from '../Box'
@@ -11,49 +11,65 @@ type SlideshowProps = {
     height: number,
     width: number,
   }[],
+  height?: number | string
+  startPosition?: 'flex-start' | 'flex-end'
 }
+ 
+export const Slideshow: React.FC<SlideshowProps> = ({ 
+  images, 
+  startPosition = 'flex-start',
+  height = '600px'
+}) =>  {
+  const [state, setState] = React.useState(startPosition)
+  const toggleState = () => setState(state === 'flex-start' ? 'flex-end' : 'flex-start')
 
-export const Slideshow: React.FC<SlideshowProps> = ({ images }) =>  {
   return (
-    <Box
-      css={{
-        position: 'relative',
-        width: '100%',
-        overflow: 'hidden',
-        marginY: '120px',
-      }}
-    >
-      <motion.div
-        animate={{
-          x: '-100%'
-        }}
-        transition={{ 
-          duration: 20 
+      <Box
+        onClick={toggleState}
+        css={{
+          position: 'relative',
+          width: '100%',
+          overflow: 'hidden',
+          marginY: '120px',
         }}
       >
-        <Flex>
-          {images.map(image => (
-            <Box
-              key={image.src}
-              css={{
-                height: '600px',
-                marginX: '64px'
-              }}
-            >
-              <AspectRatio
-                ratio={[image.width, image.height]}
-                stretch="height"
-              >
-                <Image  
-                  src={image.src}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </AspectRatio>
-            </Box>
-          ))}
+        <Flex
+          css={{
+            justifyContent: state
+          }}
+        >
+          <motion.div
+            layout          
+            transition={{ 
+              ease: 'linear',
+              repeat: 5,
+              duration: 10
+            }}
+          >
+            <Flex>
+              {images.map(image => (
+                <Box
+                  key={image.src}
+                  css={{
+                    height: height,
+                    marginX: '64px'
+                  }}
+                >
+                  <AspectRatio
+                    ratio={[image.width, image.height]}
+                    stretch="height"
+                  >
+                    <Image  
+                      src={image.src}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                  </AspectRatio>
+                </Box>
+              ))}
+            </Flex>
+          </motion.div>
         </Flex>
-      </motion.div>
-    </Box>
+      </Box>
   )
 }
