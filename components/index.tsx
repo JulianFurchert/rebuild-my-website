@@ -11,11 +11,12 @@ export { Thumbnail } from './Thumbnail'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
 export { Svg, Path, Circle, Rect, G } from './Svg'
 export { Mockup } from './Mockup'
+export { Row } from './Row'
 export { Showcase } from "./Showcase"
 export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow } from "./Tooltip"
 
 // cases
-export type { ImageCase } from "./cases/ImageCase"
+export { ImageCase } from "./cases/ImageCase"
 
 // Props
 export type { ThumbnailProps } from "./Thumbnail"

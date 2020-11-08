@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph } from '../../components'
+import { Container, Text, Box, Paragraph, Row, ImageCase } from '../../components'
 
 export default function Framo() {
   return (
@@ -7,9 +7,26 @@ export default function Framo() {
         Framo
       </Text>
       <Box css={{ maxWidth: 1200 }}>
-        <Paragraph></Paragraph>
+        <Paragraph>
+            Für das Londoner Architekturbüro Framo wurde eine Website entwickelt und ein responsives Logo designt. Das Logo besteht aus sechs Buchstaben, die sich je nach Breite des Bildschirms an den verfügbaren Platz anpassen. Die Form der Buchstaben verändern sich dabei immer mit dessen Seitenverhältnis. Um das Logo auch in anderen Medien nutzbar zu machen, wurde ein Web-App entwickelt in dem die Buchstaben frei angeordnet und skaliert werden können. Das Ergebnis kann als Vektor-Datei gespeichert werden. Umgesetzt sind sowohl Website als auch App mit React. Gestaltung und Konzeption der Website sind von Mind Design.
+        </Paragraph>
       </Box>
-      <Box css={{marginTop: 60}}></Box>
+      <Box css={{marginTop: 60}}>
+        <Row>
+          <ImageCase 
+            src="/img/framo-logo.png"
+            ratio={[750, 1334]}
+            width={750}
+            height={1334}
+          />
+          <ImageCase 
+            src="/img/framo-mobil.png"
+            ratio={[750, 1334]}
+            width={750}
+            height={1334}
+          />
+        </Row>
+      </Box>
     </Container>
   )
 }
