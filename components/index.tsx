@@ -17,6 +17,7 @@ export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow 
 
 // cases
 export { ImageCase } from "./cases/ImageCase"
+export { Slideshow } from "./cases/Slideshow"
 
 // Props
 export type { ThumbnailProps } from "./Thumbnail"

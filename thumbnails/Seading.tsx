@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion, useMotionValue, animate } from "framer-motion"
-import { Thumbnail, ThumbnailProps, Svg, Path, Rect } from "../components"
+import React from 'react';
+import { Thumbnail, ThumbnailProps, Svg, Path } from "../components"
 
 export const Seading: React.FC<Partial<ThumbnailProps>> = props => {
   return(
