@@ -75,7 +75,7 @@ const Content = styled('div', {
   variants: {
     scheme: {
       auto: {
-        backgroundColor: '$loContrast'
+        backgroundColor: '$gray1'
       },
       light: {
         backgroundColor: '$gray1'
