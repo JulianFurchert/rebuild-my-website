@@ -12,9 +12,9 @@ export const ImageCase: React.FC<ImageCaseProps> = ({ src, height, width, ...vie
   return (
     <Showcase {...viewcase} >
       <Image 
-        src={src} 
-        height={height} 
-        width={width}  
+         src={src} 
+         height={height} 
+         width={width}  
       />
     </Showcase>
   )
