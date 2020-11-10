@@ -156,7 +156,7 @@ const NsResize: React.FC<SvgProps> =  ({ size = 80, ...props }) => (
 
 const NwseResize: React.FC<SvgProps> =  ({ size = 80, ...props }) => (
   <svg width={size} height={size} viewBox="0 0 35 35" version="1.1" {...props}>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="resizenorthwestsoutheast">
             <g id="bg-copy" fill="#FFFFFF" opacity="0.00999999978">
                 <rect id="bg" x="0" y="0" width="35" height="35"></rect>
