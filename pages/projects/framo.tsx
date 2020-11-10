@@ -15,13 +15,23 @@ export default function Framo() {
         <Row>
           <ImageCase 
             src="/img/framo-logo.png"
-            ratio={[750, 1334]}
             width={750}
             height={1334}
           />
           <ImageCase 
             src="/img/framo-mobil.png"
-            ratio={[750, 1334]}
+            width={750}
+            height={1334}
+          />
+        </Row>
+        <Row>
+          <ImageCase 
+            src="/img/framo-logo.png"
+            width={750}
+            height={1334}
+          />
+          <ImageCase 
+            src="/img/framo-mobil.png"
             width={750}
             height={1334}
           />
