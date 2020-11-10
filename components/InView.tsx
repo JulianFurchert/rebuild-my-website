@@ -25,15 +25,16 @@ export const InView: React.FC<InViewProps> = ({ children, isVisible = true }) =>
   });  
 
   return(
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={inView && isVisible ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={transition} 
-    >
-      {children}
-    </motion.div>
+    <div ref={ref}>
+      <motion.div
+        initial="hidden"
+        animate={inView && isVisible ? 'visible' : 'hidden'}
+        variants={variants}
+        transition={transition} 
+      >
+        {children}
+      </motion.div>
+    </div>
   )
 }
 

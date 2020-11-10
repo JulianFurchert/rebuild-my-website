@@ -18,11 +18,18 @@ export const ImageCase: React.FC<ImageCaseProps> = ({
   mockup, 
   ...viewcase 
 }) =>  {
+  const [isVisible, setIsVisible] = React.useState(false)
+
+  const handelOnLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    setIsVisible(true)
+  }
+
   return (
     <Showcase {...viewcase} >
-      <InView>
+      <InView isVisible={isVisible}>
         <Mockup {...mockup}>
-          <Image 
+          <Image
+            onLoad={handelOnLoad} 
             src={src} 
             height={height} 
             width={width}
