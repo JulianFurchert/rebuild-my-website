@@ -59,15 +59,27 @@ const Container = styled('div', {
       }
     },
     maxWidth: {
-      25: {
-        maxWidth: "25%", 
+      20: {
+        maxWidth: "20%", 
+      },
+      30: {
+        maxWidth: "30%", 
+      },
+      40: {
+        maxWidth: "40%", 
       },
       50: {
         maxWidth: "50%", 
       },
-      75: {
-        maxWidth: "75%", 
-      }
+      60: {
+        maxWidth: "60%", 
+      },
+      70: {
+        maxWidth: "70%", 
+      },
+      80: {
+        maxWidth: "80%", 
+      },
     }
   },
 })
