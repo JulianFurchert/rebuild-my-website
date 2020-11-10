@@ -18,12 +18,14 @@ export default function Framo() {
             width={750}
             height={1334}
             maxWidth={60}
+            mockup="default"
           />
           <ImageCase 
             src="/img/framo-mobil.png"
             width={750}
             height={1334}
             maxWidth={60}
+            mockup="default"
           />
         </Row>
         <Row>
