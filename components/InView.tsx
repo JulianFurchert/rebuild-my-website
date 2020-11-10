@@ -31,6 +31,11 @@ export const InView: React.FC<InViewProps> = ({ children, isVisible = true }) =>
         animate={inView && isVisible ? 'visible' : 'hidden'}
         variants={variants}
         transition={transition} 
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
       >
         {children}
       </motion.div>

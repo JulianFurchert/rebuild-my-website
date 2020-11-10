@@ -17,11 +17,13 @@ export default function Framo() {
             src="/img/framo-logo.png"
             width={750}
             height={1334}
+            maxWidth={50}
           />
           <ImageCase 
             src="/img/framo-mobil.png"
             width={750}
             height={1334}
+            maxWidth={50}
           />
         </Row>
         <Row>
@@ -29,11 +31,13 @@ export default function Framo() {
             src="/img/framo-logo.png"
             width={750}
             height={1334}
+            maxWidth={50}
           />
           <ImageCase 
             src="/img/framo-mobil.png"
             width={750}
             height={1334}
+            maxWidth={50}
           />
         </Row>
       </Box>

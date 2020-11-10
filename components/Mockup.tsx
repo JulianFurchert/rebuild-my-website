@@ -2,31 +2,74 @@ import React from 'react';
 import { Text } from './Text';
 import { styled } from '../stitches.config'
 
-const None = styled('div', {
+export type MockupProps = {
+  windowTitle?: string,
+  mockup?: ContainerProps['variant'],
+  maxWidth?: ContainerProps['maxWidth'],
+}
+
+export const Mockup: React.FC<MockupProps> = ({
+  windowTitle, 
+  mockup,
+  maxWidth,
+  children,
+}) => {
+  if(mockup === "window"){
+    return (
+      <Container variant="window" maxWidth={maxWidth}>
+        <Header>
+          <Controls/>
+          {windowTitle && (
+            <Text variant="caption">
+              {windowTitle}
+            </Text>
+          )}
+        </Header>
+        {children}
+      </Container>
+    )
+  }
+  return (
+    <Container variant={mockup} maxWidth={maxWidth}>
+      {children}
+    </Container>
+  )
+}
+
+export default Mockup;
+
+type ContainerProps = React.ComponentProps<typeof Container>
+
+const Container = styled('div', {
   maxWidth: "100%", 
-  overflow: "hidden"
-})
-
-const Simple = styled('div', {
-  maxWidth: "100%", 
-  borderRadius: "8px", 
-  overflow: "hidden"
-})
-
-const Default = styled('div', {
-  maxWidth: "100%",
-  borderRadius: "8px",
-  boxShadow: "4px 4px 6px 0px rgba(0,0,0,0.16)",
-  overflow: "hidden"
-})
-
-const WindowContainer = styled('div', {
-  maxWidth: "100%",
-  margin: "0 auto",
-  borderRadius: "8px",
-  boxShadow: "4px 4px 6px 0px rgba(0,0,0,0.16)",
   overflow: "hidden",
-  padding: "0"
+  variants: {
+    variant: {
+      simple: {
+        borderRadius: "8px", 
+      },
+      default: {
+        borderRadius: "8px",
+        boxShadow: "4px 4px 6px 0px rgba(0,0,0,0.16)",
+      },
+      window: {
+        borderRadius: "8px",
+        boxShadow: "4px 4px 6px 0px rgba(0,0,0,0.16)",
+        padding: "0"
+      }
+    },
+    maxWidth: {
+      25: {
+        maxWidth: "25%", 
+      },
+      50: {
+        maxWidth: "50%", 
+      },
+      75: {
+        maxWidth: "75%", 
+      }
+    }
+  },
 })
 
 const Header = styled('div', {
@@ -47,66 +90,3 @@ const Controls = () => (
     </g>
   </svg>
 )
-
-type WindowProps = {
-  title?: string,
-  bg?: string,
-  color?: string,
-}
-
-const Window: React.FC<WindowProps> = ({title, bg, color, children}) => {
-  return (
-    <WindowContainer css={{backgroundColor: bg}}>
-      <Header>
-        <Controls/>
-        {title && <Text variant="caption" css={{color: color}}>{title}</Text>}
-      </Header>
-      {children}
-    </WindowContainer>
-  )
-}
-
-export type MockupProps = {
-  template?: 'none' | 'simple' | 'window' | 'default',
-  title?: string,
-  scheme?: 'dark' | 'light'
-  bg?: string,
-  color?: string,
-}
-
-export const Mockup: React.FC<MockupProps> = ({
-  template = 'default', 
-  title, 
-  bg, 
-  color, 
-  children,
-}) => {
-  if(template === "window"){
-    return (
-      <Window title={title} bg={bg} color={color}>
-        {children}
-      </Window>
-    )
-  }
-  if(template === "simple"){
-    return (
-      <Simple css={{backgroundColor: bg}}>
-        {children}
-      </Simple>
-    )
-  }
-  if(template === "default"){
-    return (
-      <Default css={{backgroundColor: bg}}>
-        {children}
-      </Default>
-    )
-  }
-  return (
-    <None css={{backgroundColor: bg}}>
-      {children}
-    </None>
-  )
-}
-
-export default Mockup;
