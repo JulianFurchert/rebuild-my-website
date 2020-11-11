@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, ImageCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, ImageCase, VideoCase } from '../../components'
 
 export default function Framo() {
   return (
@@ -13,19 +13,11 @@ export default function Framo() {
       </Box>
       <Box css={{marginTop: 60}}>
         <Row>
-          <ImageCase 
-            src="/img/framo-logo.png"
-            width={750}
-            height={1334}
-            maxWidth={60}
-            mockup="default"
-          />
-          <ImageCase 
-            src="/img/framo-mobil.png"
-            width={750}
-            height={1334}
-            maxWidth={60}
-            mockup="default"
+          <VideoCase 
+            video="/video/framo-playground.mp4"
+            width={2560}
+            height={1602}
+            maxWidth={90}
           />
         </Row>
         <Row>
@@ -40,6 +32,15 @@ export default function Framo() {
             width={750}
             height={1334}
             maxWidth={60}
+          />
+        </Row>
+        <Row>
+          <VideoCase 
+            video="/video/framo-website.mp4"
+            width={2880}
+            height={1800}
+            size="full"
+            mockup="none"
           />
         </Row>
       </Box>

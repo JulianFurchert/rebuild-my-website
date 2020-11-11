@@ -15,7 +15,7 @@ export const ImageCase: React.FC<ImageCaseProps> = ({
   height, 
   width, 
   mockup,
-  windowTitle,
+  mockupTitle,
   maxWidth,
   ...viewcase 
 }) =>  {
@@ -30,7 +30,7 @@ export const ImageCase: React.FC<ImageCaseProps> = ({
       <InView isVisible={isVisible}>
         <Mockup 
           mockup={mockup} 
-          windowTitle={windowTitle} 
+          mockupTitle={mockupTitle} 
           maxWidth={maxWidth}
         >
           <Image

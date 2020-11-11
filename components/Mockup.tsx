@@ -3,14 +3,14 @@ import { Text } from './Text';
 import { styled } from '../stitches.config'
 
 export type MockupProps = {
-  windowTitle?: string,
+  mockupTitle?: string,
   mockup?: ContainerProps['variant'],
   maxWidth?: ContainerProps['maxWidth'],
 }
 
 export const Mockup: React.FC<MockupProps> = ({
-  windowTitle, 
-  mockup,
+  mockupTitle, 
+  mockup = 'default',
   maxWidth,
   children,
 }) => {
@@ -19,9 +19,9 @@ export const Mockup: React.FC<MockupProps> = ({
       <Container variant="window" maxWidth={maxWidth}>
         <Header>
           <Controls/>
-          {windowTitle && (
+          {mockupTitle && (
             <Text variant="caption">
-              {windowTitle}
+              {mockupTitle}
             </Text>
           )}
         </Header>
@@ -41,10 +41,12 @@ export default Mockup;
 type ContainerProps = React.ComponentProps<typeof Container>
 
 const Container = styled('div', {
+  position:'relative',
   maxWidth: "100%", 
   overflow: "hidden",
   variants: {
     variant: {
+      none: {},
       simple: {
         borderRadius: "8px", 
       },
@@ -79,6 +81,9 @@ const Container = styled('div', {
       },
       80: {
         maxWidth: "80%", 
+      },
+      90: {
+        maxWidth: "90%", 
       },
     }
   },
