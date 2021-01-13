@@ -16,6 +16,8 @@
     "react-dom": "17.0.1",
     "react-feather": "^2.0.8",
     "react-intersection-observer": "^8.30.1",
+    "react-spring": "^8.0.27",
+    "styled-components": "^5.2.1",
     "svg-path-properties": "^1.0.9",
     "use-dark-mode": "^2.3.1"
   },

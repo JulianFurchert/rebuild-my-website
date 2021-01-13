@@ -1,4 +1,5 @@
-import { Container, Text, Box, Paragraph, Row, ImageCase, VideoCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, ImageCase, VideoCase, ComponentCase } from '../../components'
+import Animation from './components/Animation'
 
 export default function Framo() {
   return (
@@ -19,6 +20,14 @@ export default function Framo() {
             height={1602}
             maxWidth={90}
           />
+        </Row>
+        <Row>
+          {/* <ComponentCase
+            maxWidth={80}
+            mockup='none'
+          >
+            <Animation />
+          </ComponentCase> */}
         </Row>
         <Row>
           <ImageCase 
