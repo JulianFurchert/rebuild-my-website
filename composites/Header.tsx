@@ -30,8 +30,8 @@ const Wrappper = styled('div', {
   '&:after': {
     content: '""',
     backgroundColor: '$loContrast',
-    opacity: 0.8,
-    backdropFilter: 'saturate(1.8) blur(20px)',
+    opacity: 0.9,
+    backdropFilter: 'saturate(2.8) blur(6px)',
     top: 0,
     left: 0,
     bottom: 0,
