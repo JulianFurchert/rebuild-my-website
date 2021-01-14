@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {useSpring, animated} from 'react-spring';
-import {Stepbar } from '../../../components/ProcessBar';
-import Showcase from '../../../components/Showcase';
-import Mockup from '../../../components/Mockup';
+import React, { useEffect, useState } from 'react';
+import { useSpring, animated } from 'react-spring';
+import { Stepbar } from '../../../components/ProcessBar';
 import useInterval from '../../../hooks/useInterval';
 
 import Artboard from './Artboard';
@@ -51,23 +49,23 @@ const SettingsGrid = () => {
   }, 3000);
 
   return(
-    <Showcase
-      width={0.5}
-      onInView={()=>setInView(true)}
-      footer={
-        <Stepbar
-          steps={3}
-          index={index}
-          caption="Grid "
-        />
-      }
-    >
-      <Mockup
-        loaded={inView}
-        width={0.8}
-        ratio={0.9}
-        // bg="#232324"
-      >
+    // <Showcase
+    //   width={0.5}
+    //   onInView={()=>setInView(true)}
+    //   footer={
+    //     <Stepbar
+    //       steps={3}
+    //       index={index}
+    //       caption="Grid "
+    //     />
+    //   }
+    // >
+    //   <Mockup
+    //     loaded={inView}
+    //     width={0.8}
+    //     ratio={0.9}
+    //     // bg="#232324"
+    //   >
         <Artboard
           letter={
             <>
@@ -81,8 +79,8 @@ const SettingsGrid = () => {
             </g>
           }
         />
-      </Mockup>
-    </Showcase>
+    //   </Mockup>
+    // </Showcase>
   )
 }
 

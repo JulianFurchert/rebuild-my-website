@@ -1,5 +1,7 @@
 import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase } from '../../components'
 import Alphabets from './components/Alphabets';
+import SettingsGrid from './components/SettingsGrid';
+import SettingsZoom from './components/SettingsZoom';
 
 export default function Framo() {
   return (
@@ -13,6 +15,20 @@ export default function Framo() {
         </Paragraph>
       </Box>
       <Box css={{marginTop: 60}}>
+        <Row>
+          <ComponentCase
+            maxWidth={90}
+            mockup='none'
+          >
+            <SettingsGrid />
+          </ComponentCase>
+          <ComponentCase
+            maxWidth={90}
+            mockup='none'
+          >
+            <SettingsZoom />
+          </ComponentCase>
+        </Row>
         <Row>
           <VideoCase 
             video="/video/typescanner-app.mp4"

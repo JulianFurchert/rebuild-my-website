@@ -65,24 +65,24 @@ const SettingsZoomComponent = () => {
   }, 3000);
 
   return(
-    <Showcase
-      width={0.5}
-      onInView={()=>setInView(true)}
-      // bg="#232324"
-      footer={
-        <Slider
-          width={30}
-          percent={ grid.percent.interpolate({range: [5,40], output: [0,100]}) }
-          caption="Zoom "
-        />
-      }
-    >
-      <Mockup
-        width={0.8}
-        ratio={0.9}
-        loaded={inView}
-        // bg="#232324"
-      >
+    // <Showcase
+    //   width={0.5}
+    //   onInView={()=>setInView(true)}
+    //   // bg="#232324"
+    //   footer={
+    //     <Slider
+    //       width={30}
+    //       percent={ grid.percent.interpolate({range: [5,40], output: [0,100]}) }
+    //       caption="Zoom "
+    //     />
+    //   }
+    // >
+    //   <Mockup
+    //     width={0.8}
+    //     ratio={0.9}
+    //     loaded={inView}
+    //     // bg="#232324"
+    //   >
         <Artboard
           letter={
             <>
@@ -96,8 +96,8 @@ const SettingsZoomComponent = () => {
             </animated.g>
           }
         />
-      </Mockup>
-    </Showcase>
+    //   </Mockup>
+    // </Showcase>
 
   )
 }
