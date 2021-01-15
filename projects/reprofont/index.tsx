@@ -27,10 +27,17 @@ export default function Framo() {
           </ComponentCase>
         </Row>
         <Row>
+          <VideoCase 
+            video="/video/reprofont-desktop.mp4"
+            width={2560}
+            height={1600}
+            maxWidth={80}
+          />
+        </Row>
+        <Row>
           <ComponentCase maxWidth={80} mockup='none'>
             <GraphicNew />
           </ComponentCase>
-
           <VideoCase 
             video="/video/reprofont-300-mobil.mp4"
             width={750}
