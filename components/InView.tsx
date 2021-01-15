@@ -25,7 +25,7 @@ export const InView: React.FC<InViewProps> = ({ children, isVisible = true }) =>
   });  
 
   return(
-    <div ref={ref}>
+    <div ref={ref} style={{ width: '100%' }}>
       <motion.div
         initial="hidden"
         animate={inView && isVisible ? 'visible' : 'hidden'}
@@ -34,7 +34,8 @@ export const InView: React.FC<InViewProps> = ({ children, isVisible = true }) =>
         style={{
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          width: '100%'
         }}
       >
         {children}

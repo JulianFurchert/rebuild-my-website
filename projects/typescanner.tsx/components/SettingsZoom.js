@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useSpring, animated} from 'react-spring';
-import {Slider } from '../../../components/ProcessBar';
-import Showcase from '../../../components/Showcase';
-import Mockup from '../../../components/Mockup';
 import useInterval from '../../../hooks/useInterval';
 
 import Artboard from './Artboard';
@@ -33,7 +30,6 @@ const animation = [
 
 const SettingsZoomComponent = () => {
   const [index, setIndex] = useState(0);
-  const [inView, setInView] = useState(false);
   const [letter, setLetter] = useSpring(()=>({
     from: {
       pathA: animation[index].pathA,
@@ -65,39 +61,19 @@ const SettingsZoomComponent = () => {
   }, 3000);
 
   return(
-    // <Showcase
-    //   width={0.5}
-    //   onInView={()=>setInView(true)}
-    //   // bg="#232324"
-    //   footer={
-    //     <Slider
-    //       width={30}
-    //       percent={ grid.percent.interpolate({range: [5,40], output: [0,100]}) }
-    //       caption="Zoom "
-    //     />
-    //   }
-    // >
-    //   <Mockup
-    //     width={0.8}
-    //     ratio={0.9}
-    //     loaded={inView}
-    //     // bg="#232324"
-    //   >
-        <Artboard
-          letter={
-            <>
-              <animated.polyline  points={letter.pathA} />
-              <animated.polyline  points={letter.pathB} />
-            </>
-          }
-          grid={
-            <animated.g transform={grid.zxy.interpolate((z, x, y) => `matrix(${z},0,0,${z},${x},${y})`)}>
-              <SettingsZoom />
-            </animated.g>
-          }
-        />
-    //   </Mockup>
-    // </Showcase>
+    <Artboard
+      letter={
+        <>
+          <animated.polyline  points={letter.pathA} />
+          <animated.polyline  points={letter.pathB} />
+        </>
+      }
+      grid={
+        <animated.g transform={grid.zxy.interpolate((z, x, y) => `matrix(${z},0,0,${z},${x},${y})`)}>
+          <SettingsZoom />
+        </animated.g>
+      }
+    />
 
   )
 }

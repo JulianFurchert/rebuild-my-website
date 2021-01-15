@@ -2,12 +2,7 @@ import React from 'react';
 import { styled } from '../../../stitches.config';
 
 const Container = styled('div', {
-  position: "absolute",
-  top: "0px",
-  left: "0px",
-  maxWidth: "100%",
-  width: "100vh",
-  height: "100%",
+  width: "100%",
   borderRadius: "16px",
   backgroundColor: "white"
 })

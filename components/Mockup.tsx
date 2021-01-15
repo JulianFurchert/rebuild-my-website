@@ -42,6 +42,7 @@ type ContainerProps = React.ComponentProps<typeof Container>
 
 const Container = styled('div', {
   position:'relative',
+  width: "100%",
   maxWidth: "100%", 
   overflow: "hidden",
   variants: {

@@ -17,13 +17,13 @@ export default function Framo() {
       <Box css={{marginTop: 60}}>
         <Row>
           <ComponentCase
-            maxWidth={90}
+            maxWidth={70}
             mockup='none'
           >
             <SettingsGrid />
           </ComponentCase>
           <ComponentCase
-            maxWidth={90}
+            maxWidth={70}
             mockup='none'
           >
             <SettingsZoom />
@@ -35,6 +35,7 @@ export default function Framo() {
             width={2560}
             height={1600}
             maxWidth={90}
+            scheme="dark"
           />
         </Row>
         <Row>

@@ -22,8 +22,7 @@ const fonts =[
 ];
 
 const Container = styled('div', {
-  maxWidth: '100%',
-  width: '100vw'
+  width: '100%'
 })
 
 const Alphabets = () => {

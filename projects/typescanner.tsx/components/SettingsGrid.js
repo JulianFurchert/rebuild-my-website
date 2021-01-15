@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { Stepbar } from '../../../components/ProcessBar';
 import useInterval from '../../../hooks/useInterval';
 
 import Artboard from './Artboard';
@@ -27,7 +26,6 @@ const animation = [
 ]
 
 const SettingsGrid = () => {
-  const [inView, setInView] = useState(false);
   const [index, setIndex] = useState(0);
   const [letter, setLetter] = useSpring(()=>({
     from: {
@@ -49,38 +47,19 @@ const SettingsGrid = () => {
   }, 3000);
 
   return(
-    // <Showcase
-    //   width={0.5}
-    //   onInView={()=>setInView(true)}
-    //   footer={
-    //     <Stepbar
-    //       steps={3}
-    //       index={index}
-    //       caption="Grid "
-    //     />
-    //   }
-    // >
-    //   <Mockup
-    //     loaded={inView}
-    //     width={0.8}
-    //     ratio={0.9}
-    //     // bg="#232324"
-    //   >
-        <Artboard
-          letter={
-            <>
-              <animated.polyline  points={letter.pathA} />
-              <animated.polyline  points={letter.pathB} />
-            </>
-          }
-          grid={
-            <g>
-              {animation[index].grid}
-            </g>
-          }
-        />
-    //   </Mockup>
-    // </Showcase>
+    <Artboard
+      letter={
+        <>
+          <animated.polyline  points={letter.pathA} />
+          <animated.polyline  points={letter.pathB} />
+        </>
+      }
+      grid={
+        <g>
+          {animation[index].grid}
+        </g>
+      }
+    />
   )
 }
 
