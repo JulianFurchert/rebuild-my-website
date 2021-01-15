@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import { styled } from '../stitches.config'
@@ -16,13 +16,18 @@ const variants = {
 }
 
 export type InViewProps = {
-  isVisible?: boolean
+  isVisible?: boolean,
+  onChange?: () => void
 }
 
-export const InView: React.FC<InViewProps> = ({ children, isVisible = true }) => {
+export const InView: React.FC<InViewProps> = ({ children, onChange, isVisible = true }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-  });  
+  });
+
+  useEffect(()=>{
+    inView && onChange && onChange()
+  },[inView])
 
   return(
     <div ref={ref} style={{ width: '100%' }}>
