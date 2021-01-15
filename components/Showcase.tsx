@@ -8,6 +8,7 @@ export type ShowcaseVariants = {
 } 
 
 export const Showcase = styled('div', {
+  position: 'relative',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -30,6 +31,9 @@ export const Showcase = styled('div', {
       full: {
         padding: 0,
       },
+      gallery: {
+        paddingBottom: '40px',
+      }
     }
   }
 })

@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase, GalleryCase } from '../../components'
 
 import GraphicNew from './components/GraphicNew';
 import GraphicEEE from './components/GraphicEEE';
@@ -33,7 +33,7 @@ export default function Framo() {
             height={1600}
             maxWidth={80}
           />
-        </Row>
+        </Row>public/img/reprofont-speciem/speciem2.jpg
         <Row>
           <ComponentCase maxWidth={80} mockup='none'>
             <GraphicNew />
@@ -43,6 +43,24 @@ export default function Framo() {
             width={750}
             height={1334}
             maxWidth={80}
+          />
+        </Row>
+        <Row>
+          <GalleryCase 
+            src={[
+              "/img/reprofont-speciem/speciem2.jpg",
+              "/img/reprofont-speciem/speciem3.jpg",
+              "/img/reprofont-speciem/speciem4.jpg",
+              "/img/reprofont-speciem/speciem5.jpg",
+              "/img/reprofont-speciem/speciem6.jpg",
+              "/img/reprofont-speciem/speciem7.jpg",
+              "/img/reprofont-speciem/speciem8.jpg",
+              "/img/reprofont-speciem/speciem9.jpg",
+              "/img/reprofont-speciem/speciem10.jpg",
+            ]}
+            width={1280}
+            height={889}
+            maxWidth={60}
           />
         </Row>
       </Box>
