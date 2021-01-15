@@ -68,9 +68,15 @@ const StepContainer = styled('div', {
 const AnimatedFiller = animated(Filler);
 const AnimatedStepContainer = animated(StepContainer);
 
+type TimelineProps = {
+  duration: number,
+  onRest: () => void,
+  caption?: string,
+}
 
-export const Timeline = ({duration, onRest, caption, bg}) => {
+export const Timeline: React.FC<TimelineProps> = ({ duration, onRest, caption, bg }) => {
   const [reset, setReset] = useState(false)
+  
   const props = useSpring({
     from: { width: '0%'},
     width: '100%',
@@ -95,8 +101,13 @@ export const Timeline = ({duration, onRest, caption, bg}) => {
   )
 }
 
+type StepbarProps = {
+  index: number,
+  steps: number,
+  caption?: string,
+}
 
-export const Stepbar = ({index, steps, caption}) => {
+export const Stepbar: React.FC<StepbarProps> = ({ index, steps, caption }) => {
 
   const props = useSpring({
     left: `${index/steps*100}%`
@@ -125,8 +136,13 @@ export const Stepbar = ({index, steps, caption}) => {
   )
 }
 
+type SliderProps = {
+  percent: number,
+  width: number,
+  caption?: string,
+}
 
-export const Slider = ({percent, width, caption}) => {
+export const Slider: React.FC<SliderProps> = ({ percent, width, caption }) => {
   return (
     <Bar>
     {caption && <Text variant="caption">{caption}</Text>}

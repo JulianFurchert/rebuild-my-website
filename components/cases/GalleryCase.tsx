@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Showcase, ShowcaseVariants } from '../Showcase';
-import { Timeline } from '../ProcessBar';
+// import { Timeline } from '../ProcessBar';
 import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 import { Box } from '../Box';
@@ -50,7 +50,7 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
           right: 0
         }}
       >
-        <Timeline duration={4000} onRest={onRest}/>
+        {/* <Timeline duration={4000} onRest={onRest}/> */}
       </Box>
     </Showcase>
   )
