@@ -31,8 +31,9 @@ export default function System() {
         </Paragraph>
         <Row css={{ backgroundColor: '$gray1' }}>
           <Timeline
-            duration={4000}
-            onRest={()=>console.log('Timeline onRest')}
+            duration={5}
+            number={10}
+            onChange={i =>console.log('Timeline: ' + i)}
           />
         </Row>
         <Paragraph css={{ marginTop: 60 }}>
@@ -40,8 +41,9 @@ export default function System() {
         </Paragraph>
         <Row css={{ backgroundColor: '$gray1' }}>
           <Stepbar
-            steps={6}
-            index={0}
+            duration={2.5}
+            number={5}
+            onChange={i => console.log('Stepbar: ' + i)}
           />
         </Row>
         <Paragraph css={{ marginTop: 60 }}>

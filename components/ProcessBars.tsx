@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from 'react'
 import { styled } from '../stitches.config'
-import { useSpring, animated } from 'react-spring'
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { Text } from './Text'
+import useInterval from '../hooks/useInterval'
 
 const Bar = styled('div', {
   position: "relative",
@@ -33,7 +34,7 @@ const Progressbar = styled('div', {
   backgroundColor: '$loContrast'
 })
 
-const Filler = styled('div', {
+const Filler = styled(motion.div, {
   position: "absolute",
   top: "0",
   left: "0",
@@ -53,48 +54,51 @@ const StepContainer = styled('div', {
   left: "0"
 })
 
-// const StepContainer = styled.div`
-//   z-index: 100;
-//   height: 32px;
-//   display: flex;
-//   align-items: center;
-//   justify-content:space-between;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: ${props => `${props.width}%`};
-// `
-
-const AnimatedFiller = animated(Filler);
-const AnimatedStepContainer = animated(StepContainer);
-
 type TimelineProps = {
-  duration: number,
-  onRest: () => void,
+  duration?: number,
+  number?: number,
+  onChange?: (i: number) => void,
   caption?: string,
 }
 
-export const Timeline: React.FC<TimelineProps> = ({ duration, onRest, caption, bg }) => {
-  const [reset, setReset] = useState(false)
+export const Timeline: React.FC<TimelineProps> = ({ duration = 2,  number = 10, onChange, caption,  }) => {
+  const [index, setIndex ] = useState(0);
+  const [variant, setVariant] = useState('end')
   
-  const props: any = useSpring({
-    from: { width: '0%'},
-    width: '100%',
-    config: { duration },
-    reset: reset,
-    onRest: ()=>{
-      onRest()
-      setReset(true)
+  const variants = {
+    start: { 
+      width: '0%',
+      transition: { duration: 0, delay: 0.2 }
     },
-    onStart: ()=> setReset(false)
-  })
+    end: { 
+      width: '100%',
+      transition: { duration: duration, delay: 0.2 }
+    },
+  }
+
+  const handleOnAnimationComplete = () => {
+    if (variant === 'end') {
+      let newIndex = (index + 1) % number;
+      setVariant('start')
+      setIndex(newIndex)
+      onChange && onChange(newIndex);
+    }
+    else {
+      setVariant('end');
+    }
+  }
 
   return (
     <Bar>
       {caption && <Text variant="caption">{caption}</Text>}
       <Container>
         <Progressbar>
-          <AnimatedFiller style={props}/>
+          <Filler
+            variants={variants}
+            initial="start"
+            animate={variant}
+            onAnimationComplete={handleOnAnimationComplete}
+          />
         </Progressbar>
       </Container>
     </Bar>
@@ -102,36 +106,38 @@ export const Timeline: React.FC<TimelineProps> = ({ duration, onRest, caption, b
 }
 
 type StepbarProps = {
-  index: number,
-  steps: number,
+  number?: number,
+  duration?: number,
+  onChange?: (i: number) => void,
   caption?: string,
 }
 
-export const Stepbar: React.FC<StepbarProps> = ({ index, steps, caption }) => {
+export const Stepbar: React.FC<StepbarProps> = ({ duration = 2, number = 4, caption, onChange }) => {
+  const [index, setIndex ] = useState(0);
 
-  const props = useSpring({
-    left: `${index/steps*100}%`
-  })
+  useInterval(() => {
+    let newIndex = (index + 1) % number;
+    setIndex(newIndex);
+    onChange && onChange(newIndex)
+  }, duration * 1000);
 
-  const stepBars = useMemo(()=>{
-    let bars = [];
-    for(var i = 0; i < steps; i++){ bars.push(i) }
-    return bars
-  },[steps])
+  var bars = [];
+  for (var i = 0; i < number; i++) {
+    bars.push(i);
+  }
 
   return (
     <Bar>
       {caption && <Text variant="caption">{caption}</Text>}
-      <Container>
-        {stepBars.map( item => (
-          <Progressbar key={item} />
-        ))}
-        <AnimatedStepContainer width={100/steps} style={props}>
-          <Progressbar>
-            <AnimatedFiller />
-          </Progressbar>
-        </AnimatedStepContainer>
-      </Container>
+      <AnimateSharedLayout>
+        <Container>
+          {bars.map( item => (
+            <Progressbar key={item}>
+              {item === index ? <Filler layoutId="filler" /> : undefined}
+            </Progressbar>
+          ))}
+        </Container>
+      </AnimateSharedLayout>
     </Bar>
   )
 }
