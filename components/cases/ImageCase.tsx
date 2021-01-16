@@ -4,10 +4,11 @@ import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 import Image from 'next/image' 
 
-type ImageCaseProps = ShowcaseVariants & MockupProps & {
+type ImageCaseProps = ShowcaseVariants & {
   src: string,
   height: number
   width: number,
+  mockup?: MockupProps
 }
 
 export const ImageCase: React.FC<ImageCaseProps> = ({ 
@@ -15,8 +16,6 @@ export const ImageCase: React.FC<ImageCaseProps> = ({
   height, 
   width, 
   mockup,
-  mockupTitle,
-  maxWidth,
   ...viewcase 
 }) =>  {
   const [isVisible, setIsVisible] = React.useState(false)
@@ -28,16 +27,13 @@ export const ImageCase: React.FC<ImageCaseProps> = ({
   return (
     <Showcase {...viewcase} >
       <InView isVisible={isVisible}>
-        <Mockup 
-          mockup={mockup} 
-          mockupTitle={mockupTitle} 
-          maxWidth={maxWidth}
-        >
+        <Mockup {...mockup}> 
           <Image
             onLoad={handelOnLoad} 
             src={src} 
             height={height} 
             width={width}
+            layout="responsive"
           />
         </Mockup>
       </InView>

@@ -5,15 +5,14 @@ import { Showcase, ShowcaseVariants } from '../Showcase';
 import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 
-type LottieCaseProps = ShowcaseVariants & MockupProps & {
+type LottieCaseProps = ShowcaseVariants & {
   data: any,
+  mockup?: MockupProps
 }
 
 export const LottieCase:React.FC<LottieCaseProps> = ({
   data,
   mockup,
-  mockupTitle,
-  maxWidth,
   ...viewcase 
 }) =>  {
   const [loaded, setLoaded] = useState(false);
@@ -44,11 +43,7 @@ export const LottieCase:React.FC<LottieCaseProps> = ({
   return (
     <Showcase {...viewcase}>
       <InView isVisible={loaded} onChange={handleOnChange}>
-        <Mockup 
-          mockup={mockup} 
-          mockupTitle={mockupTitle} 
-          maxWidth={maxWidth}
-        >
+        <Mockup {...mockup}>
           <LottieContainer ref={lottieRef}/>
         </Mockup>
       </InView>

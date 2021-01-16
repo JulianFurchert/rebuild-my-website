@@ -5,10 +5,11 @@ import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 import Image from 'next/image' 
 
-type VideoCaseProps = ShowcaseVariants & MockupProps & {
+type VideoCaseProps = ShowcaseVariants & {
   video: string,
   height: number
   width: number,
+  mockup?: MockupProps
 }
 
 export const VideoCase: React.FC<VideoCaseProps> = ({ 
@@ -16,8 +17,6 @@ export const VideoCase: React.FC<VideoCaseProps> = ({
   height, 
   width, 
   mockup,
-  mockupTitle,
-  maxWidth,
   ...viewcase 
 }) =>  {
   const [isVisible, setIsVisible] = React.useState(false)
@@ -30,11 +29,7 @@ export const VideoCase: React.FC<VideoCaseProps> = ({
   return (
     <Showcase {...viewcase} >
       <InView isVisible={isVisible}>
-        <Mockup 
-          mockup={mockup} 
-          mockupTitle={mockupTitle} 
-          maxWidth={maxWidth}
-        >
+        <Mockup {...mockup}>
           <Image
             onLoad={handelOnLoad} 
             src={poster} 

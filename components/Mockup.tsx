@@ -3,25 +3,25 @@ import { Text } from './Text';
 import { styled } from '../stitches.config'
 
 export type MockupProps = {
-  mockupTitle?: string,
-  mockup?: ContainerProps['variant'],
+  title?: string,
+  variant?: ContainerProps['variant'],
   maxWidth?: ContainerProps['maxWidth'],
 }
 
 export const Mockup: React.FC<MockupProps> = ({
-  mockupTitle, 
-  mockup = 'default',
+  title, 
+  variant = 'default',
   maxWidth,
   children,
 }) => {
-  if(mockup === "window"){
+  if(variant === "window"){
     return (
       <Container variant="window" maxWidth={maxWidth}>
         <Header>
           <Controls/>
-          {mockupTitle && (
+          {title && (
             <Text variant="caption">
-              {mockupTitle}
+              {title}
             </Text>
           )}
         </Header>
@@ -30,7 +30,7 @@ export const Mockup: React.FC<MockupProps> = ({
     )
   }
   return (
-    <Container variant={mockup} maxWidth={maxWidth}>
+    <Container variant={variant} maxWidth={maxWidth}>
       {children}
     </Container>
   )
@@ -62,29 +62,59 @@ const Container = styled('div', {
       }
     },
     maxWidth: {
-      20: {
+      '20%': {
         maxWidth: "20%", 
       },
-      30: {
+      '30%': {
         maxWidth: "30%", 
       },
-      40: {
+      '40%': {
         maxWidth: "40%", 
       },
-      50: {
+      '50%': {
         maxWidth: "50%", 
       },
-      60: {
+      '60%': {
         maxWidth: "60%", 
       },
-      70: {
+      '70%': {
         maxWidth: "70%", 
       },
-      80: {
+      '80%': {
         maxWidth: "80%", 
       },
-      90: {
+      '90%': {
         maxWidth: "90%", 
+      },
+      300: {
+        maxWidth: 300, 
+      },
+      400: {
+        maxWidth: 400, 
+      },
+      500: {
+        maxWidth: 500, 
+      },
+      600: {
+        maxWidth: 600, 
+      },
+      700: {
+        maxWidth: 700, 
+      },
+      800: {
+        maxWidth: 800, 
+      },
+      900: {
+        maxWidth: 900, 
+      },
+      1000: {
+        maxWidth: 1000, 
+      },
+      1100: {
+        maxWidth: 1100, 
+      },
+      1200: {
+        maxWidth: 1200, 
       },
     }
   },

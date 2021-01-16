@@ -52,16 +52,20 @@ export default function System() {
         <Row>
           <CodeCase 
             code={["```lottie", "src: example_lottie.json", "````"]}
-            mockup="window"
-            mockupTitle="window"
+            mockup={{
+              variant: 'window',
+              title: 'window'
+            }}
           />
         </Row>
         <Row>
           <CodeCase 
             code={["```lottie", "src: example_lottie.json", "````"]}
-            mockup="window"
-            mockupTitle="Window with dark scheme"
             scheme="dark"
+            mockup={{
+              variant: 'window',
+              title: 'window',
+            }}
           />
         </Row>
         <Paragraph css={{ marginTop: 60 }}>
@@ -85,6 +89,9 @@ export default function System() {
           <GalleryCase
             width={1100} 
             height={800}
+            mockup={{
+              maxWidth: 1100
+            }}
             src={[
               '/img/example-gallery/image-1.jpg',
               '/img/example-gallery/image-2.jpg',
@@ -101,6 +108,9 @@ export default function System() {
             video="/video/example-web.mp4"
             width={1280}
             height={800}
+            mockup={{
+              maxWidth: 1100
+            }}
           />
         </Row>
         <Row>
@@ -116,13 +126,17 @@ export default function System() {
             video="/video/example-iphone.mp4"
             width={372}
             height={666}
-            maxWidth={60}
+            mockup={{
+              maxWidth: 600
+            }}
           />
           <VideoCase 
             video="/video/example-iphone.mp4"
             width={372}
             height={666}
-            maxWidth={60}
+            mockup={{
+              maxWidth: 600
+            }}
           />
         </Row>
         <Paragraph css={{ marginTop: 60 }}>
@@ -140,8 +154,10 @@ export default function System() {
             src="/img/example-web-1200x800.jpg"
             width={1200}
             height={800}
-            mockup="window"
-            mockupTitle="window"
+            mockup={{
+              variant: 'window',
+              title: 'window'
+            }}
           />
         </Row>
         <Row>
@@ -149,11 +165,17 @@ export default function System() {
             src="/img/example-iphone-375x667.jpg"
             width={375}
             height={667}
+            mockup={{
+              maxWidth: 300
+            }}
           />
           <ImageCase 
             src="/img/example-iphone-375x667.jpg"
             width={375}
             height={667}
+            mockup={{
+              maxWidth: 300
+            }}
           />
         </Row>
         <Paragraph css={{ marginTop: 60 }}>
@@ -162,7 +184,9 @@ export default function System() {
         <Row>
           <LottieCase
             data={lottie}
-            maxWidth={60}
+            mockup={{
+              maxWidth: '60%'
+            }}
           />
         </Row>
       </Box>

@@ -4,28 +4,23 @@ import { Showcase, ShowcaseVariants } from '../Showcase';
 import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 
-type CodeCaseProps = ShowcaseVariants & MockupProps & {
+type CodeCaseProps = ShowcaseVariants & {
   code: string[],
+  mockup?: MockupProps
 }
 
 export const CodeCase: React.FC<CodeCaseProps> = ({
   code,
   mockup,
-  mockupTitle,
-  maxWidth,
   ...viewcase 
 }) => {
   
   return(
-    <Showcase {...viewcase} >
+    <Showcase {...viewcase}>
       <InView>
-        <Mockup 
-          mockup={mockup} 
-          mockupTitle={mockupTitle} 
-          maxWidth={maxWidth}
-        >
+        <Mockup {...mockup}>
           <Code>
-            { code.map(row => <div>{row}</div>) }
+            {code.map(row => <div>{row}</div>)}
           </Code>
         </Mockup>
       </InView>

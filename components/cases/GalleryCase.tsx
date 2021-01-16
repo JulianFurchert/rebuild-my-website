@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Showcase, ShowcaseVariants } from '../Showcase';
-// import { Timeline } from '../ProcessBar';
+import { Timeline } from '../ProcessBars';
 import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 import { Box } from '../Box';
 import Image from 'next/image' 
 
-type GalleryCaseProps = ShowcaseVariants & MockupProps & {
+type GalleryCaseProps = ShowcaseVariants & {
   src: string[],
   height: number
   width: number,
+  mockup?: MockupProps
 }
 
 export const GalleryCase: React.FC<GalleryCaseProps> = ({ 
@@ -17,28 +18,23 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
   height, 
   width, 
   mockup,
-  mockupTitle,
-  maxWidth,
   ...viewcase 
 }) =>  {
   const [index, setIndex] = useState(0);
 
-  const onRest = () => {
-    setIndex(state => (state + 1) % src.length)
+  const handleOnChange = ( index: number ) => {
+    setIndex(index)
   }
 
   return (
     <Showcase size="gallery" {...viewcase}>
       <InView>
-        <Mockup 
-          mockup={mockup} 
-          mockupTitle={mockupTitle} 
-          maxWidth={maxWidth}
-        > 
+        <Mockup {...mockup}> 
           <Image
             src={src[index]} 
             height={height} 
             width={width}
+            layout="responsive"
           />
         </Mockup>
       </InView>
@@ -50,7 +46,11 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
           right: 0
         }}
       >
-        {/* <Timeline duration={4000} onRest={onRest}/> */}
+        <Timeline 
+          number={src.length} 
+          duration={4} 
+          onChange={handleOnChange}
+        />
       </Box>
     </Showcase>
   )
