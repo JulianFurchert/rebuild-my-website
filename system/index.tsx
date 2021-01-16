@@ -1,4 +1,17 @@
-import { Container, Text, Box, Paragraph, Row, VideoCase, ImageCase, LottieCase } from '../components'
+import { 
+  Container, 
+  Text, Box, 
+  Paragraph, 
+  Row, 
+  VideoCase, 
+  ImageCase, 
+  LottieCase, 
+  GalleryCase, 
+  ComponentCase,
+  CodeCase,
+  Timeline, 
+  Stepbar,
+} from '../components'
 import lottie from './lottie/lottie.json';
 
 export default function System() {
@@ -12,8 +25,73 @@ export default function System() {
           Design System is a Gatsby Starter for creating style guides, documentations, or design systems. With Pretty Paper, you can easily write your documentation using Markdown. To simplify the writing of Design Specification, the Markdown synatx has been extended with special code blocks. This allows you to quickly define colors, fonts, text styles, or add videos and lottie animations to your documentation.
         </Paragraph>
       </Box>
-      <Box css={{ marginTop: 60 }}>
-        <Paragraph>
+      <Box>
+        <Paragraph css={{ marginTop: 60 }}>
+          Timeline
+        </Paragraph>
+        <Row css={{ backgroundColor: '$gray1' }}>
+          <Timeline
+            duration={4000}
+            onRest={()=>console.log('Timeline onRest')}
+          />
+        </Row>
+        <Paragraph css={{ marginTop: 60 }}>
+          Stepbar
+        </Paragraph>
+        <Row css={{ backgroundColor: '$gray1' }}>
+          <Stepbar
+            steps={6}
+            index={0}
+          />
+        </Row>
+        <Paragraph css={{ marginTop: 60 }}>
+          CodeCase
+        </Paragraph>
+        <Row>
+          <CodeCase 
+            code={["```lottie", "src: example_lottie.json", "````"]}
+            mockup="window"
+            mockupTitle="window"
+          />
+        </Row>
+        <Row>
+          <CodeCase 
+            code={["```lottie", "src: example_lottie.json", "````"]}
+            mockup="window"
+            mockupTitle="Window with dark scheme"
+            scheme="dark"
+          />
+        </Row>
+        <Paragraph css={{ marginTop: 60 }}>
+          ComponentCase
+        </Paragraph>
+        <Row css={{ backgroundColor: '$gray1' }}>
+          <ComponentCase>
+            <Box
+              css={{
+                height: '200px',
+                width: '100%',
+                backgroundColor: '$primary'
+              }}
+            />
+          </ComponentCase>
+        </Row>
+        <Paragraph css={{ marginTop: 60 }}>
+          Gallery
+        </Paragraph>
+        <Row>
+          <GalleryCase
+            width={1100} 
+            height={800}
+            src={[
+              '/img/example-gallery/image-1.jpg',
+              '/img/example-gallery/image-2.jpg',
+              '/img/example-gallery/image-3.jpg',
+              '/img/example-gallery/image-4.jpg'
+            ]}
+          />
+        </Row>
+        <Paragraph css={{ marginTop: 60 }}>
           VideoCase
         </Paragraph>
         <Row>

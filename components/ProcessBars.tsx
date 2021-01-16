@@ -77,7 +77,7 @@ type TimelineProps = {
 export const Timeline: React.FC<TimelineProps> = ({ duration, onRest, caption, bg }) => {
   const [reset, setReset] = useState(false)
   
-  const props = useSpring({
+  const props: any = useSpring({
     from: { width: '0%'},
     width: '100%',
     config: { duration },
@@ -132,33 +132,6 @@ export const Stepbar: React.FC<StepbarProps> = ({ index, steps, caption }) => {
           </Progressbar>
         </AnimatedStepContainer>
       </Container>
-    </Bar>
-  )
-}
-
-type SliderProps = {
-  percent: number,
-  width: number,
-  caption?: string,
-}
-
-export const Slider: React.FC<SliderProps> = ({ percent, width, caption }) => {
-  return (
-    <Bar>
-    {caption && <Text variant="caption">{caption}</Text>}
-    <Container>
-      <Progressbar>
-        <AnimatedFiller
-          style={{
-            width: `${width}%`,
-            left: percent.interpolate({
-              range: [0,100],
-              output: [0,100-width]
-            }).interpolate( p => `${p}%`),
-          }}
-        />
-      </Progressbar>
-    </Container>
     </Bar>
   )
 }
