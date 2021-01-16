@@ -65,6 +65,7 @@ export default function System() {
             mockup={{
               variant: 'window',
               title: 'window',
+              scheme: 'dark'
             }}
           />
         </Row>

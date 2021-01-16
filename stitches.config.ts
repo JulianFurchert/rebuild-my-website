@@ -1,35 +1,46 @@
 import { createStyled } from '@stitches/react'
 
-export const lightThemeColors = {
-  $primary: '#007aff',
-  $loContrast: '#FCFCFD',
-  $hiContrast: '#17171A',
-  $gray1: '#F0F2F5',
-  $gray2: '#E2E6E9',
-  $gray3: '#E2E6E9',
-  $gray4: '#B3B6BB',
-  $gray5: '#999CA2',
-  $gray6: '#7F8288',
-  $gray7: '#4F5156',
-  $gray8: '#17171A',
-}
-
-export const darkThemeColors = {
-  $primary: '#007aff',
-  $loContrast: '#141517',
-  $hiContrast: '#F0F2F5',
-  $gray1: '#212123',
-  $gray2: '#4F5156',
-  $gray3: '#7F8288',
-  $gray4: '#999CA2',
-  $gray5: '#B3B6BB',
-  $gray6: '#D0D1D4',
-  $gray7: '#EDEDED',
-  $gray8: '#F0F2F5',
+export const colors = {
+  $light_primary: '#007aff',
+  $light_loContrast: '#FCFCFD',
+  $light_hiContrast: '#17171A',
+  $light_gray1: '#F0F2F5',
+  $light_gray2: '#E2E6E9',
+  $light_gray3: '#E2E6E9',
+  $light_gray4: '#B3B6BB',
+  $light_gray5: '#999CA2',
+  $light_gray6: '#7F8288',
+  $light_gray7: '#4F5156',
+  $light_gray8: '#17171A',
+  // dark
+  $dark_primary: '#007aff',
+  $dark_loContrast: '#141517',
+  $dark_hiContrast: '#F0F2F5',
+  $dark_gray1: '#212123',
+  $dark_gray2: '#4F5156',
+  $dark_gray3: '#7F8288',
+  $dark_gray4: '#999CA2',
+  $dark_gray5: '#B3B6BB',
+  $dark_gray6: '#D0D1D4',
+  $dark_gray7: '#EDEDED',
+  $dark_gray8: '#F0F2F5',
 }
 
 const theme = {
-  colors: lightThemeColors,
+  colors: {
+    ...colors,
+    $primary: colors.$light_primary,
+    $loContrast: colors.$light_loContrast,
+    $hiContrast: colors.$light_hiContrast,
+    $gray1: colors.$light_gray1,
+    $gray2: colors.$light_gray2,
+    $gray3: colors.$light_gray3,
+    $gray4: colors.$light_gray4,
+    $gray5: colors.$light_gray5,
+    $gray6: colors.$light_gray6,
+    $gray7: colors.$light_gray7,
+    $gray8: colors.$light_gray8,
+  },
   space: {
     $1: '5px',
     $2: '10px',
@@ -106,7 +117,20 @@ export const { styled, css } = createStyled({
 })
 
 export const darkTheme= css.theme({
-  colors: darkThemeColors
+  colors: {
+    ...colors,
+    $primary: colors.$dark_primary,
+    $loContrast: colors.$dark_loContrast,
+    $hiContrast: colors.$dark_hiContrast,
+    $gray1: colors.$dark_gray1,
+    $gray2: colors.$dark_gray2,
+    $gray3: colors.$dark_gray3,
+    $gray4: colors.$dark_gray4,
+    $gray5: colors.$dark_gray5,
+    $gray6: colors.$dark_gray6,
+    $gray7: colors.$dark_gray7,
+    $gray8: colors.$dark_gray8,
+  },
 })
 
 css.global({

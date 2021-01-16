@@ -6,21 +6,23 @@ export type MockupProps = {
   title?: string,
   variant?: ContainerProps['variant'],
   maxWidth?: ContainerProps['maxWidth'],
+  scheme?: ContainerProps['scheme'],
 }
 
 export const Mockup: React.FC<MockupProps> = ({
   title, 
   variant = 'default',
   maxWidth,
+  scheme = 'auto',
   children,
 }) => {
   if(variant === "window"){
     return (
-      <Container variant="window" maxWidth={maxWidth}>
+      <Container scheme={scheme} variant="window" maxWidth={maxWidth}>
         <Header>
           <Controls/>
           {title && (
-            <Text variant="caption">
+            <Text css={{ color: 'inherit' }} variant="caption">
               {title}
             </Text>
           )}
@@ -30,7 +32,7 @@ export const Mockup: React.FC<MockupProps> = ({
     )
   }
   return (
-    <Container variant={variant} maxWidth={maxWidth}>
+    <Container scheme={scheme} variant={variant} maxWidth={maxWidth}>
       {children}
     </Container>
   )
@@ -46,6 +48,20 @@ const Container = styled('div', {
   maxWidth: "100%", 
   overflow: "hidden",
   variants: {
+    scheme: {
+      auto: {
+        backgroundColor: '$loContrast',
+        color: '$hiContrast',
+      },
+      light: {
+        backgroundColor: '$light_loContrast',
+        color: '$light_hiContrast',
+      },
+      dark: {
+        backgroundColor: '$dark_loContrast',
+        color: '$dark_hiContrast',
+      }
+    },
     variant: {
       none: {},
       simple: {

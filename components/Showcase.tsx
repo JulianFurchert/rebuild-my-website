@@ -20,11 +20,17 @@ export const Showcase = styled('div', {
   overflow: 'hidden',
   variants: {
     scheme: {
+      auto: {
+        backgroundColor: '$gray1',
+        color: '$hiContrast',
+      },
       light: {
-        backgroundColor: '$gray1'
+        backgroundColor: '$light_gray1',
+        color: '$light_hiContrast',
       },
       dark: {
-        backgroundColor: '$gray8'
+        backgroundColor: '$dark_gray1',
+        color: '$dark_hiContrast',
       }
     },
     size: {

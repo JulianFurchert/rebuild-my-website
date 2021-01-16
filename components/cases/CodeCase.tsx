@@ -32,7 +32,7 @@ const Code = styled('div', {
   fontFamily: "'Space Mono', monospace",
   width: "100%",
   height: "100%",
-  color: '$hiContrast',
+  color: 'inherit',
   lineHeight: 1.6,
   padding: "16px 24px",
   fontsize: "20px"
