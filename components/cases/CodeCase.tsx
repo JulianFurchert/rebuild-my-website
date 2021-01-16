@@ -20,7 +20,7 @@ export const CodeCase: React.FC<CodeCaseProps> = ({
       <InView>
         <Mockup {...mockup}>
           <Code>
-            {code.map(row => <div>{row}</div>)}
+            {code.map(row => <div key={row}>{row}</div>)}
           </Code>
         </Mockup>
       </InView>
@@ -30,8 +30,6 @@ export const CodeCase: React.FC<CodeCaseProps> = ({
 
 const Code = styled('div', {
   fontFamily: "'Space Mono', monospace",
-  position: "absolute",
-  left: "0",
   width: "100%",
   height: "100%",
   color: '$hiContrast',

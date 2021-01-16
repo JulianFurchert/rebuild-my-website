@@ -54,7 +54,9 @@ export const LottieCase:React.FC<LottieCaseProps> = ({
 const LottieContainer = styled('div', {
   position:'relative',
   width: '100%',
-  height: 'auto',
+  '& svg': {
+    display: 'block'
+  }
 })
 
 export default LottieCase;

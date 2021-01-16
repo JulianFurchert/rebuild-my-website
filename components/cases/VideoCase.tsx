@@ -35,6 +35,7 @@ export const VideoCase: React.FC<VideoCaseProps> = ({
             src={poster} 
             height={height} 
             width={width}
+            layout="responsive"
           />
           <Video
             playsInline
