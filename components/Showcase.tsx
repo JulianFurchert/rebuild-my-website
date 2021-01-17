@@ -12,7 +12,7 @@ export const Showcase = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '$6',
+  padding: '$7',
   height: '100%',
   width: '100%',
   backgroundColor: '$gray1',

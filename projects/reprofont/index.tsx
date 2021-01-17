@@ -34,7 +34,7 @@ export default function Framo() {
             width={2560}
             height={1600}
             mockup={{
-              maxWidth: "80%"
+              maxWidth: "90%"
             }}
           />
         </Row>public/img/reprofont-speciem/speciem2.jpg
@@ -67,7 +67,7 @@ export default function Framo() {
             width={1280}
             height={889}
             mockup={{
-              maxWidth: "80%"
+              maxWidth: "90%"
             }}
           />
         </Row>
