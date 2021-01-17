@@ -5,29 +5,6 @@ import { Mockup, MockupProps } from '../Mockup';
 import { InView } from '../InView';
 import { Box } from '../Box';
 import Image from 'next/image' 
-import { motion, AnimatePresence } from "framer-motion";
-
-const variants = {
-  enter: {
-    x: 500,
-    opacity: 0
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-    opacity: 1
-  },
-  exit: {
-    zIndex: 0,
-    x: -500,
-    opacity: 0
-  }
-};
-
-const transition = {
-  x: { type: "spring", stiffness: 250, damping: 30 },
-  opacity: { duration: 0.2 }
-};
 
 type GalleryCaseProps = ShowcaseVariants & {
   src: string[],
@@ -44,7 +21,9 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
   ...viewcase 
 }) =>  {
   const [index, setIndex] = useState(0);
-
+  const nextIndex = index + 1 < src.length ? index + 1 : 0;
+  console.log({ index, nextIndex });
+  
   const handleOnChange = ( index: number ) => {
     setIndex(index)
   }
@@ -52,41 +31,20 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
   return (
     <Showcase size="gallery" {...viewcase}>
       <InView>
-        <div style={{width: '100%', opacity: 0.0}}>
-          <Mockup {...mockup}> 
-            <Image
-              src={src[0]} 
-              height={height} 
-              width={width}
-              layout="responsive"
-            />
-          </Mockup>
-        </div>
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={index}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={transition}
-            style={{
-              position: 'absolute',
-              display: 'flex',
-              justifyContent: 'center',
-              width: '100%'
-            }}
-          >
-            <Mockup {...mockup}> 
-              <Image
-                src={src[index]} 
-                height={height} 
-                width={width}
-                layout="responsive"
-              />
-            </Mockup>
-          </motion.div>
-        </AnimatePresence>
+        <GalleryItem 
+          {...mockup}
+          src={src[index]} 
+          height={height} 
+          width={width}
+        />
+        <Box css={{ opacity: 0, position: 'absolute' }}>
+          <GalleryItem 
+            {...mockup}
+            src={src[nextIndex]} 
+            height={height} 
+            width={width}
+          />
+        </Box>
       </InView>
       <Box
         css={{
@@ -103,5 +61,30 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
         />
       </Box>
     </Showcase>
+  )
+}
+
+type GalleryItemProps = {
+  src: string,
+  height: number
+  width: number,
+  mockup?: MockupProps
+}
+
+const GalleryItem:React.FC<GalleryItemProps> = ({
+  src,
+  height,
+  width,
+  mockup
+}) => {
+  return(
+    <Mockup {...mockup}> 
+      <Image
+        src={src} 
+        height={height} 
+        width={width}
+        layout="responsive"
+      />
+    </Mockup>
   )
 }
