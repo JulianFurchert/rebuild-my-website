@@ -33,7 +33,11 @@ export default function Framo() {
         </Row>
         <Row columns={2}>
           <CodeCase
-            code={["```lottie", "src: example_lottie.json", "````"]}
+            code={[
+              "```lottie", 
+              "src: example_lottie.json", 
+              "````"
+            ]}
             mockup={{
               variant: 'window',
               title: 'lottie.md',
@@ -46,7 +50,12 @@ export default function Framo() {
         <Row columns={2}>
           <LottieCase  data={lottieExample} />
           <CodeCase
-            code={["```video", "src: example_video.mp4",  "autoplay: true", "````"]}
+            code={[
+              "```video", 
+              "src: example_video.mp4",  
+              "autoplay: true", 
+              "````"
+            ]}
             mockup={{
               variant: 'window',
               title: 'video.md',
