@@ -24,14 +24,16 @@ export default function Framo() {
           />
         </Row>
         <Row>
-          {/* <ComponentCase
-            maxWidth={80}
-            mockup='none'
+          <ComponentCase
+            mockup={{
+              variant: 'none',
+              maxWidth: '80%'
+            }}
           >
             <Animation />
-          </ComponentCase> */}
+          </ComponentCase>
         </Row>
-        <Row>
+        <Row columns={2}>
           <ImageCase 
             src="/img/framo-logo.png"
             width={750}
