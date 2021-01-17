@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useMotionValue, animate } from "framer-motion"
+import { useMotionValue, animate } from "framer-motion"
 import { Thumbnail, ThumbnailProps, Svg, Path, Circle } from "../components"
 import { svgPathProperties } from "svg-path-properties";
 
