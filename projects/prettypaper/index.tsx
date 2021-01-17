@@ -37,7 +37,8 @@ export default function Framo() {
             mockup={{
               variant: 'window',
               title: 'window',
-              scheme: 'dark'
+              scheme: 'dark',
+              maxWidth: '80%'
             }}
           />
           <LottieCase data={lottieBlue} />
@@ -49,7 +50,8 @@ export default function Framo() {
             mockup={{
               variant: 'window',
               title: 'window',
-              scheme: 'dark'
+              scheme: 'dark',
+              maxWidth: '80%'
             }}
           />
         </Row>

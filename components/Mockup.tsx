@@ -22,7 +22,7 @@ export const Mockup: React.FC<MockupProps> = ({
         <Header>
           <Controls/>
           {title && (
-            <Text css={{ color: 'inherit' }} variant="caption">
+            <Text css={{ color: 'inherit' }} variant="body">
               {title}
             </Text>
           )}

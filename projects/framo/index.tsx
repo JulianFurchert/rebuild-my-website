@@ -9,7 +9,7 @@ export default function Framo() {
       </Text>
       <Box css={{ maxWidth: 1200 }}>
         <Paragraph>
-            Für das Londoner Architekturbüro Framo wurde eine Website entwickelt und ein responsives Logo designt. Das Logo besteht aus sechs Buchstaben, die sich je nach Breite des Bildschirms an den verfügbaren Platz anpassen. Die Form der Buchstaben verändern sich dabei immer mit dessen Seitenverhältnis. Um das Logo auch in anderen Medien nutzbar zu machen, wurde ein Web-App entwickelt in dem die Buchstaben frei angeordnet und skaliert werden können. Das Ergebnis kann als Vektor-Datei gespeichert werden. Umgesetzt sind sowohl Website als auch App mit React. Gestaltung und Konzeption der Website sind von Mind Design.
+          A website was developed and a responsive logo was designed for the London-based architecture firm Framo. The logo consists of six letters that adapt to the available space depending on the width of the screen. The shape of the letters always changes with the aspect ratio of the screen. To make the logo usable in other media, a web app was developed in which the letters can be freely arranged and scaled. The result can be saved as a vector file. Both website and app are implemented with React. Design and conception of the website are by Mind Design.
         </Paragraph>
       </Box>
       <Box css={{marginTop: 60}}>

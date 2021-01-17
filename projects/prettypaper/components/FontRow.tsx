@@ -81,7 +81,7 @@ const FontRow = () => {
     </Showcase>
       <Showcase>
         <InView onChange={handleOnChange} isVisible={inView}>
-          <Mockup variant="window" title="color.md" scheme="dark">
+          <Mockup maxWidth="80%" variant="window" title="color.md" scheme="dark">
             <TextArea>
               <div>```font </div>
               <div>font: Roboto </div>
