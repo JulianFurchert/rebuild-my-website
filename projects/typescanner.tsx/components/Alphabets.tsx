@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { styled } from '../../../stitches.config';
+import { Box } from '../../../components'
 
 import Font1 from './alphabets/font_1.svg';
 import Font2 from './alphabets/font_2.svg';
@@ -21,11 +21,7 @@ const fonts =[
   <Font8/>
 ];
 
-const Container = styled('div', {
-  width: '100%'
-})
-
-const Alphabets = () => {
+const Alphabets: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   const updateIndex = () => {
@@ -38,9 +34,9 @@ const Alphabets = () => {
   },[])
 
   return(
-    <Container>
+    <Box css={{ width: '100%' }}>
       {fonts[index]}
-    </Container>
+    </Box>
   )
 }
 

@@ -1,5 +1,5 @@
 import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase } from '../../components'
-// import Alphabets from './components/Alphabets';
+import Alphabets from './components/Alphabets';
 // import SettingsGrid from './components/SettingsGrid';
 // import SettingsZoom from './components/SettingsZoom';
 
@@ -51,7 +51,7 @@ export default function Framo() {
               variant: 'none'
             }}
           >
-            {/* <Alphabets /> */}
+            <Alphabets />
           </ComponentCase>
         </Row>
         <Row>
