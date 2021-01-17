@@ -63,7 +63,9 @@ const Container = styled('div', {
       }
     },
     variant: {
-      none: {},
+      none: {
+        backgroundColor: 'transparent',
+      },
       simple: {
         borderRadius: "8px", 
       },

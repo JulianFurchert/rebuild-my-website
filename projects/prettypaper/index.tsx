@@ -24,28 +24,33 @@ export default function Framo() {
             video="/video/prettypaper-gray.mp4"
             width={2880}
             height={1800}
-            maxWidth={90}
             scheme="dark"
+            mockup={{
+              maxWidth: '90%',
+              scheme: 'dark'
+            }}
           />
         </Row>
-        <Row>
+        <Row columns={2}>
           <CodeCase
             code={["```lottie", "src: example_lottie.json", "````"]}
-            mockup="window"
-            mockupTitle="window"
+            mockup={{
+              variant: 'window',
+              title: 'window',
+              scheme: 'dark'
+            }}
           />
-          <LottieCase
-            data={lottieBlue}
-          />
+          <LottieCase data={lottieBlue} />
         </Row>
-        <Row>
-          <LottieCase
-            data={lottieExample}
-          />
+        <Row columns={2}>
+          <LottieCase  data={lottieExample} />
           <CodeCase
             code={["```video", "src: example_video.mp4",  "autoplay: true", "````"]}
-            mockup="window"
-            mockupTitle="window"
+            mockup={{
+              variant: 'window',
+              title: 'window',
+              scheme: 'dark'
+            }}
           />
         </Row>
       </Box>

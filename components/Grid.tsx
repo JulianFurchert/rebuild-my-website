@@ -1,6 +1,6 @@
 import { styled } from '../stitches.config'
 
-export const Row = styled('div',{
+export const Grid = styled('div',{
   width: "100%", 
   display: "grid", 
   gridTemplateColumns: 'repeat(1, 1fr)',
@@ -37,4 +37,4 @@ export const Row = styled('div',{
   }
 })
 
-export default Row;
+export default Grid;

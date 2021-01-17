@@ -4,7 +4,7 @@ import { styled } from '../../../stitches.config';
 import { Showcase, Mockup, InView, Row } from '../../../components';
 
 const ComponentContainer = styled('div', {
-  position: "absolute",
+  position: 'absolute',
   top: "0",
   left: "0",
   width: "100%",
@@ -16,11 +16,6 @@ const ComponentContainer = styled('div', {
 
 const TextArea = styled('div', {
   fontFamily: "'Space Mono', monospace",
-  position: "absolute",
-  left: "0",
-  width: "100%",
-  height: "100%",
-  color: "white",
   fontSize: "20px",
   lineHeight: 1.6,
   padding: "16px 24px"
@@ -58,10 +53,10 @@ const ColorRow = () => {
   }
 
   return(
-    <Row>
+    <Row columns={2}>
       <Showcase>
         <InView onChange={handleOnChange} isVisible={inView}>
-          <Mockup mockup="window" mockupTitle="color.md">
+          <Mockup variant="window" title="color.md" scheme="dark">
             <TextArea>
               <div>```color </div>
               <span>hex: </span>
@@ -73,7 +68,8 @@ const ColorRow = () => {
       </Showcase>
       <Showcase>
         <InView onChange={handleOnChange} isVisible={inView}>
-          <Mockup>
+          <Mockup variant="none">
+            <svg width="100%" viewBox="0 0 150 100" />
             <ComponentContainer>
               <svg width="280" viewBox="0 0 225 208">
                 <g id="Group_1" transform="translate(-75 -121)">

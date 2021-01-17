@@ -13,7 +13,6 @@ export const Showcase = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   padding: '$6',
-  margin: '$2',
   height: '100%',
   width: '100%',
   backgroundColor: '$gray1',
