@@ -3,7 +3,7 @@ import { useSpring, animated } from 'react-spring';
 import useInterval from '../../../hooks/useInterval';
 
 import Artboard from './Artboard';
-import SettingsZoom from './settings-zoom.svg';
+import SettingsZoom from './assets/settings-zoom.svg';
 
 
 const animation = [

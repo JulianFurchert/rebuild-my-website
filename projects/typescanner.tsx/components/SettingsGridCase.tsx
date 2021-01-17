@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Stepbar, ComponentCase, Box } from '../../../components'
 
 import Artboard from './Artboard';
-import GridA from './settings-grid-a.svg';
-import GridB from './settings-grid-b.svg';
-import GridC from './settings-grid-c.svg';
+import GridA from './assets/settings-grid-a.svg';
+import GridB from './assets/settings-grid-b.svg';
+import GridC from './assets/settings-grid-c.svg';
 
 const animation = [
   {

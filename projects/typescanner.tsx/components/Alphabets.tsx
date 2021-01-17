@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Box } from '../../../components'
 
-import Font1 from './alphabets/font_1.svg';
-import Font2 from './alphabets/font_2.svg';
-import Font3 from './alphabets/font_3.svg';
-import Font4 from './alphabets/font_4.svg';
-import Font5 from './alphabets/font_5.svg';
-import Font6 from './alphabets/font_6.svg';
-import Font7 from './alphabets/font_7.svg';
-import Font8 from './alphabets/font_8.svg';
+import Font1 from './assets/alphabets/font_1.svg';
+import Font2 from './assets/alphabets/font_2.svg';
+import Font3 from './assets/alphabets/font_3.svg';
+import Font4 from './assets/alphabets/font_4.svg';
+import Font5 from './assets/alphabets/font_5.svg';
+import Font6 from './assets/alphabets/font_6.svg';
+import Font7 from './assets/alphabets/font_7.svg';
+import Font8 from './assets/alphabets/font_8.svg';
 
 const fonts =[
   <Font1/>,
