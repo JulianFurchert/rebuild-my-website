@@ -25,7 +25,7 @@ const animation = [
   },
 ]
 
-const SettingsGrid = () => {
+const SettingsGridCase = () => {
   const [index, setIndex] = useState(0);
   
   // useInterval(() => {
@@ -93,4 +93,4 @@ const SettingsGrid = () => {
   )
 }
 
-export default SettingsGrid;
+export default SettingsGridCase;
