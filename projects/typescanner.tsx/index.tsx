@@ -1,7 +1,7 @@
 import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase } from '../../components'
-import Alphabets from './components/Alphabets';
-import SettingsGrid from './components/SettingsGrid';
-import SettingsZoom from './components/SettingsZoom';
+// import Alphabets from './components/Alphabets';
+// import SettingsGrid from './components/SettingsGrid';
+// import SettingsZoom from './components/SettingsZoom';
 
 export default function Framo() {
   return (
@@ -17,16 +17,20 @@ export default function Framo() {
       <Box css={{marginTop: 60}}>
         <Row>
           <ComponentCase
-            maxWidth={70}
-            mockup='none'
+            mockup={{
+              maxWidth: '70%',
+              variant: 'none'
+            }}
           >
-            <SettingsGrid />
+            {/* <SettingsGrid /> */}
           </ComponentCase>
           <ComponentCase
-            maxWidth={70}
-            mockup='none'
+            mockup={{
+              maxWidth: '70%',
+              variant: 'none'
+            }}
           >
-            <SettingsZoom />
+            {/* <SettingsZoom /> */}
           </ComponentCase>
         </Row>
         <Row>
@@ -34,16 +38,20 @@ export default function Framo() {
             video="/video/typescanner-app.mp4"
             width={2560}
             height={1600}
-            maxWidth={90}
             scheme="dark"
+            mockup={{
+              maxWidth: '90%'
+            }}
           />
         </Row>
         <Row>
           <ComponentCase
-            maxWidth={90}
-            mockup='none'
+            mockup={{
+              maxWidth: '90%',
+              variant: 'none'
+            }}
           >
-            <Alphabets />
+            {/* <Alphabets /> */}
           </ComponentCase>
         </Row>
         <Row>
@@ -51,8 +59,10 @@ export default function Framo() {
             src="/img/typescanner-docs.png"
             width={1280}
             height={800}
-            maxWidth={90}
             scheme="dark"
+            mockup={{
+              maxWidth: '90%',
+            }}
           />
         </Row>
         <Row>
@@ -60,7 +70,9 @@ export default function Framo() {
             video="/video/typescanner-calculation.mp4"
             width={2560}
             height={1600}
-            maxWidth={90}
+            mockup={{
+              maxWidth: '90%',
+            }}
           />
         </Row>
       </Box>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { lightThemeColors } from '../stitches.config'
 import { useAnimation, AnimatePresence } from "framer-motion"
 import { Thumbnail, ThumbnailProps, Svg, Path, Rect, Mouse, outsidePosition, G, CursorVariants } from "../components"
 
