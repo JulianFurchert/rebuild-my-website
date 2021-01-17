@@ -20,9 +20,16 @@ export default function Framo() {
             video="/video/reprofont-100-mobil.mp4"
             width={750}
             height={1334}
-            maxWidth={80}
+            mockup={{
+              maxWidth: "80%"
+            }}
           />
-          <ComponentCase maxWidth={80} mockup='none'>
+          <ComponentCase 
+            mockup={{
+              variant: 'none',
+              maxWidth: "80%"
+            }}
+          >
             <GraphicEEE />
           </ComponentCase>
         </Row>
@@ -31,18 +38,27 @@ export default function Framo() {
             video="/video/reprofont-desktop.mp4"
             width={2560}
             height={1600}
-            maxWidth={80}
+            mockup={{
+              maxWidth: "80%"
+            }}
           />
         </Row>public/img/reprofont-speciem/speciem2.jpg
         <Row>
-          <ComponentCase maxWidth={80} mockup='none'>
+          <ComponentCase 
+            mockup={{
+              variant: 'none',
+              maxWidth: "80%"
+            }}
+          >
             <GraphicNew />
           </ComponentCase>
           <VideoCase 
             video="/video/reprofont-300-mobil.mp4"
             width={750}
             height={1334}
-            maxWidth={80}
+            mockup={{
+              maxWidth: "80%"
+            }}
           />
         </Row>
         <Row>
@@ -60,7 +76,9 @@ export default function Framo() {
             ]}
             width={1280}
             height={889}
-            maxWidth={60}
+            mockup={{
+              maxWidth: "80%"
+            }}
           />
         </Row>
       </Box>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 import { styled } from '../stitches.config'
 import { motion, AnimateSharedLayout } from "framer-motion";
 import { Text } from './Text'
