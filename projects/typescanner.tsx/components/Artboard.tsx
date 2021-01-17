@@ -4,7 +4,8 @@ import { styled } from '../../../stitches.config';
 const Container = styled('div', {
   width: "100%",
   borderRadius: "16px",
-  backgroundColor: "white"
+  backgroundColor: "white",
+  marginBottom: '-20%'
 })
 
 const Letter = styled('svg', {
