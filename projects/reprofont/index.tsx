@@ -15,21 +15,16 @@ export default function Framo() {
         </Paragraph>
       </Box>
       <Box css={{marginTop: 60}}>
-        <Row>
+        <Row columns={2}>
           <VideoCase 
             video="/video/reprofont-100-mobil.mp4"
             width={750}
             height={1334}
             mockup={{
-              maxWidth: "80%"
+              maxWidth: "60%"
             }}
           />
-          <ComponentCase 
-            mockup={{
-              variant: 'none',
-              maxWidth: "80%"
-            }}
-          >
+          <ComponentCase  mockup={{ variant: 'none' }}>
             <GraphicEEE />
           </ComponentCase>
         </Row>
@@ -43,13 +38,8 @@ export default function Framo() {
             }}
           />
         </Row>public/img/reprofont-speciem/speciem2.jpg
-        <Row>
-          <ComponentCase 
-            mockup={{
-              variant: 'none',
-              maxWidth: "80%"
-            }}
-          >
+        <Row columns={2}>
+          <ComponentCase  mockup={{ variant: 'none' }}>
             <GraphicNew />
           </ComponentCase>
           <VideoCase 
@@ -57,7 +47,7 @@ export default function Framo() {
             width={750}
             height={1334}
             mockup={{
-              maxWidth: "80%"
+              maxWidth: "60%"
             }}
           />
         </Row>
