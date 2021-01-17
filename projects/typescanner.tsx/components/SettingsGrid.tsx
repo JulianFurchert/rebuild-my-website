@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useSpring, animated } from 'react-spring';
-import useInterval from '../../../hooks/useInterval';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Stepbar, ComponentCase, Box } from '../../../components'
 
 import Artboard from './Artboard';
 import GridA from './settings-grid-a.svg';
@@ -27,39 +27,69 @@ const animation = [
 
 const SettingsGrid = () => {
   const [index, setIndex] = useState(0);
-  const [letter, setLetter] = useSpring(()=>({
-    from: {
-      pathA: animation[index].pathA,
-      pathB: animation[index].pathB
-    }
-  }))
+  
+  // useInterval(() => {
+  //   setIndex((index + 1) % 3);
+  // }, 3000);
 
-  useEffect(() => {
-    setLetter({
-      pathA: animation[index].pathA,
-      pathB: animation[index].pathB,
-      delay: 800
-    })
-  },[index])
-
-  useInterval(() => {
-    setIndex((index + 1) % 3);
-  }, 3000);
+  const handleOnChange = (index: number) => {
+    setIndex(index)
+  }
 
   return(
-    <Artboard
-      letter={
-        <>
-          <animated.polyline  points={letter.pathA} />
-          <animated.polyline  points={letter.pathB} />
-        </>
+    <ComponentCase
+      size="gallery"  
+      mockup={{
+        maxWidth: '70%',
+        variant: 'none'
+      }}
+      footer={
+        <Stepbar 
+          number={3} 
+          onChange={handleOnChange} 
+        />
       }
-      grid={
-        <g>
-          {animation[index].grid}
-        </g>
-      }
-    />
+    >
+      <Artboard
+        letter={
+          <>
+            <motion.polyline
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              initial={{
+                points: animation[0].pathA
+              }}
+              animate={{
+                points: animation[index].pathA
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3
+              }}
+            />
+            <motion.polyline 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              initial={{
+                points: animation[0].pathB
+              }}
+              animate={{
+                points: animation[index].pathB
+              }} 
+              transition={{
+                duration: 0.8,
+                delay: 0.3
+              }}
+            />
+          </>
+        }
+        grid={
+          <g>
+            {animation[index].grid}
+          </g>
+        }
+      />
+    </ComponentCase>
   )
 }
 

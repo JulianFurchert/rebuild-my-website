@@ -26,19 +26,25 @@ const GridContainer = styled('div', {
   width: "100%"
 })
 
-const Grid = styled('svg', {
-  strokeWidth: 0.1,
-  strokeLinecap: "square",
-  strokeMiterlimit: "3.239",
-  fill: "none",
-  stroke: "#868686"
-})
+const Grid = styled('svg', {})
 
-const Artboard = ({grid, letter}) => {
+type ArtboardProps = {
+  grid: any,
+  letter: any,
+}
+
+const Artboard: React.FC<ArtboardProps> = ({ grid, letter }) => {
   return(
       <Container>
         <GridContainer>
-          <Grid viewBox="0 0 1100 1400">
+          <Grid 
+            viewBox="0 0 1100 1400"
+            strokeWidth={0.1}
+            strokeLinecap="square"
+            strokeMiterlimit="3.239"
+            fill="none"
+            stroke="#868686"
+          >
             {grid}
           </Grid>
         </GridContainer>

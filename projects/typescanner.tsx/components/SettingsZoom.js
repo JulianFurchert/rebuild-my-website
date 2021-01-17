@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useSpring, animated} from 'react-spring';
+import React, { useEffect, useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 import useInterval from '../../../hooks/useInterval';
 
 import Artboard from './Artboard';
