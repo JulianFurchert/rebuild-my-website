@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Slideshow } from '../../components'
+import { Container, Text, Box, Paragraph, Slideshow, Row, ImageCase } from '../../components'
 
 export default function Framo() {
   return (
@@ -64,6 +64,70 @@ export default function Framo() {
             }
           ]}
         />
+      </Box>
+      <Box css={{ maxWidth: 1200 }}>
+        <Text as="h2" variant="headline2" css={{marginBottom: 20}}>
+          Communication with the Unknown
+        </Text>
+        <Paragraph>
+          This is a series of posters created in cooperation with designers from Singapore, Thailand and Malaysia. During our journey through Southeast Asia we were captivated by all the letterings/script/writings we couldn’t read or comprehend. This is what inspired my partner and I to create our own fictitious type (lettering), which we gave the designers. Much like the unknown shapes and fonts we had seen, this writing was unknown to the designers. We were curious to find out, what the designers would do with these new, unknown (and cryptic) letters. The work you see below is what transpired from this.
+        </Paragraph>
+      </Box>
+      <Box css={{marginTop: 60}}>
+        <Row columns={2}>
+          <ImageCase 
+            src="/img/seading-poster-1.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+          <ImageCase 
+            src="/img/seading-poster-2.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+        </Row>
+        <Row columns={2}>
+          <ImageCase 
+            src="/img/seading-poster-3.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+          <ImageCase 
+            src="/img/seading-poster-4.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+        </Row>
+        <Row columns={2}>
+          <ImageCase 
+            src="/img/seading-poster-5.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+          <ImageCase 
+            src="/img/seading-poster-6.jpg"
+            width={881}
+            height={1200}
+            mockup={{
+              variant: 'simple'
+            }}
+          />
+        </Row>
       </Box>
     </Container>
   )
