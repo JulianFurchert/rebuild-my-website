@@ -9,7 +9,7 @@ export default function Framo() {
   return (
     <Container>
       <Text as="h1" variant="headline" css={{marginBottom: 20}}>
-        PrettPaper
+        Pretty Paper
       </Text>
       <Box css={{ maxWidth: 1200 }}>
         <Paragraph>
@@ -36,7 +36,7 @@ export default function Framo() {
             code={["```lottie", "src: example_lottie.json", "````"]}
             mockup={{
               variant: 'window',
-              title: 'window',
+              title: 'lottie.md',
               scheme: 'dark',
               maxWidth: '80%'
             }}
@@ -49,7 +49,7 @@ export default function Framo() {
             code={["```video", "src: example_video.mp4",  "autoplay: true", "````"]}
             mockup={{
               variant: 'window',
-              title: 'window',
+              title: 'video.md',
               scheme: 'dark',
               maxWidth: '80%'
             }}

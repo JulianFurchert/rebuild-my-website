@@ -23,7 +23,7 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
   const [index, setIndex] = useState(0);
   const nextIndex = index + 1 < src.length ? index + 1 : 0;
   console.log({ index, nextIndex });
-  
+
   const handleOnChange = ( index: number ) => {
     setIndex(index)
   }
@@ -32,14 +32,14 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
     <Showcase size="gallery" {...viewcase}>
       <InView>
         <GalleryItem 
-          {...mockup}
+          mockup={mockup}
           src={src[index]} 
           height={height} 
           width={width}
         />
         <Box css={{ opacity: 0, position: 'absolute' }}>
           <GalleryItem 
-            {...mockup}
+            mockup={mockup}
             src={src[nextIndex]} 
             height={height} 
             width={width}

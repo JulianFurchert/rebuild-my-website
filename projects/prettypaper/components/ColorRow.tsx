@@ -14,11 +14,14 @@ const ComponentContainer = styled('div', {
   justifyContent: "center"
 })
 
-const TextArea = styled('div', {
+const Code = styled('div', {
   fontFamily: "'Space Mono', monospace",
-  fontSize: "20px",
+  width: "100%",
+  height: "100%",
+  color: 'inherit',
   lineHeight: 1.6,
-  padding: "16px 24px"
+  fontSize: '$5',
+  padding: "$6 $5",
 })
 
 const hexList = ['#454CFF', '#42D5FE', '#E84374','#fda5c5',]
@@ -57,12 +60,12 @@ const ColorRow = () => {
       <Showcase>
         <InView onChange={handleOnChange} isVisible={inView}>
           <Mockup maxWidth="80%" variant="window" title="color.md" scheme="dark">
-            <TextArea>
+            <Code>
               <div>```color </div>
               <span>hex: </span>
               <span ref={textArea}/>
               <div>```</div>
-            </TextArea>
+            </Code>
           </Mockup>
         </InView>
       </Showcase>

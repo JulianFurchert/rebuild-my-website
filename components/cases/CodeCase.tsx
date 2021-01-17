@@ -34,8 +34,8 @@ const Code = styled('div', {
   height: "100%",
   color: 'inherit',
   lineHeight: 1.6,
-  padding: "16px 24px",
-  fontsize: "20px"
+  fontSize: '$5',
+  padding: "$6 $5",
 })
 
 
