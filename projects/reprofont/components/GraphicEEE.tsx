@@ -1,6 +1,6 @@
 import React from 'react';
-import { animated, useSpring } from 'react-spring'
 import { styled } from '../../../stitches.config';
+import { motion } from "framer-motion"
 
 const Container = styled('div', {
   display: "flex",
@@ -17,16 +17,6 @@ const Svg = styled('svg', {
 })
 
 const GraphicEEE  = () => {
-  const props: any = useSpring({
-    from: { x: 1000 },
-    to: async next => {
-      while (1) {
-        await next({ x: 0 })
-        await next({ x: 1000 })
-      }
-    }
-  })
-
   return (
     <Container>
       <Svg viewBox="0 0 300 360">
@@ -35,7 +25,21 @@ const GraphicEEE  = () => {
           <path id="row2" d="M53.368-49.3H16.049v11.681H4.368v25.637H16.049V-.3H53.368V-14.252H18.324v-9.407H53.368Zm-2.274,2.274v21.089H16.049v11.681H6.642V-35.34H40.549v-2.274H18.324v-9.407ZM18.324-11.977h32.77V-2.57H18.324ZM120.459-49.3h-49v37.319H83.14V-.3h25.017l11.992-11.992-.827-1.964H85.414v-9.407h35.044Zm-2.274,2.274v21.089H83.14v11.681H73.733v-32.77ZM107.64-37.615H84.277v2.274H107.64ZM85.414-11.977H116.53L107.123-2.57H85.414Zm67.3-11.681h35.044V-37.615H176.075V-49.3H138.756v49h37.319V-14.252H152.712Zm-2.274,11.681H173.8V-2.57H141.03V-47.022H173.8v9.407H151.575v2.274h33.907v9.407H150.438Z" transform="translate(55 219.296)"/>
           <path id="row3" d="M53.368-49.3H16.049v11.681H4.368v25.637H16.049V-.3H53.368V-14.252H18.324v-9.407H53.368Zm-2.274,2.274v21.089H16.049v11.681H6.642V-35.34H40.549v-2.274H18.324v-9.407ZM18.324-11.977h32.77V-2.57H18.324ZM120.459-49.3h-49v37.319H83.14V-.3h25.017l11.992-11.992-.827-1.964H85.414v-9.407h35.044Zm-2.274,2.274v21.089H83.14v11.681H73.733v-32.77ZM107.64-37.615H84.277v2.274H107.64ZM85.414-11.977H116.53L107.123-2.57H85.414Zm67.3-11.681h35.044V-37.615H176.075V-49.3H138.756v49h37.319V-14.252H152.712Zm-2.274,11.681H173.8V-2.57H141.03V-47.022H173.8v9.407H151.575v2.274h33.907v9.407H150.438Z" transform="translate(55 292.296)"/>
         </g>
-        <animated.path strokeDashoffset={props.x} strokeDasharray={1000} id="line" d="M336.81,34.987c51.7,7.07,157.272,37.471,204.442,76.268s68.157,135.451,3.1,178.862S397.562,299.25,369.816,229.47,369.7,66.4,479.221,41.132" transform="translate(-313 1)" fill="none" stroke="#000" strokeWidth="3"/>
+        <motion.path 
+          initial={{ pathLength: 1 }}
+          animate={{ pathLength: 0 }}
+          transition={{ 
+            duration: 2,
+            repeatType: 'reverse',
+            repeat: Infinity
+          }}
+          id="line" 
+          d="M336.81,34.987c51.7,7.07,157.272,37.471,204.442,76.268s68.157,135.451,3.1,178.862S397.562,299.25,369.816,229.47,369.7,66.4,479.221,41.132" 
+          transform="translate(-313 1)" 
+          fill="none" 
+          stroke="#000" 
+          strokeWidth="3"
+        />
       </Svg>
     </Container>
   )
