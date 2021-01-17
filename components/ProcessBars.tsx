@@ -7,7 +7,7 @@ import useInterval from '../hooks/useInterval'
 const Bar = styled('div', {
   position: "relative",
   zIndex: 50,
-  height: "32px",
+  height: "40px",
   width: "100%",
   display: "flex",
   alignItems: "center",
@@ -17,7 +17,7 @@ const Bar = styled('div', {
 const Container = styled('div', {
   position: "relative",
   zIndex: 50,
-  height: "32px",
+  height: "40px",
   flexGrow: 1,
   display: "flex",
   alignItems: "center",
@@ -41,17 +41,6 @@ const Filler = styled(motion.div, {
   height: "100%",
   width: "100%",
   backgroundColor: '$hiContrast'
-})
-
-const StepContainer = styled('div', {
-  zIndex: 100,
-  height: "32px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  position: "absolute",
-  top: "0",
-  left: "0"
 })
 
 type TimelineProps = {
@@ -90,8 +79,12 @@ export const Timeline: React.FC<TimelineProps> = ({ duration = 2,  number = 10, 
 
   return (
     <Bar>
-      {caption && <Text variant="caption">{caption}</Text>}
       <Container>
+        {caption && (
+          <Text css={{ marginRight: '$2' }} variant="body">
+            {caption}
+          </Text>
+        )}
         <Progressbar>
           <Filler
             variants={variants}
@@ -128,9 +121,13 @@ export const Stepbar: React.FC<StepbarProps> = ({ duration = 2, number = 4, capt
 
   return (
     <Bar>
-      {caption && <Text variant="caption">{caption}</Text>}
       <AnimateSharedLayout>
         <Container>
+          {caption && (
+            <Text css={{ marginRight: '$2' }} variant="body">
+              {caption}
+            </Text>
+          )}
           {bars.map( item => (
             <Progressbar key={item}>
               {item === index ? <Filler layoutId="filler" /> : undefined}

@@ -37,7 +37,7 @@ export const Showcase = styled('div', {
         padding: 0,
       },
       gallery: {
-        paddingBottom: '40px',
+        paddingBottom: '56px',
       }
     }
   }

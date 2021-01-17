@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Stepbar, ComponentCase, Box } from '../../../components'
+import { Stepbar, ComponentCase } from '../../../components'
 
 import Artboard from './Artboard';
 import GridA from './assets/settings-grid-a.svg';
@@ -27,10 +27,6 @@ const animation = [
 
 const SettingsGridCase = () => {
   const [index, setIndex] = useState(0);
-  
-  // useInterval(() => {
-  //   setIndex((index + 1) % 3);
-  // }, 3000);
 
   const handleOnChange = (index: number) => {
     setIndex(index)
@@ -46,7 +42,8 @@ const SettingsGridCase = () => {
       footer={
         <Stepbar 
           number={3} 
-          onChange={handleOnChange} 
+          onChange={handleOnChange}
+          caption="Grid " 
         />
       }
     >

@@ -1,7 +1,8 @@
 import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase } from '../../components'
+
 import Alphabets from './components/Alphabets';
 import SettingsGridCase from './components/SettingsGridCase';
-// import SettingsZoom from './components/SettingsZoom';
+import SettingsZoomCase from './components/SettingsZoomCase';
 
 export default function Framo() {
   return (
@@ -17,7 +18,7 @@ export default function Framo() {
       <Box css={{marginTop: 60}}>
         <Row columns={2}>
           <SettingsGridCase />
-          <SettingsGridCase />
+          <SettingsZoomCase />
         </Row>
         <Row>
           <VideoCase 
