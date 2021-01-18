@@ -6,14 +6,14 @@ import { InView } from '../InView';
 import { Box } from '../Box';
 import Image from 'next/image' 
 
-type SlidesCaseProps = ShowcaseVariants & {
+type GalleryCaseProps = ShowcaseVariants & {
   src: string[],
   height: number
   width: number,
   mockup?: MockupProps
 }
 
-export const SlidesCase: React.FC<SlidesCaseProps> = ({ 
+export const GalleryCase: React.FC<GalleryCaseProps> = ({ 
   src, 
   height, 
   width, 

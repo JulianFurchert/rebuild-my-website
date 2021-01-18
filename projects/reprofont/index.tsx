@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase, SlidesCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase, GalleryCase } from '../../components'
 
 import GraphicNew from './components/GraphicNew';
 import GraphicEEE from './components/GraphicEEE';
@@ -52,7 +52,7 @@ export default function Framo() {
           />
         </Row>
         <Row>
-          <SlidesCase 
+          <GalleryCase 
             src={[
               "/img/reprofont-speciem/speciem2.jpg",
               "/img/reprofont-speciem/speciem3.jpg",

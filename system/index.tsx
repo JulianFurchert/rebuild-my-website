@@ -6,7 +6,7 @@ import {
   VideoCase, 
   ImageCase, 
   LottieCase, 
-  SlidesCase, 
+  GalleryCase, 
   ComponentCase,
   CodeCase,
   Timeline, 
@@ -87,7 +87,7 @@ export default function System() {
           Gallery
         </Paragraph>
         <Row>
-          <SlidesCase
+          <GalleryCase
             width={1100} 
             height={800}
             mockup={{

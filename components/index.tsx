@@ -24,7 +24,7 @@ export { ImageCase } from "./cases/ImageCase"
 export { Slideshow } from "./cases/Slideshow"
 export { VideoCase } from "./cases/VideoCase"
 export { ComponentCase } from "./cases/ComponentCase"
-export { SlidesCase } from "./cases/SlidesCase"
+export { GalleryCase } from "./cases/GalleryCase"
 export { LottieCase } from "./cases/LottieCase"
 export { CodeCase } from "./cases/CodeCase"
 
