@@ -5,6 +5,7 @@ export { Container } from './Container'
 export { Flex } from './Flex'
 export { Text } from './Text'
 export { Link } from './Link'
+export { InlineLink } from './InlineLink'
 export { IconButton } from './IconButton'
 export { Grid } from './Grid'
 export { InView } from './InView'
@@ -23,7 +24,7 @@ export { ImageCase } from "./cases/ImageCase"
 export { Slideshow } from "./cases/Slideshow"
 export { VideoCase } from "./cases/VideoCase"
 export { ComponentCase } from "./cases/ComponentCase"
-export { GalleryCase } from "./cases/GalleryCase"
+export { SlidesCase } from "./cases/SlidesCase"
 export { LottieCase } from "./cases/LottieCase"
 export { CodeCase } from "./cases/CodeCase"
 

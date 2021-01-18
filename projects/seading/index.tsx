@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Slideshow, Row, ImageCase } from '../../components'
+import { Container, Text, Box, Paragraph, Slideshow, Row, ImageCase, InlineLink } from '../../components'
 
 export default function Framo() {
   return (
@@ -12,6 +12,9 @@ export default function Framo() {
         </Paragraph>
         <Paragraph>
           We decided to visit the the three big cities Singapore, Kuala Lumpur and Bangkok again. We wrote to small and big agencies, designers, illustrators and small printers. How do they handle typography, shapes and color? What gives them their inspiration and motivation. How important is the topic Identity? It became a highly inspiring journey. We were welcomes by all with open arms. The Seading project encompasses 17 interviews
+        </Paragraph>
+        <Paragraph>
+          For this incredible experience I thank all the studios and designers who have welcomed us so kindly: <InlineLink href="#">Interiordesign-Schule Myanmar</InlineLink>, <InlineLink href="https://somewhere-else.co/">Somewhere Else</InlineLink>, <InlineLink href="https://factory1611.com/">Factory 1611</InlineLink>, <InlineLink href="http://theasylum.com.sg/">Ayslum</InlineLink>, <InlineLink href="https://www.behance.net/questcequecest">qu’est-ce que c’est design</InlineLink>, <InlineLink href="https://flagandmountains.com/">Flag & Mountains</InlineLink>, <InlineLink href="http://donotdesign.com/v3/">Do Not Design</InlineLink>, <InlineLink href="https://www.gyro.com/">gyro</InlineLink>, <InlineLink href="https://someearlybirds.com/">Some Early Birds</InlineLink>, <InlineLink href="http://wearenotlie.com/">LIE</InlineLink>, <InlineLink href="http://tsubakistudio.net">Tsubaki</InlineLink>, <InlineLink href="http://www.conscious.co.th/">Conscious</InlineLink>,  <InlineLink href="https://farmgroup.co.th/">Farmgroup</InlineLink>, <InlineLink href="https://practical.co.th/">Practical Design Studio</InlineLink>, <InlineLink href="https://www.behance.net/helloiamjk">Jackkrit Anantakul</InlineLink>   
         </Paragraph>
       </Box>
       <Box css={{marginTop: 60}}>
@@ -80,7 +83,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
           <ImageCase 
@@ -88,7 +92,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
         </Row>
@@ -98,7 +103,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
           <ImageCase 
@@ -106,7 +112,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
         </Row>
@@ -116,7 +123,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
           <ImageCase 
@@ -124,7 +132,8 @@ export default function Framo() {
             width={881}
             height={1200}
             mockup={{
-              variant: 'simple'
+              variant: 'simple',
+              maxWidth: '90%'
             }}
           />
         </Row>
