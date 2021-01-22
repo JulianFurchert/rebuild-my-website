@@ -1,5 +1,6 @@
 import { styled } from '../stitches.config'
-import { Flex, Container, Link, Text, ThemeToggle } from '../components'
+import { Flex, Container, Link, Box, ThemeToggle } from '../components'
+import MenuDialog from './MenuDialog'
 
 type HeaderProps = {
   toggleTheme: () => void
@@ -13,9 +14,9 @@ export const Header: React.FC<HeaderProps> = ({ toggleTheme }) => (
           Julian Furchert
         </Link>
         <Flex>
-          <Text css={{marginRight: '$2'}}>
-            Menu
-          </Text>
+          <Box css={{ marginRight: '$4' }}>
+            <MenuDialog />
+          </Box>
           <ThemeToggle toggleTheme={toggleTheme} />
         </Flex>
       </Flex>
