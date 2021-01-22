@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { styled } from '../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { TextButton, Link, Box } from '../components';
-import { User, Coffee, Archive, Heart, Book } from 'react-feather';
+import { User, Coffee, Archive, Heart, Book, Umbrella } from 'react-feather';
 
 const StyledOverlay = styled(Dialog.Overlay, {
   backgroundColor: 'rgba(0, 0, 0, .55)',
@@ -75,7 +75,7 @@ export default () => {
           </Box>
         </Link>
         <Link onClick={handleOnClick} href="/archive" variant="menu">
-          <Heart size={20} /> 
+          <Umbrella size={20} /> 
           <Box as="span" css={{ marginLeft: '$3' }}>
             Digital Garden
           </Box>
