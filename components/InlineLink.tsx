@@ -1,7 +1,8 @@
 import { styled,  } from '../stitches.config'
 
 type InlineLink = {
-  href?: string
+  href?: string,
+  variant?: 'blue'
 }
 
 export const InlineLink: React.FC<InlineLink> = ({ children, ...props }) => {
@@ -23,5 +24,15 @@ export const Link = styled('a', {
   textDecoration: 'none',
   '&:hover':{
     color: '$primary',
+  },
+  variants: {
+    variant: {
+      'blue': {
+        color: '$primary',
+        '&:hover':{
+          textDecoration: 'underline',
+        },
+      }
+    }
   }
 })

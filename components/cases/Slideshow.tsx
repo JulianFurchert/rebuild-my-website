@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import { Flex } from '../Flex'
 import { Box } from '../Box'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Showcase } from '../Showcase';
 import { useBreakpointIndex } from '../../hooks/useMatchMedia';
+import { useInView } from 'react-intersection-observer';
 
 type Image = {
   src: string,
@@ -32,6 +33,14 @@ export const Slideshow: React.FC<SlideshowProps> = ({
   images, 
 }) =>  {
   const index = useBreakpointIndex();
+  const [page, setPage] = useState(0);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
+  useEffect(()=>{
+    inView && setPage(page + 1);
+  },[inView])
 
   let height = 200;
   let margin = 40;
@@ -46,47 +55,58 @@ export const Slideshow: React.FC<SlideshowProps> = ({
   } 
 
   const width = calcWidth(images, height, margin) 
+  const duration = width / 120;
+
+  const handleComplete = () =>{
+    setPage(page + 1);
+  }
 
   return (
     <Showcase>
-      <Box css={{ height }}>
-        <motion.div
-          style={{
-            position: 'absolute',
-            left: 50,
-          }}
-          initial={{
-            left: 50,
-          }}
-          animate={{
-            left: -width,
-          }}
-          transition={{
-            ease: 'linear',
-            duration: width / 200
-          }}
-        >
-          <Flex css={{ width }}>
-            {images.map(img => (
-              <Box
-                style={{ 
-                  marginRight: margin,
-                  height: '100%',
-                  flex: `calc(${img.width}/${img.height})`,
-                }}
-              >
-                <Image  
-                  key={img.src}
-                  src={img.src}
-                  sizes="50vw"
-                  height={img.height}
-                  width={img.width}
-                  layout="responsive"
-                />
-              </Box>
-            ))}
-          </Flex>
-        </motion.div>
+      <Box ref={ref} css={{ height }}>
+        <AnimatePresence onExitComplete={handleComplete} initial={false}>
+          <motion.div
+            key={page}
+            style={{
+              position: 'absolute',
+              left: 0,
+            }}
+            initial={{
+              x: width
+            }}
+            animate={{
+              x: 0,
+            }}
+            exit={{
+              x: -width,
+            }}
+            transition={{
+              ease: 'linear',
+              duration,
+            }}
+          >
+            <Flex css={{ width }}>
+              {images.map(img => (
+                <Box
+                  style={{ 
+                    marginRight: margin,
+                    height: '100%',
+                    flex: `calc(${img.width}/${img.height})`,
+                  }}
+                >
+                  <Image  
+                    key={img.src}
+                    src={img.src}
+                    sizes="50vw"
+                    height={img.height}
+                    width={img.width}
+                    layout="responsive"
+                  />
+                </Box>
+              ))}
+            </Flex>
+          </motion.div>
+        </AnimatePresence>
       </Box>
     </Showcase>
   )
