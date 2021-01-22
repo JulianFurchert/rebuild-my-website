@@ -84,7 +84,7 @@ const theme = {
   }
 }
 
-export const { styled, css } = createStyled({
+export const { styled, css,  } = createStyled({
   tokens: theme,
   utils: {
     marginX: () => (

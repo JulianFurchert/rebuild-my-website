@@ -1,70 +1,93 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image'
 import { Flex } from '../Flex'
 import { Box } from '../Box'
-import { AspectRatio } from '../AspectRatio'
 import { motion } from 'framer-motion'
-import { Showcase, ShowcaseVariants } from '../Showcase';
+import { Showcase } from '../Showcase';
+import { useBreakpointIndex } from '../../hooks/useMatchMedia';
+
+type Image = {
+  src: string,
+  height: number,
+  width: number,
+}
 
 type SlideshowProps = {
-  images: {
-    src: string,
-    height: number,
-    width: number,
-  }[],
+  images: Image[],
   height?: number | string
   startPosition?: 'flex-start' | 'flex-end'
+}
+
+const calcWidth = (images: Image[], height: number, margin: number) => {
+  let totalWidth = 0;
+  images.forEach(img => {
+    const ratio = img.width / img.height;
+    const width = ratio * height;
+    return totalWidth = totalWidth + width + margin
+  })
+  return totalWidth
 }
  
 export const Slideshow: React.FC<SlideshowProps> = ({ 
   images, 
-  startPosition = 'flex-start',
-  height = '600px'
 }) =>  {
-  const [state, setState] = React.useState(startPosition)
-  const toggleState = () => setState(state === 'flex-start' ? 'flex-end' : 'flex-start')
-  useEffect(()=> toggleState(),[])
+  const index = useBreakpointIndex();
+
+  let height = 200;
+  let margin = 40;
+  
+  if(index === 1){
+    height = 400;
+    margin = 60;
+  } 
+  if(index === 2){
+    height = 600;
+    margin = 80;
+  } 
+
+  const width = calcWidth(images, height, margin) 
 
   return (
     <Showcase>
-        <Flex
-          css={{
-            justifyContent: state
+      <Box css={{ height }}>
+        <motion.div
+          style={{
+            position: 'absolute',
+            left: 50,
+          }}
+          initial={{
+            left: 50,
+          }}
+          animate={{
+            left: -width,
+          }}
+          transition={{
+            ease: 'linear',
+            duration: width / 200
           }}
         >
-          <motion.div
-            layout          
-            transition={{ 
-              ease: 'linear',
-              repeat: 5,
-              duration: 10
-            }}
-          >
-            <Flex>
-              {images.map(image => (
-                <Box
-                  key={image.src}
-                  css={{
-                    height: height,
-                    marginX: '64px'
-                  }}
-                >
-                  <AspectRatio
-                    ratio={[image.width, image.height]}
-                    stretch="height"
-                  >
-                    <Image  
-                      src={image.src}
-                      layout="fill"
-                      objectFit="cover"
-                      sizes="50vw"
-                    />
-                  </AspectRatio>
-                </Box>
-              ))}
-            </Flex>
-          </motion.div>
-        </Flex>
-      </Showcase>
+          <Flex css={{ width }}>
+            {images.map(img => (
+              <Box
+                style={{ 
+                  marginRight: margin,
+                  height: '100%',
+                  flex: `calc(${img.width}/${img.height})`,
+                }}
+              >
+                <Image  
+                  key={img.src}
+                  src={img.src}
+                  sizes="50vw"
+                  height={img.height}
+                  width={img.width}
+                  layout="responsive"
+                />
+              </Box>
+            ))}
+          </Flex>
+        </motion.div>
+      </Box>
+    </Showcase>
   )
 }

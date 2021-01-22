@@ -177,11 +177,6 @@ export default function Framo() {
               height: 1200
             },
             {
-              src: "/img/seading-poster-1.jpg",
-              width: 881,
-              height: 1200
-            },
-            {
               src: "/img/seading-poster-2.jpg",
               width: 881,
               height: 1200
@@ -217,29 +212,12 @@ export default function Framo() {
                 height: 3264
               },
               {
-                src: '/img/seading/DSCF4568.jpg',
+                src: '/img/seading/DSCF4472.jpg',
                 width: 4896,
                 height: 3264
               },
               {
                 src: '/img/seading/DSCF4562.jpg',
-                width: 4896,
-                height: 3264
-              },
-            ],
-            [
-              {
-                src: '/img/seading/DSCF4492.jpg',
-                width: 4896,
-                height: 3264
-              },
-              {
-                src: '/img/seading/DSCF4472.jpg',
-                width: 4896,
-                height: 3264
-              },
-              {
-                src: '/img/seading/DSCF4472.jpg',
                 width: 4896,
                 height: 3264
               },
@@ -273,7 +251,7 @@ export default function Framo() {
                 height: 3264
               },
               {
-                src: '/img/seading/_DSF3309.jpg',
+                src: '/img/seading/_DSF3296.jpg',
                 width: 4896,
                 height: 3264
               },
@@ -281,23 +259,6 @@ export default function Framo() {
                 src: '/img/seading/_DSF3298.jpg',
                 width: 4896,
                 height: 3264
-              },
-            ],
-            [
-              {
-                src: '/img/seading/_DSF3296.jpg',
-                width: 4896,
-                height: 3264
-              },
-              {
-                src: '/img/seading/_DSC0806.jpg',
-                width: 4898,
-                height: 3265
-              },
-              {
-                src: '/img/seading/_DSC0771.jpg',
-                width: 4898,
-                height: 3265
               },
             ],
             [
