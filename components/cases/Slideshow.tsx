@@ -57,6 +57,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({
                       src={image.src}
                       layout="fill"
                       objectFit="cover"
+                      sizes="50vw"
                     />
                   </AspectRatio>
                 </Box>

@@ -14,6 +14,8 @@ export default function Framo() {
           We decided to visit the the three big cities Singapore, Kuala Lumpur and Bangkok again. We wrote to small and big agencies, designers, illustrators and small printers. How do they handle typography, shapes and color? What gives them their inspiration and motivation. How important is the topic Identity? It became a highly inspiring journey. We were welcomes by all with open arms. The Seading project encompasses 17 interviews
         </Paragraph>
         <Paragraph>
+          This is a series of posters created in cooperation with designers from Singapore, Thailand and Malaysia. During our journey through Southeast Asia we were captivated by all the letterings/script/writings we couldn’t read or comprehend. This is what inspired my partner and I to create our own fictitious type (lettering), which we gave the designers. Much like the unknown shapes and fonts we had seen, this writing was unknown to the designers. We were curious to find out, what the designers would do with these new, unknown (and cryptic) letters. The work you see below is what transpired from this.        </Paragraph>
+        <Paragraph>
           For this incredible experience I thank all the studios and designers who have welcomed us so kindly: <InlineLink href="#">Interiordesign-Schule Myanmar</InlineLink>, <InlineLink href="https://somewhere-else.co/">Somewhere Else</InlineLink>, <InlineLink href="https://factory1611.com/">Factory 1611</InlineLink>, <InlineLink href="http://theasylum.com.sg/">Ayslum</InlineLink>, <InlineLink href="https://www.behance.net/questcequecest">qu’est-ce que c’est design</InlineLink>, <InlineLink href="https://flagandmountains.com/">Flag & Mountains</InlineLink>, <InlineLink href="http://donotdesign.com/v3/">Do Not Design</InlineLink>, <InlineLink href="https://www.gyro.com/">gyro</InlineLink>, <InlineLink href="https://someearlybirds.com/">Some Early Birds</InlineLink>, <InlineLink href="http://wearenotlie.com/">LIE</InlineLink>, <InlineLink href="http://tsubakistudio.net">Tsubaki</InlineLink>, <InlineLink href="http://www.conscious.co.th/">Conscious</InlineLink>,  <InlineLink href="https://farmgroup.co.th/">Farmgroup</InlineLink>, <InlineLink href="https://practical.co.th/">Practical Design Studio</InlineLink>, <InlineLink href="https://www.behance.net/helloiamjk">Jackkrit Anantakul</InlineLink>   
         </Paragraph>
       </Box>
@@ -70,7 +72,50 @@ export default function Framo() {
                 width: 4896,
                 height: 3264
               },
-            ],
+            ]
+          ]}
+        />
+        <Slideshow 
+          images={[
+            {
+              src: '/img/seading/gallery/IMG_1922.jpg',
+              width: 4898,
+              height: 3265
+            },
+            {
+              src: '/img/seading/gallery/IMG_1836.jpg',
+              width: 4898,
+              height: 3265
+            },
+            {
+              src: '/img/seading/gallery/DSCF4907.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4822.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4779.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4735.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4575.jpg',
+              width: 4896,
+              height: 3264
+            }
+          ]}
+        />
+        <ImagesCase 
+          images={[
             [
               {
                 src: '/img/seading/DSCF4789.jpg',
@@ -127,39 +172,39 @@ export default function Framo() {
         <Slideshow 
           images={[
             {
-              src: '/img/seading/gallery/IMG_1922.jpg',
-              width: 4898,
-              height: 3265
+              src: "/img/seading-poster-1.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/IMG_1836.jpg',
-              width: 4898,
-              height: 3265
+              src: "/img/seading-poster-1.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/DSCF4907.jpg',
-              width: 4896,
-              height: 3264
+              src: "/img/seading-poster-2.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/DSCF4822.jpg',
-              width: 4896,
-              height: 3264
+              src: "/img/seading-poster-3.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/DSCF4779.jpg',
-              width: 4896,
-              height: 3264
+              src: "/img/seading-poster-4.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/DSCF4735.jpg',
-              width: 4896,
-              height: 3264
+              src: "/img/seading-poster-5.jpg",
+              width: 881,
+              height: 1200
             },
             {
-              src: '/img/seading/gallery/DSCF4575.jpg',
-              width: 4896,
-              height: 3264
+              src: "/img/seading-poster-6.jpg",
+              width: 881,
+              height: 1200
             }
           ]}
         />
@@ -274,73 +319,6 @@ export default function Framo() {
             ],
           ]}
         />
-      </Box>
-      <Box css={{ maxWidth: 1200 }}>
-        <Paragraph>
-          This is a series of posters created in cooperation with designers from Singapore, Thailand and Malaysia. During our journey through Southeast Asia we were captivated by all the letterings/script/writings we couldn’t read or comprehend. This is what inspired my partner and I to create our own fictitious type (lettering), which we gave the designers. Much like the unknown shapes and fonts we had seen, this writing was unknown to the designers. We were curious to find out, what the designers would do with these new, unknown (and cryptic) letters. The work you see below is what transpired from this.
-        </Paragraph>
-      </Box>
-      <Box css={{marginTop: 60}}>
-        <Row columns={2}>
-          <ImageCase 
-            src="/img/seading-poster-1.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-          <ImageCase 
-            src="/img/seading-poster-2.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-        </Row>
-        <Row columns={2}>
-          <ImageCase 
-            src="/img/seading-poster-3.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-          <ImageCase 
-            src="/img/seading-poster-4.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-        </Row>
-        <Row columns={2}>
-          <ImageCase 
-            src="/img/seading-poster-5.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-          <ImageCase 
-            src="/img/seading-poster-6.jpg"
-            width={881}
-            height={1200}
-            mockup={{
-              variant: 'simple',
-              maxWidth: '90%'
-            }}
-          />
-        </Row>
       </Box>
     </Container>
   )
