@@ -18,6 +18,7 @@ export { Svg, Path, Circle, Rect, G } from './Svg'
 export { Mockup } from './Mockup'
 export { Row } from './Row'
 export { Showcase } from "./Showcase"
+export { Separator } from "./Separator"
 export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow } from "./Tooltip"
 
 // cases

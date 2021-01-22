@@ -10,7 +10,7 @@ export default function Home() {
     <Container>
       <Flex css={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <TypeScanner css={{ width: '30%' }}  />
-        <PrettyPaper css={{ width: '40%' }} />
+        <PrettyPaper css={{ width: '45%' }} />
       </Flex>
       <Flex css={{ justifyContent: 'center', marginTop: '160px'}}>
         <ReproFont css={{ width: '50%' }} />
