@@ -4,6 +4,7 @@ import { Flex } from '../Flex'
 import { Box } from '../Box'
 import { AspectRatio } from '../AspectRatio'
 import { motion } from 'framer-motion'
+import { Showcase, ShowcaseVariants } from '../Showcase';
 
 type SlideshowProps = {
   images: {
@@ -25,14 +26,7 @@ export const Slideshow: React.FC<SlideshowProps> = ({
   useEffect(()=> toggleState(),[])
 
   return (
-      <Box
-        css={{
-          position: 'relative',
-          width: '100%',
-          overflow: 'hidden',
-          marginY: '120px',
-        }}
-      >
+    <Showcase>
         <Flex
           css={{
             justifyContent: state
@@ -70,6 +64,6 @@ export const Slideshow: React.FC<SlideshowProps> = ({
             </Flex>
           </motion.div>
         </Flex>
-      </Box>
+      </Showcase>
   )
 }

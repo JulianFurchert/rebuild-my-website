@@ -19,7 +19,7 @@ export const ImagesCase: React.FC<ImagesCaseProps> = ({
 }) =>  {
 
   return (
-    <Box {...props} css={{ margin: '$4 0'}}>
+    <Box {...props} css={{ margin: '15px 0'}}>
         {images.map(row => (
           <Flex style={{  margin: '0 -5px' }}>
             {row.map(img => (
