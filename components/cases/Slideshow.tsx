@@ -94,7 +94,8 @@ export const Slideshow: React.FC<SlideshowProps> = ({
                     flex: `calc(${img.width}/${img.height})`,
                   }}
                 >
-                  <Image  
+                  <Image 
+                    priority={true} 
                     key={img.src}
                     src={img.src}
                     sizes="50vw"
