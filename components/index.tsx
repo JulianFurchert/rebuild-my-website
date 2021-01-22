@@ -20,6 +20,7 @@ export { Showcase } from "./Showcase"
 export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow } from "./Tooltip"
 
 // cases
+export { ImagesCase } from "./cases/ImagesCase"
 export { ImageCase } from "./cases/ImageCase"
 export { Slideshow } from "./cases/Slideshow"
 export { VideoCase } from "./cases/VideoCase"

@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Slideshow, Row, ImageCase, InlineLink } from '../../components'
+import { Container, Text, Box, Paragraph, Slideshow, Row, ImageCase, ImagesCase, InlineLink } from '../../components'
 
 export default function Framo() {
   return (
@@ -18,60 +18,264 @@ export default function Framo() {
         </Paragraph>
       </Box>
       <Box css={{marginTop: 60}}>
-        <Slideshow 
+        <ImagesCase 
           images={[
-            {
-              src: '/img/seading-slideshow-a-1.jpg',
-              width: 1920,
-              height: 1280
-            },
-            {
-              src: '/img/seading-slideshow-a-4.jpg',
-              width: 1920,
-              height: 2880
-            },
-            {
-              src: '/img/seading-slideshow-a-2.jpg',
-              width: 1920,
-              height: 1280
-            },
-            {
-              src: '/img/seading-slideshow-a-3.jpg',
-              width: 1920,
-              height: 1280
-            }
+            [
+              {
+                src: '/img/seading/P9100123.jpg',
+                width: 4608,
+                height: 3456
+              },
+              {
+                src: '/img/seading/IMG_1904.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/IMG_1867.jpg',
+                width: 4898,
+                height: 3265
+              },
+            ],
+            [
+              {
+                src: '/img/seading/IMG_1848.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/IMG_1798.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/IMG_1790.jpg',
+                width: 4898,
+                height: 3265
+              },
+            ],
+            [
+              {
+                src: '/img/seading/IMG_1786.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/IMG_1738.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/DSCF4802.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/DSCF4789.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4765.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4753.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/DSCF4741.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4737.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4699.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/DSCF4692.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4631.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4582.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ]
           ]}
         />
         <Slideshow 
-          startPosition="flex-end"
           images={[
             {
-              src: '/img/seading-slideshow-a-1.jpg',
-              width: 1920,
-              height: 1280
+              src: '/img/seading/gallery/IMG_1922.jpg',
+              width: 4898,
+              height: 3265
             },
             {
-              src: '/img/seading-slideshow-a-4.jpg',
-              width: 1920,
-              height: 2880
+              src: '/img/seading/gallery/IMG_1836.jpg',
+              width: 4898,
+              height: 3265
             },
             {
-              src: '/img/seading-slideshow-a-2.jpg',
-              width: 1920,
-              height: 1280
+              src: '/img/seading/gallery/DSCF4907.jpg',
+              width: 4896,
+              height: 3264
             },
             {
-              src: '/img/seading-slideshow-a-3.jpg',
-              width: 1920,
-              height: 1280
+              src: '/img/seading/gallery/DSCF4822.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4779.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4735.jpg',
+              width: 4896,
+              height: 3264
+            },
+            {
+              src: '/img/seading/gallery/DSCF4575.jpg',
+              width: 4896,
+              height: 3264
             }
+          ]}
+        />
+        <ImagesCase 
+          images={[
+            [
+              {
+                src: '/img/seading/DSCF4579.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4568.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4562.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/DSCF4492.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4472.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/DSCF4472.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/_DSF3432.jpg',
+                width: 3264,
+                height: 4896
+              },
+              {
+                src: '/img/seading/_DSF3410.jpg',
+                width: 3264,
+                height: 4896
+              },
+              {
+                src: '/img/seading/_DSF3404.jpg',
+                width: 3264,
+                height: 4896
+              },
+              {
+                src: '/img/seading/_DSF3402.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/_DSF3370.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/_DSF3309.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/_DSF3298.jpg',
+                width: 4896,
+                height: 3264
+              },
+            ],
+            [
+              {
+                src: '/img/seading/_DSF3296.jpg',
+                width: 4896,
+                height: 3264
+              },
+              {
+                src: '/img/seading/_DSC0806.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/_DSC0771.jpg',
+                width: 4898,
+                height: 3265
+              },
+            ],
+            [
+              {
+                src: '/img/seading/_DSC0763.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/_DSC0761.jpg',
+                width: 4898,
+                height: 3265
+              },
+              {
+                src: '/img/seading/_DSC0747.jpg',
+                width: 4608,
+                height: 3072
+              },
+            ],
           ]}
         />
       </Box>
       <Box css={{ maxWidth: 1200 }}>
-        <Text as="h2" variant="headline2" css={{marginBottom: 20}}>
-          Communication with the Unknown
-        </Text>
         <Paragraph>
           This is a series of posters created in cooperation with designers from Singapore, Thailand and Malaysia. During our journey through Southeast Asia we were captivated by all the letterings/script/writings we couldn’t read or comprehend. This is what inspired my partner and I to create our own fictitious type (lettering), which we gave the designers. Much like the unknown shapes and fonts we had seen, this writing was unknown to the designers. We were curious to find out, what the designers would do with these new, unknown (and cryptic) letters. The work you see below is what transpired from this.
         </Paragraph>
