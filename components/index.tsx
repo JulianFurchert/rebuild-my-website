@@ -2,6 +2,7 @@ export { AspectRatio } from './AspectRatio'
 export { Box } from './Box'
 export { Paragraph } from './Paragraph'
 export { Container } from './Container'
+export { CollapseText, CollapseTextHidden } from './CollapseText'
 export { Flex } from './Flex'
 export { Text } from './Text'
 export { Link } from './Link'
@@ -13,13 +14,14 @@ export { Timeline, Stepbar } from './ProcessBars'
 export { TextButton } from './TextButton'
 export { ThemeToggle } from './ThemeToggle'
 export { Thumbnail } from './Thumbnail'
+export { ProjectInformation } from './ProjectInformation'
 export { Mouse, mouseTransition, outsidePosition } from './Mouse'
 export { Svg, Path, Circle, Rect, G } from './Svg'
 export { Mockup } from './Mockup'
 export { Row } from './Row'
 export { Showcase } from "./Showcase"
 export { Separator } from "./Separator"
-export { Tooltip, TooltipTrigger, TooltipPosition, TooltipContent, TooltipArrow } from "./Tooltip"
+export { Tooltip } from "./Tooltip"
 
 // cases
 export { ImagesCase } from "./cases/ImagesCase"

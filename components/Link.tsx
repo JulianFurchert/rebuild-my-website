@@ -4,7 +4,7 @@ import { styled } from '../stitches.config'
 type LinkProps = NextLinkProps & {
   css?: StyledLinkProps['css'],
   external?: boolean,
-  variant?: 'menu',
+  variant?: 'menu' | 'subtle' | 'primary',
   onClick?: () => void;
 }
 
@@ -37,6 +37,18 @@ const StyledLink = styled('a', {
   },
   variants: {
     variant: {
+      primary: {
+        color: '$primary',
+        '&:hover':{
+          textDecoration: 'underline',
+        },
+      },
+      subtle: {
+        color: '$gray6',
+        '&:hover':{
+          color: '$hiContrast',
+        },
+      },
       menu: {
         display: 'flex',
         alignItems: 'center',
