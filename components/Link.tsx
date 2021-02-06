@@ -59,9 +59,9 @@ const StyledLink = styled('a', {
         },
       },
       subtle: {
-        color: '$gray6',
+        color: '$gray7',
         '&:hover':{
-          color: '$hiContrast',
+          color: '$primary',
         },
       },
       menu: {

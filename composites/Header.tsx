@@ -1,6 +1,7 @@
 import { styled } from '../stitches.config'
 import { Flex, Container, Link, Box, ThemeToggle } from '../components'
 import MenuDialog from './MenuDialog'
+import InfoDialog from './InfoDialog'
 
 type HeaderProps = {
   toggleTheme: () => void

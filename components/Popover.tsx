@@ -33,9 +33,9 @@ export const PopoverTrigger = styled(PopoverPrimitive.Trigger, {
         },
       },
       subtle: {
-        color: '$gray6',
+        color: '$gray7',
         '&:hover':{
-          color: '$hiContrast',
+          color: '$primary',
         },
       },
     }

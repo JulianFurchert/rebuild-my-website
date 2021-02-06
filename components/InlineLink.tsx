@@ -21,7 +21,7 @@ export const Link = styled('a', {
   lineHeight: 'inherit',
   fontSize: 'inherit',
   fontWeight: 'inherit',
-  textDecoration: 'none',
+  textDecoration: 'underline',
   '&:hover':{
     color: '$primary',
   },

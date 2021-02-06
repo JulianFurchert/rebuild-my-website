@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { styled } from '../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { TextButton, Link, Box } from '../components';
-import { Menu, User, Coffee, Archive, Heart, Book, Umbrella, Tool } from 'react-feather';
-// import { Menu } from 'react-feather';
+import { Info } from 'react-feather';
 
 const StyledOverlay = styled(Dialog.Overlay, {
   backgroundColor: 'rgba(0, 0, 0, .55)',
@@ -66,43 +65,19 @@ const MenuDialog = () => {
       onOpenChange={open => setOpen(open)}
     >
       <Trigger>
-        Menu
+        <Info size={20} />
       </Trigger>
       <StyledOverlay />
       <StyledContent>
-        <Link onClick={handleOnClick} href="/" variant="menu">
-          <Coffee size={20} /> 
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Home
-          </Box>
-        </Link>
-        <Link onClick={handleOnClick} href="/about" variant="menu">
-          <User size={20} /> 
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            About
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/experience" variant="menu">
-          {/* <Book size={20} />  */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Experience
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/archive" variant="menu">
-          {/* <Archive size={20} /> */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Archive
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/digital-garden" variant="menu">
-          {/* <Umbrella size={20} />  */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Digital Garden
-          </Box>
-        </Link>
+        <Box as="span" css={{ marginLeft: '$3' }}>
+          Home
+        </Box>
+        <Box as="span" css={{ marginLeft: '$3' }}>
+          About
+        </Box>
+        <Box as="span" css={{ marginLeft: '$3' }}>
+          Experience
+        </Box>
       </StyledContent>
     </Dialog.Root>
   );
