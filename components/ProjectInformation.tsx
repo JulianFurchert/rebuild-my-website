@@ -1,6 +1,7 @@
 import { Box } from './Box'
 import { Link } from './Link'
 import { Popover, PopoverContent, PopoverTrigger } from './Popover'
+import { ChevronDown } from 'react-feather'
 
 type Props = {
   site?: string,
@@ -34,11 +35,14 @@ export const ProjectInformation: React.FC<Props> = ({
       )}
       {stack && (
         <Popover>
-          <PopoverTrigger>
+          <PopoverTrigger variant="subtle">
             Stack
+            <ChevronDown size={18} />
           </PopoverTrigger>
           <PopoverContent>
-            Example
+            {stack.map(item => 
+              <Box>{item}</Box>  
+            )}
           </PopoverContent>
         </Popover>
       )}

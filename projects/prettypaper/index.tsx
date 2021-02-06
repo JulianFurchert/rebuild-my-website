@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, VideoCase, LottieCase, CodeCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, VideoCase, LottieCase, CodeCase, ProjectInformation } from '../../components'
 
 import lottieExample from './lottie/example_800-800.json';
 import lottieBlue from './lottie/blue_800-800.json';
@@ -16,7 +16,14 @@ export default function Framo() {
           Pretty Paper is a Gatsby Starter for creating style guides, documentations, or design systems. With Pretty Paper, you can easily write your documentation using Markdown. To simplify the writing of Design Specification, the Markdown synatx has been extended with special code blocks. This allows you to quickly define colors, fonts, text styles, or add videos and lottie animations to your documentation.
         </Paragraph>
       </Box>
-      <Box css={{marginTop: 60}}>
+      <Box css={{ marginTop: 32 }}>
+        <ProjectInformation 
+          code="https://github.com/JulianFurchert/seading" 
+          site="https://seading.vercel.app/" 
+          stack={[ 'React', 'Next.js', 'Typescript' ]}
+        />
+      </Box>
+      <Box css={{ marginTop: 40 }}>
         <ColorRow />
         <FontRow />
         <Row>

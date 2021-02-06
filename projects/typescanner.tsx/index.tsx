@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase } from '../../components'
+import { Container, Text, Box, Paragraph, VideoCase, ImageCase, Row, ComponentCase, ProjectInformation } from '../../components'
 
 import Alphabets from './components/Alphabets';
 import SettingsGridCase from './components/SettingsGridCase';
@@ -15,7 +15,14 @@ export default function Framo() {
           TypeScanner is a web application that can generate fonts based on 96 different grids. The result can be modified by three parameters. The selection of the raster, its position and its scaling. The resulting glyph shapes range from readable characters to abstract shapes. Thanks to opentype.js the fonts can be exported directly in OTF format. TypeScanner is implemented with React. The grids are taken from the book 'Grid Index' by Carsten Nicolai and were prepared in several steps.      
         </Paragraph>
       </Box>
-      <Box css={{marginTop: 60}}>
+      <Box css={{ marginTop: 24 }}>
+        <ProjectInformation 
+          code="https://github.com/JulianFurchert/seading" 
+          site="https://seading.vercel.app/" 
+          stack={[ 'React', 'Next.js', 'Typescript' ]}
+        />
+      </Box>
+      <Box css={{ marginTop: 40 }}>
         <Row columns={2}>
           <SettingsGridCase />
           <SettingsZoomCase />

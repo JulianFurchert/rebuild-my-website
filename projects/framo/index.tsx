@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, ImageCase, VideoCase, ComponentCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, ImageCase, VideoCase, ComponentCase, ProjectInformation } from '../../components'
 import Animation from './components/Animation'
 
 export default function Framo() {
@@ -12,7 +12,14 @@ export default function Framo() {
           A website was developed and a responsive logo was designed for the London-based architecture firm Framo. The logo consists of six letters that adapt to the available space depending on the width of the screen. The shape of the letters always changes with the aspect ratio of the screen. To make the logo usable in other media, a web app was developed in which the letters can be freely arranged and scaled. The result can be saved as a vector file. Both website and app are implemented with React. Design and conception of the website are by Mind Design.
         </Paragraph>
       </Box>
-      <Box css={{marginTop: 60}}>
+      <Box css={{ marginTop: 24 }}>
+        <ProjectInformation 
+          code="https://github.com/JulianFurchert/seading" 
+          site="https://seading.vercel.app/" 
+          stack={[ 'React', 'Next.js', 'Typescript' ]}
+        />
+      </Box>
+      <Box css={{ marginTop: 40 }}>
         <Row>
           <VideoCase 
             video="/video/framo-playground.mp4"

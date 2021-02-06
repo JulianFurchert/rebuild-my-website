@@ -1,4 +1,4 @@
-import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase, GalleryCase } from '../../components'
+import { Container, Text, Box, Paragraph, Row, VideoCase, ComponentCase, GalleryCase, ProjectInformation } from '../../components'
 
 import GraphicNew from './components/GraphicNew';
 import GraphicEEE from './components/GraphicEEE';
@@ -14,7 +14,14 @@ export default function Framo() {
         The idea for the Repro font family was born while working in Cinema4D. In Cinema4D text paths and splines are divided into straight lines during post-processing. Different interpolation methods are available to calculate the intermediate points. This means that the shape of a letter is determined by the selection of the font as well as by the selection and settings of the interpolation method. This fact inspired me to write my own method for recalculating the glyphs. The method creates intermediate points along the paths and moves them to a virtual orthogonal grid. The glyphs of the Repro 100 are used as a starting point, and the grid becomes coarser and coarser from typeface to typeface (Repro 200-600) until the resulting characters are no longer readable.    
         </Paragraph>
       </Box>
-      <Box css={{marginTop: 60}}>
+      <Box css={{ marginTop: 32 }}>
+        <ProjectInformation 
+          code="https://github.com/JulianFurchert/seading" 
+          site="https://seading.vercel.app/" 
+          stack={[ 'React', 'Next.js', 'Typescript' ]}
+        />
+      </Box>
+      <Box css={{ marginTop: 40 }}>
         <Row columns={2}>
           <VideoCase 
             video="/video/reprofont-100-mobil.mp4"
