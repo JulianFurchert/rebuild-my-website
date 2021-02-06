@@ -4,10 +4,11 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { TextButton, Link, Box } from '../components';
 import { Menu, User, Coffee, Archive, Heart, Book, Umbrella, Tool } from 'react-feather';
 // import { Menu } from 'react-feather';
+import { motion, AnimatePresence } from "framer-motion";
 
-const StyledOverlay = styled(Dialog.Overlay, {
+const MotionOverlay = styled(motion.div, {
   backgroundColor: 'rgba(0, 0, 0, .55)',
-  position: 'fixed',
+  position: 'absolute',
   top: 0,
   right: 0,
   bottom: 0,
@@ -24,14 +25,19 @@ const StyledContent = styled(Dialog.Content, {
   maxWidth: 'fit-content',
   maxHeight: '85vh',
   marginTop: '-5vh',
+  zIndex: 300,
+  backgroundColor: 'transparent',
+  '&:focus': {
+    outline: 'none',
+  },
+});
+
+const MotionContent = styled(motion.div, {
   backgroundColor: '$loContrast',
   color: '$hiContrast',
   zIndex: 300,
   padding: '$3 0',
   borderRadius: 15,
-  '&:focus': {
-    outline: 'none',
-  },
 });
 
 const Trigger = styled(Dialog.Trigger, {
@@ -61,50 +67,68 @@ const MenuDialog = () => {
   }
 
   return(
-    <Dialog.Root 
-      open={open} 
-      onOpenChange={open => setOpen(open)}
-    >
-      <Trigger>
-        Menu
-      </Trigger>
-      <StyledOverlay />
-      <StyledContent>
-        <Link onClick={handleOnClick} href="/" variant="menu">
-          <Coffee size={20} /> 
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Home
-          </Box>
-        </Link>
-        <Link onClick={handleOnClick} href="/about" variant="menu">
-          <User size={20} /> 
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            About
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/experience" variant="menu">
-          {/* <Book size={20} />  */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Experience
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/archive" variant="menu">
-          {/* <Archive size={20} /> */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Archive
-          </Box>
-        </Link>
-        <Link disabeld onClick={handleOnClick} href="/digital-garden" variant="menu">
-          {/* <Umbrella size={20} />  */}
-          <Tool size={20} />
-          <Box as="span" css={{ marginLeft: '$3' }}>
-            Digital Garden
-          </Box>
-        </Link>
-      </StyledContent>
-    </Dialog.Root>
+    <AnimatePresence>
+      <Dialog.Root 
+        open={open} 
+        onOpenChange={open => setOpen(open)}
+      >
+        <Trigger>
+          Menu
+        </Trigger>
+        <Dialog.Overlay>
+          <MotionOverlay 
+            key="overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          />
+        </Dialog.Overlay>
+        <StyledContent>
+          <MotionContent
+            key="content"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link onClick={handleOnClick} href="/" variant="menu">
+              <Coffee size={20} /> 
+              <Box as="span" css={{ marginLeft: '$3' }}>
+                Home
+              </Box>
+            </Link>
+            <Link onClick={handleOnClick} href="/about" variant="menu">
+              <User size={20} /> 
+              <Box as="span" css={{ marginLeft: '$3' }}>
+                About
+              </Box>
+            </Link>
+            <Link disabeld onClick={handleOnClick} href="/experience" variant="menu">
+              {/* <Book size={20} />  */}
+              <Tool size={20} />
+              <Box as="span" css={{ marginLeft: '$3' }}>
+                Experience
+              </Box>
+            </Link>
+            <Link disabeld onClick={handleOnClick} href="/archive" variant="menu">
+              {/* <Archive size={20} /> */}
+              <Tool size={20} />
+              <Box as="span" css={{ marginLeft: '$3' }}>
+                Archive
+              </Box>
+            </Link>
+            <Link disabeld onClick={handleOnClick} href="/digital-garden" variant="menu">
+              {/* <Umbrella size={20} />  */}
+              <Tool size={20} />
+              <Box as="span" css={{ marginLeft: '$3' }}>
+                Digital Garden
+              </Box>
+            </Link>
+          </MotionContent>
+        </StyledContent>
+      </Dialog.Root>
+    </AnimatePresence>
   );
 }
 
