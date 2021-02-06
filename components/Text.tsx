@@ -13,7 +13,7 @@ export const Text = styled('div', {
         fontSize: '$7',
       },
       headline2: {
-        fontWeight: '$heading',
+        fontWeight: 500,
         fontSize: '$6',
       },
       bodyLarge: {
@@ -37,6 +37,6 @@ export const Text = styled('div', {
         fontSize: '$1',
         fontWeight: '$body'
       },
-    },
+    }
   },
 })
