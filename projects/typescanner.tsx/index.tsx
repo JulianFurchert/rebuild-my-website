@@ -17,9 +17,10 @@ export default function Framo() {
       </Box>
       <Box css={{ marginTop: 24 }}>
         <ProjectInformation 
-          code="https://github.com/JulianFurchert/seading" 
-          site="https://seading.vercel.app/" 
-          stack={[ 'React', 'Next.js', 'Typescript' ]}
+          site="https://beta.typescanner.com/" 
+          code="https://github.com/JulianFurchert/typeScanner/"
+          docs="https://docs.typescanner.com/" 
+          stack={[ 'React', 'Opentype.js', 'Paper.js', 'Snap.svg', 'Netlify' ]}
         />
       </Box>
       <Box css={{ marginTop: 40 }}>

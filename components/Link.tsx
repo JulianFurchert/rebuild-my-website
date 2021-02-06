@@ -5,16 +5,31 @@ type LinkProps = NextLinkProps & {
   css?: StyledLinkProps['css'],
   external?: boolean,
   variant?: 'menu' | 'subtle' | 'primary',
+  disabeld?: boolean,
   onClick?: () => void;
 }
 
-export const Link: React.FC<LinkProps> = ({ children, css, external, variant, onClick, ...props }) => {
+export const Link: React.FC<LinkProps> = ({ children, disabeld, css, external, variant, onClick, ...props }) => {
+
+  if(disabeld){
+    return(
+      <StyledLink 
+        variant={variant} 
+        css={css}
+        disabeld={disabeld} 
+      >
+        {children}
+      </StyledLink>
+    )
+  }
+
   return(
     <NextLink {...props} passHref>
       <StyledLink 
         onClick={onClick} 
         variant={variant} 
-        css={css} 
+        css={css}
+        disabeld={disabeld} 
         target={external ? '_blank'  : '_self'}
       >
         {children}
@@ -64,6 +79,19 @@ const StyledLink = styled('a', {
           backgroundColor: '$gray1',
         },
       }
-    }
-  }
+    },
+    disabeld: {
+      true: {
+        color: '$gray5',
+        '&:hover':{
+          color: '$gray5',
+          backgroundColor: 'transparend',
+        },
+        '&:focus': {
+          color: '$gray5',
+          backgroundColor: 'transparend',
+        },
+      }
+    },
+  },
 })

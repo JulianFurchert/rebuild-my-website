@@ -14,9 +14,10 @@ export default function Framo() {
       </Box>
       <Box css={{ marginTop: 24 }}>
         <ProjectInformation 
-          code="https://github.com/JulianFurchert/seading" 
-          site="https://seading.vercel.app/" 
-          stack={[ 'React', 'Next.js', 'Typescript' ]}
+          site="https://framo-playground.netlify.app/" 
+          siteName="Playground"
+          code="https://github.com/JulianFurchert/framo-playground" 
+          stack={[ 'React', 'Styled Components', 'React Pose', 'Snap.svg', 'Netlify', 'Prismic' ]}
         />
       </Box>
       <Box css={{ marginTop: 40 }}>

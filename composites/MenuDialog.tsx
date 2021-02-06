@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { styled } from '../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { TextButton, Link, Box } from '../components';
-import { User, Coffee, Archive, Heart, Book, Umbrella } from 'react-feather';
+import { User, Coffee, Archive, Heart, Book, Umbrella, Tool } from 'react-feather';
 
 const StyledOverlay = styled(Dialog.Overlay, {
   backgroundColor: 'rgba(0, 0, 0, .55)',
@@ -52,7 +52,7 @@ const Trigger = styled(Dialog.Trigger, {
   },
 });
 
-export default () => {
+const MenuDialog = () => {
   const [open, setOpen] = useState(false);
 
   const handleOnClick = () => {
@@ -87,14 +87,16 @@ export default () => {
             Experience
           </Box>
         </Link>
-        <Link onClick={handleOnClick} href="/archive" variant="menu">
-          <Archive size={20} />
+        <Link disabeld onClick={handleOnClick} href="" variant="menu">
+          {/* <Archive size={20} /> */}
+          <Tool size={20} />
           <Box as="span" css={{ marginLeft: '$3' }}>
             Archive
           </Box>
         </Link>
-        <Link onClick={handleOnClick} href="/archive" variant="menu">
-          <Umbrella size={20} /> 
+        <Link disabeld onClick={handleOnClick} href="" variant="menu">
+          {/* <Umbrella size={20} />  */}
+          <Tool size={20} />
           <Box as="span" css={{ marginLeft: '$3' }}>
             Digital Garden
           </Box>
@@ -103,3 +105,5 @@ export default () => {
     </Dialog.Root>
   );
 }
+
+export default MenuDialog

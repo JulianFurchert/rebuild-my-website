@@ -18,9 +18,9 @@ export default function Framo() {
       </Box>
       <Box css={{ marginTop: 32 }}>
         <ProjectInformation 
-          code="https://github.com/JulianFurchert/seading" 
-          site="https://seading.vercel.app/" 
-          stack={[ 'React', 'Next.js', 'Typescript' ]}
+          site="https://pretty-paper.netlify.app/" 
+          code="https://github.com/JulianFurchert/gatsby-starter-prettypaper" 
+          stack={[ 'React', 'Gatsby.js', 'Sass', 'CSS Modules', 'Markdown' ]}
         />
       </Box>
       <Box css={{ marginTop: 40 }}>

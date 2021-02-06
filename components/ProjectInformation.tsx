@@ -5,6 +5,7 @@ import { ChevronDown } from 'react-feather'
 
 type Props = {
   site?: string,
+  siteName?: string,
   code?: string,
   docs?: string,
   stack?: string[]
@@ -12,6 +13,7 @@ type Props = {
 
 export const ProjectInformation: React.FC<Props> = ({
   site,
+  siteName,
   code,
   docs,
   stack,
@@ -20,7 +22,7 @@ export const ProjectInformation: React.FC<Props> = ({
     <Box>
       {site && (
         <Link external variant="subtle" css={{marginRight: '$3'}} href={site}>
-          Site
+          {siteName ? siteName : 'Site'}
         </Link>
       )}
       {code && (

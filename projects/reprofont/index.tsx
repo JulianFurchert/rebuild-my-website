@@ -16,9 +16,9 @@ export default function Framo() {
       </Box>
       <Box css={{ marginTop: 32 }}>
         <ProjectInformation 
-          code="https://github.com/JulianFurchert/seading" 
-          site="https://seading.vercel.app/" 
-          stack={[ 'React', 'Next.js', 'Typescript' ]}
+          site="https://reprofont.de/" 
+          code="https://github.com/JulianFurchert/reprofont-website" 
+          stack={[ 'React', 'Redux', 'Anime.js', 'Processing' ]}
         />
       </Box>
       <Box css={{ marginTop: 40 }}>
