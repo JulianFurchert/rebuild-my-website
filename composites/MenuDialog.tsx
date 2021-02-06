@@ -81,7 +81,7 @@ const MenuDialog = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ ease: 'easeInOut', duration: 0.1 }}
           />
         </Dialog.Overlay>
         <StyledContent>
@@ -90,7 +90,7 @@ const MenuDialog = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ ease: 'easeInOut', duration: 0.3 }}
           >
             <Link onClick={handleOnClick} href="/" variant="menu">
               <Coffee size={20} /> 
