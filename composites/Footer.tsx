@@ -10,7 +10,14 @@ const data = [
 export const Footer: React.FC = () => (
   <Wrappper>
     <Container>
-      <Flex css={{alignItems: 'center', height: 100}}>
+      <Flex 
+        css={{ 
+          alignItems: 'center', 
+          justifyContent: 'space-between', 
+          height: 100
+        }}
+      >
+        <Flex>
         {data.map(entry => (
           <Link 
             key={entry.href}
@@ -21,6 +28,13 @@ export const Footer: React.FC = () => (
             {entry.label}
           </Link>
         ))}
+        </Flex>
+        <Link 
+          external={true} 
+          href="https://github.com/JulianFurchert/rebuild-my-website"
+        >
+          View Source
+        </Link>
       </Flex>
     </Container>
   </Wrappper>

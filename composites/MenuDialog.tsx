@@ -33,6 +33,25 @@ const StyledContent = styled(Dialog.Content, {
   },
 });
 
+const Trigger = styled(Dialog.Trigger, {
+  border: 'none',
+  margin: 0,
+  padding: 0,
+  width: 'auto',
+  overflow: 'visible',
+  background: 'transparent',
+  outline: 'none',
+  fontFamily: '$body',
+  color: '$hiContrast',
+  lineHeight: 1.5,
+  fontSize: '$4',
+  fontWeight: '$body',
+  textDecoration: 'none',
+  '&:hover':{
+    color: '$primary',
+  },
+});
+
 export default () => {
   const [open, setOpen] = useState(false);
 
@@ -45,9 +64,9 @@ export default () => {
       open={open} 
       onOpenChange={open => setOpen(open)}
     >
-      <Dialog.Trigger as={TextButton}>
+      <Trigger>
         Menu
-      </Dialog.Trigger>
+      </Trigger>
       <StyledOverlay />
       <StyledContent>
         <Link onClick={handleOnClick} href="/" variant="menu">
