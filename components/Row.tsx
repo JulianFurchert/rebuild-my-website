@@ -8,7 +8,7 @@ export const Row = styled('div',{
   gridColumnGap: '$4',
   gridRowGap: '$4',
   margin: '$4 0',
-  bp2: {
+  bp1: {
     gridTemplateColumns: 'repeat(1, 1fr)',
   },
   variants: {
@@ -26,9 +26,6 @@ export const Row = styled('div',{
       },
       2: {
         gridTemplateColumns: 'repeat(2, 1fr)',
-      },
-      3: {
-        gridTemplateColumns: 'repeat(3, 1fr)',
       }
     }
   }
