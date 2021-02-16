@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Flex, Box } from '../components'
 import { Header } from './Header'
 import { Footer } from './Footer'
+import { styled } from '../stitches.config'
 
 type LayoutProps = {
   toggleTheme: () => void
@@ -20,10 +21,18 @@ export const Layout: React.FC<LayoutProps> = ({ children, toggleTheme }) => {
         <title>Julian Furchert</title>
       </Head>
       <Header toggleTheme={toggleTheme} />
-      <Box css={{ marginY: '100px', flexGrow: 1 }}>
+      <Container>
         {children}
-      </Box>
+      </Container>
       <Footer />
     </Flex>
   )
 }
+
+const Container = styled('div', {
+  marginY: '100px', 
+  flexGrow: 1,
+  bp1: {
+    marginY: '48px',
+  },
+})

@@ -24,6 +24,9 @@ export const PopoverTrigger = styled(PopoverPrimitive.Trigger, {
   '&:hover':{
     color: '$primary',
   },
+  bp1: {
+    fontSize: '$3',
+  },
   variants: {
     variant: {
       primary: {

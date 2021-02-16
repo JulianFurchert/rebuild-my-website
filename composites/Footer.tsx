@@ -14,7 +14,10 @@ export const Footer: React.FC = () => (
         css={{ 
           alignItems: 'center', 
           justifyContent: 'space-between', 
-          height: 100
+          height: 100,
+          bp1: {
+            height: 80,
+          }
         }}
       >
         <Flex>

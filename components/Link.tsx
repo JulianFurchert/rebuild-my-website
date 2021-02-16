@@ -50,6 +50,9 @@ const StyledLink = styled('a', {
   '&:hover':{
     color: '$primary',
   },
+  bp1: {
+    fontSize: '$3',
+  },
   variants: {
     variant: {
       primary: {

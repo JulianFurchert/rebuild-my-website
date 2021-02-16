@@ -26,6 +26,7 @@ const StyledContent = styled(Dialog.Content, {
   maxHeight: '85vh',
   marginTop: '-5vh',
   zIndex: 300,
+  paddingX: '$4',
   backgroundColor: 'transparent',
   '&:focus': {
     outline: 'none',
@@ -54,6 +55,9 @@ const Trigger = styled(Dialog.Trigger, {
   fontSize: '$4',
   fontWeight: '$body',
   textDecoration: 'none',
+  bp1: {
+    fontSize: '$3',
+  },
   '&:hover':{
     color: '$primary',
   },

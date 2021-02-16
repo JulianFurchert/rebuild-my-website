@@ -11,6 +11,9 @@ export const Text = styled('div', {
       headline: {
         fontWeight: '$heading',
         fontSize: '$7',
+        bp1: {
+          fontSize: 32,
+        }
       },
       headline2: {
         fontWeight: 500,
