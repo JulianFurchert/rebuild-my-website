@@ -6,8 +6,8 @@ import { Box } from "./Box"
 export type ThumbnailProps = NextLinkProps & {
   css?: ImageContainerProps['css'],
   name: string,
-  width: ContainerProps['width'],
-  translateY: ContainerProps['translateY'],
+  width?: ContainerProps['width'],
+  translateY?: ContainerProps['translateY'],
 }
 
 export const Thumbnail: React.FC<ThumbnailProps> = ({ children, css, name, width, translateY, ...props }) => {
