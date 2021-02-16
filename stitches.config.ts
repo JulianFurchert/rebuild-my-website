@@ -113,8 +113,8 @@ export const { styled, css,  } = createStyled({
     }),
   },
   breakpoints: {
-    bp1: (rule) => `@media (min-width: 520px) { ${rule} }`,
-    bp2: (rule) => `@media (min-width: 900px) { ${rule} }`,
+    bp1: (rule) => `@media (max-width: 900px) { ${rule} }`,
+    bp2: (rule) => `@media (max-width: 1280px) { ${rule} }`,
   },
 })
 

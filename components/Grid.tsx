@@ -8,6 +8,9 @@ export const Grid = styled('div',{
   gridColumnGap: '$4',
   gridRowGap: '$4',
   margin: '$4 0',
+  bp1: {
+    gridTemplateColumns: 'repeat(1, 1fr)',
+  },
   variants: {
     reverse: {
       true: {
@@ -15,23 +18,17 @@ export const Grid = styled('div',{
           order: 2
         }
       },
-      false: {
-
-      }
+      false: {}
     },
     columns: {
       1: {
         gridTemplateColumns: 'repeat(1, 1fr)',
       },
       2: {
-        bp1: {
-          gridTemplateColumns: 'repeat(2, 1fr)',
-        }
+        gridTemplateColumns: 'repeat(2, 1fr)',
       },
       3: {
-        bp1: {
-          gridTemplateColumns: 'repeat(3, 1fr)',
-        }
+        gridTemplateColumns: 'repeat(3, 1fr)',
       }
     }
   }

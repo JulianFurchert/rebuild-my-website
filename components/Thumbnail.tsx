@@ -4,28 +4,30 @@ import { Link } from "./Link"
 import { Box } from "./Box"
 
 export type ThumbnailProps = NextLinkProps & {
-  css?: ContainerProps['css'],
-  name: string
+  css?: ImageContainerProps['css'],
+  name: string,
+  width: ContainerProps['width'],
+  translateY: ContainerProps['translateY'],
 }
 
-export const Thumbnail: React.FC<ThumbnailProps> = ({ children, css, name, ...props }) => {
+export const Thumbnail: React.FC<ThumbnailProps> = ({ children, css, name, width, translateY, ...props }) => {
   return(
-      <Box css={css}>
+      <Container width={width} translateY={translateY}>
         <NextLink {...props} passHref>
-          <Container >
+          <ImageContainer >
               {children}
-          </Container>
+          </ImageContainer>
         </NextLink>
         <Link css={{ marginTop: '$2', display: 'block' }} href={props.href}>
           {name}
         </Link>
-      </Box>
+      </Container>
   )
 }
 
-type ContainerProps = React.ComponentProps<typeof Container>
+type ImageContainerProps = React.ComponentProps<typeof Container>
 
-const Container = styled('a', {
+const ImageContainer = styled('a', {
   position: 'relative',
   display: 'block',
   color: '$hiContrast',
@@ -33,4 +35,33 @@ const Container = styled('a', {
   textDecoration: 'none',
   cursor: 'pointer',
   overflow: 'hidden',
+})
+
+type ContainerProps = React.ComponentProps<typeof Container>
+
+const Container = styled('div', {
+  width: '50%',
+  bp1: {
+    width: '100%',
+    marginTop: '$6',
+  },
+  variants: {
+    width: {
+      60: { width: '60%' },
+      55: { width: '55%' },
+      50: { width: '50%' },
+      45: { width: '45%' },
+      40: { width: '40%' },
+      35: { width: '35%' },
+      30: { width: '30%' },
+      25: { width: '25%' },
+      20: { width: '20%' },
+    },
+    translateY: {
+      5: { marginTop: '5vw' },
+      10: { marginTop: '10vw' },
+      15: { marginTop: '15vw' },
+      20: { marginTop: '20vw' },
+    }
+  }
 })
