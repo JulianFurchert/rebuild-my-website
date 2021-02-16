@@ -9,7 +9,7 @@ import { styled } from '../stitches.config'
 export default function Home() {
   return (
     <Container>
-      <Row>
+      <Row reverse="mobil">
         <TypeScanner width={30} />
         <PrettyPaper width={45} />
       </Row>
@@ -36,6 +36,13 @@ const Row = styled('div', {
     marginTop: 40,
   },
   variants: {
+    reverse: {
+      mobil: {
+        bp1: {
+          flexDirection: 'column-reverse'
+        }
+      }
+    },
     mt: {
       0: { marginTop: 0 },
       40: { marginTop: 40 },
