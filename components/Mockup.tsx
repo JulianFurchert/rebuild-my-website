@@ -7,6 +7,7 @@ export type MockupProps = {
   variant?: ContainerProps['variant'],
   maxWidth?: ContainerProps['maxWidth'],
   scheme?: ContainerProps['scheme'],
+  clipPath?: string
 }
 
 export const Mockup: React.FC<MockupProps> = ({
@@ -14,11 +15,14 @@ export const Mockup: React.FC<MockupProps> = ({
   variant = 'default',
   maxWidth,
   scheme = 'auto',
+  clipPath,
   children,
 }) => {
+  const memoizedCss = React.useMemo(() => clipPath ? { clipPath } : {}, [])
+
   if(variant === "window"){
     return (
-      <Container scheme={scheme} variant="window" maxWidth={maxWidth}>
+      <Container css={memoizedCss} scheme={scheme} variant="window" maxWidth={maxWidth}>
         <Header>
           <Controls/>
           {title && (
@@ -32,7 +36,7 @@ export const Mockup: React.FC<MockupProps> = ({
     )
   }
   return (
-    <Container scheme={scheme} variant={variant} maxWidth={maxWidth}>
+    <Container css={memoizedCss} scheme={scheme} variant={variant} maxWidth={maxWidth}>
       {children}
     </Container>
   )

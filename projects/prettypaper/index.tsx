@@ -34,7 +34,8 @@ export default function Framo() {
             scheme="dark"
             mockup={{
               maxWidth: '90%',
-              scheme: 'dark'
+              scheme: 'dark',     
+              clipPath: 'inset(6% 4% round 10px)'
             }}
           />
         </Row>
