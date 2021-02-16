@@ -32,6 +32,9 @@ const Row = styled('div', {
     marginTop: 0,
     flexWrap: 'wrap',
   },
+  bp2: {
+    marginTop: 40,
+  },
   variants: {
     mt: {
       0: { marginTop: 0 },

@@ -8,7 +8,7 @@ export const Grid = styled('div',{
   gridColumnGap: '$4',
   gridRowGap: '$4',
   margin: '$4 0',
-  bp1: {
+  bp2: {
     gridTemplateColumns: 'repeat(1, 1fr)',
   },
   variants: {
