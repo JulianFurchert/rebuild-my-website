@@ -108,6 +108,9 @@ const Container = styled('div', {
       '90%': {
         maxWidth: "90%", 
       },
+      '100%': {
+        maxWidth: "100%", 
+      },
       300: {
         maxWidth: 300, 
       },

@@ -4,11 +4,7 @@ import { styled } from '../../../stitches.config';
 import { Showcase, Mockup, InView, Row } from '../../../components';
 
 const ComponentContainer = styled('div', {
-  position: 'absolute',
-  top: "0",
-  left: "0",
   width: "100%",
-  height: "100%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center"
@@ -55,11 +51,10 @@ const FontRow = () => {
   }
 
   return(
-    <Row columns={2}>
+    <Row columns={2} reverse={{initial: false, bp1: true}}>
     <Showcase>
       <InView onChange={handleOnChange} isVisible={inView}>
         <Mockup variant="none">
-          <svg width="100%" viewBox="0 0 150 100" />
           <ComponentContainer>
             <svg width="280" viewBox="0 0 225 208">
               <g id="Font_1" data-name="Font – 1" clipPath="url(#clip-Font_1)">
@@ -83,7 +78,7 @@ const FontRow = () => {
     </Showcase>
       <Showcase>
         <InView onChange={handleOnChange} isVisible={inView}>
-          <Mockup maxWidth="80%" variant="window" title="color.md" scheme="dark">
+          <Mockup maxWidth={500} variant="window" title="font.md" scheme="dark">
             <Code>
               <div>```font </div>
               <div>font: Roboto </div>

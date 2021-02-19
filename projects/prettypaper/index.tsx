@@ -29,13 +29,14 @@ export default function Framo() {
         <Row>
           <VideoCase 
             video="/video/prettypaper-gray.mp4"
-            width={2880}
+            size={{ bp1: 'full' }}
+            width={2880} 
             height={1800}
             scheme="dark"
             mockup={{
-              maxWidth: '90%',
+              maxWidth: {initial: '90%', bp1: '100%'},
               scheme: 'dark',     
-              clipPath: 'inset(6% 4% round 10px)'
+              clipPath: 'inset(6% 4%)'
             }}
           />
         </Row>
@@ -50,12 +51,12 @@ export default function Framo() {
               variant: 'window',
               title: 'lottie.md',
               scheme: 'dark',
-              maxWidth: '80%'
+              maxWidth: 600
             }}
           />
           <LottieCase data={lottieBlue} />
         </Row>
-        <Row columns={2}>
+        <Row columns={2} reverse={{initial: false, bp1: true}}>
           <LottieCase  data={lottieExample} />
           <CodeCase
             code={[
@@ -68,7 +69,7 @@ export default function Framo() {
               variant: 'window',
               title: 'video.md',
               scheme: 'dark',
-              maxWidth: '80%'
+              maxWidth: 600
             }}
           />
         </Row>

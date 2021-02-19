@@ -17,6 +17,9 @@ export const Showcase = styled('div', {
   width: '100%',
   backgroundColor: '$gray1',
   overflow: 'hidden',
+  bp1: {
+    padding: '$4',
+  },
   variants: {
     scheme: {
       auto: {
