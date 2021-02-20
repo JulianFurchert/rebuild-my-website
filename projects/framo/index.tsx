@@ -27,7 +27,7 @@ export default function Framo() {
             width={2560}
             height={1602}
             mockup={{
-              maxWidth: '90%'
+              maxWidth: {intital:'90%', bp1: '100%'}
             }}
           />
         </Row>
@@ -35,7 +35,7 @@ export default function Framo() {
           <ComponentCase
             mockup={{
               variant: 'none',
-              maxWidth: '80%'
+              maxWidth: {intital:'80%', bp1: '100%'}
             }}
           >
             <Animation />
@@ -47,7 +47,7 @@ export default function Framo() {
             width={750}
             height={1334}
             mockup={{
-              maxWidth: '60%'
+              maxWidth: {intital:'60%', bp1: '70%'}
             }}
           />
           <ImageCase 
@@ -55,7 +55,7 @@ export default function Framo() {
             width={750}
             height={1334}
             mockup={{
-              maxWidth: '60%'
+              maxWidth: {intital:'60%', bp1: '70%'}
             }}
           />
         </Row>
