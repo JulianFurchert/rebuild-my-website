@@ -47,6 +47,10 @@ const Container = styled('div', {
   },
   variants: {
     width: {
+      100: { width: '100%' },
+      90: { width: '90%' },
+      80: { width: '80%' },
+      70: { width: '70%' },
       60: { width: '60%' },
       55: { width: '55%' },
       50: { width: '50%' },

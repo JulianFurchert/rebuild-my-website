@@ -36,7 +36,7 @@ const SettingsGridCase = () => {
     <ComponentCase
       size="gallery"  
       mockup={{
-        maxWidth: '70%',
+        maxWidth: {initial: '70%', bp1: '80%'},
         variant: 'none'
       }}
       footer={

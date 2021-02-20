@@ -22,7 +22,12 @@ const Container = styled('div', {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  margin: "0 24px"
+  margin: "0 24px",
+  width: 'calc(100% - 48px)',
+  bp1: {
+    margin: "0 16px",
+    width: 'calc(100% - 32px)',
+  }
 })
 
 const Progressbar = styled('div', {

@@ -35,14 +35,14 @@ export default function Framo() {
             height={1600}
             scheme="dark"
             mockup={{
-              maxWidth: '90%'
+              maxWidth: {initial: '90%', bp1:  '100%'}
             }}
           />
         </Row>
         <Row>
           <ComponentCase
             mockup={{
-              maxWidth: '90%',
+              maxWidth: {initial: '90%', bp1:  '100%'},
               variant: 'none'
             }}
           >
@@ -56,7 +56,7 @@ export default function Framo() {
             height={800}
             scheme="dark"
             mockup={{
-              maxWidth: '90%',
+              maxWidth: {initial: '90%', bp1:  '100%'}
             }}
           />
         </Row>
@@ -66,7 +66,8 @@ export default function Framo() {
             width={2560}
             height={1600}
             mockup={{
-              maxWidth: '90%',
+              maxWidth: {initial: '90%', bp1:  '100%'},
+              variant: 'simple'
             }}
           />
         </Row>

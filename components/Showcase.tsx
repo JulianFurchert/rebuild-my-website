@@ -41,6 +41,9 @@ export const Showcase = styled('div', {
       },
       gallery: {
         paddingBottom: '56px',
+        bp1: {
+          paddingBottom: '56px',
+        },
       }
     }
   }
