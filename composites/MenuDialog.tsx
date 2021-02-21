@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { styled } from '../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
-import { TextButton, Link, Box } from '../components';
-import { Menu, User, Coffee, Archive, Heart, Book, Umbrella, Tool } from 'react-feather';
-// import { Menu } from 'react-feather';
+import { Link, Box } from '../components';
+import { User, Coffee, Archive, Heart, Book, Umbrella, Tool } from 'react-feather';
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from 'next/router'
 
 const MotionOverlay = styled(motion.div, {
   backgroundColor: 'rgba(0, 0, 0, .55)',
@@ -88,7 +88,7 @@ const MenuDialog = () => {
             transition={{ ease: 'easeInOut', duration: 0.1 }}
           />
         </Dialog.Overlay>
-        <StyledContent>
+        <StyledContent onOpenAutoFocus={e => e.preventDefault()}>
           <MotionContent
             key="content"
             initial={{ opacity: 0, y: 100 }}
@@ -96,44 +96,91 @@ const MenuDialog = () => {
             exit={{ opacity: 0 }}
             transition={{ ease: 'easeInOut', duration: 0.3 }}
           >
-            <Link onClick={handleOnClick} href="/" variant="menu">
-              <Coffee size={20} /> 
-              <Box as="span" css={{ marginLeft: '$3' }}>
-                Home
-              </Box>
-            </Link>
-            <Link onClick={handleOnClick} href="/about" variant="menu">
-              <User size={20} /> 
-              <Box as="span" css={{ marginLeft: '$3' }}>
-                About
-              </Box>
-            </Link>
-            <Link disabeld onClick={handleOnClick} href="/experience" variant="menu">
-              {/* <Book size={20} />  */}
-              <Tool size={20} />
-              <Box as="span" css={{ marginLeft: '$3' }}>
-                Experience
-              </Box>
-            </Link>
-            <Link disabeld onClick={handleOnClick} href="/archive" variant="menu">
-              {/* <Archive size={20} /> */}
-              <Tool size={20} />
-              <Box as="span" css={{ marginLeft: '$3' }}>
-                Archive
-              </Box>
-            </Link>
-            <Link disabeld onClick={handleOnClick} href="/digital-garden" variant="menu">
-              {/* <Umbrella size={20} />  */}
-              <Tool size={20} />
-              <Box as="span" css={{ marginLeft: '$3' }}>
-                Digital Garden
-              </Box>
-            </Link>
+            <MenuLink 
+              icon={<Coffee size={20} /> }
+              onClick={handleOnClick}
+              href="/"
+              label="Home"
+            />
+            <MenuLink 
+              icon={<User size={20} /> }
+              onClick={handleOnClick}
+              href="/about"
+              label="About"
+            />
+            <MenuLink 
+              // icon={<Book size={20} /> }
+              icon={<Tool size={20} /> }
+              onClick={handleOnClick}
+              href="/experience"
+              label="Experience"
+              disabeld
+            />
+            <MenuLink 
+              // icon={<Archive size={20} /> }
+              icon={<Tool size={20} /> }
+              onClick={handleOnClick}
+              href="/archive"
+              label="Archive"
+              disabeld
+            />
+            <MenuLink 
+              // icon={<Umbrella size={20} /> }
+              icon={<Tool size={20} /> }
+              onClick={handleOnClick}
+              href="/digital-garden"
+              label="Digital Garden"
+              disabeld
+            />
           </MotionContent>
         </StyledContent>
       </Dialog.Root>
     </AnimatePresence>
   );
+}
+
+type MenuLinkProps = {
+  icon: React.ReactNode,
+  label: string,
+  onClick: () => void,
+  href: string,
+  disabeld?: boolean,
+}
+
+const MenuLink: React.FC<MenuLinkProps> = ({
+  icon,
+  label,
+  onClick,
+  href,
+  disabeld
+}) => {
+  const linkRef = useRef<HTMLAnchorElement>(null);
+  const { pathname } = useRouter();
+
+  useEffect(()=>{
+    if(pathname === href && linkRef){
+      linkRef.current.focus();
+    }
+  },[pathname, href])
+
+  const handleOnClick = () => {
+    onClick();
+  }
+
+  return(
+    <Link 
+      ref={linkRef} 
+      disabeld={disabeld}
+      onClick={handleOnClick} 
+      href={href} 
+      variant="menu"
+    >
+      {icon}
+      <Box as="span" css={{ marginLeft: '$3' }}>
+        {label}
+      </Box>
+    </Link>
+  )
 }
 
 export default MenuDialog

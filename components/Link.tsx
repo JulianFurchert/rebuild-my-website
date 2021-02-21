@@ -1,3 +1,4 @@
+import { forwardRef } from 'react';
 import { default as NextLink, LinkProps as NextLinkProps } from 'next/link'
 import { styled } from '../stitches.config'
 
@@ -7,16 +8,19 @@ type LinkProps = NextLinkProps & {
   variant?: 'menu' | 'subtle' | 'primary',
   disabeld?: boolean,
   onClick?: () => void;
+  children: React.ReactNode
 }
 
-export const Link: React.FC<LinkProps> = ({ children, disabeld, css, external, variant, onClick, ...props }) => {
-
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => {
+  const { children, disabeld, css, external, variant, onClick, ...rest } = props;
+  
   if(disabeld){
     return(
       <StyledLink 
         variant={variant} 
         css={css}
-        disabeld={disabeld} 
+        disabeld={disabeld}
+        ref={ref} 
       >
         {children}
       </StyledLink>
@@ -24,19 +28,21 @@ export const Link: React.FC<LinkProps> = ({ children, disabeld, css, external, v
   }
 
   return(
-    <NextLink {...props} passHref>
+    <NextLink {...rest} passHref>
       <StyledLink 
         onClick={onClick} 
         variant={variant} 
         css={css}
         disabeld={disabeld} 
         target={external ? '_blank'  : '_self'}
+        ref={ref} 
       >
         {children}
       </StyledLink>
     </NextLink>
   )
-}
+
+});
 
 type StyledLinkProps = React.ComponentProps<typeof StyledLink>
 
