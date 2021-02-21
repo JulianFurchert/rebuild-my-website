@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { styled } from '../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Link, Box } from '../components';
@@ -63,11 +63,31 @@ const Trigger = styled(Dialog.Trigger, {
   },
 });
 
+type LinkRef = React.MutableRefObject<HTMLAnchorElement>;
+
+type LinkRefs = {
+  [key: string]: LinkRef
+}
+
 const MenuDialog = () => {
   const [open, setOpen] = useState(false);
+  const refs = useRef<LinkRefs>()
+  const { pathname } = useRouter();
 
   const handleOnClick = () => {
     setOpen(false)
+  }
+
+  const addRef = (path: string, link: LinkRef) => {
+    refs.current = {...refs.current, [path]: link}
+  }
+
+  const onOpenAutoFocus = (e: Event) => {
+    const linkRef = refs.current[pathname];
+    if(linkRef){
+      e.preventDefault()
+      linkRef.current.focus();
+    }
   }
 
   return(
@@ -88,7 +108,7 @@ const MenuDialog = () => {
             transition={{ ease: 'easeInOut', duration: 0.1 }}
           />
         </Dialog.Overlay>
-        <StyledContent onOpenAutoFocus={e => e.preventDefault()}>
+        <StyledContent onOpenAutoFocus={onOpenAutoFocus}>
           <MotionContent
             key="content"
             initial={{ opacity: 0, y: 100 }}
@@ -101,12 +121,14 @@ const MenuDialog = () => {
               onClick={handleOnClick}
               href="/"
               label="Home"
+              addRef={addRef}
             />
             <MenuLink 
               icon={<User size={20} /> }
               onClick={handleOnClick}
               href="/about"
               label="About"
+              addRef={addRef}
             />
             <MenuLink 
               // icon={<Book size={20} /> }
@@ -115,6 +137,7 @@ const MenuDialog = () => {
               href="/experience"
               label="Experience"
               disabeld
+              addRef={addRef}
             />
             <MenuLink 
               // icon={<Archive size={20} /> }
@@ -123,6 +146,7 @@ const MenuDialog = () => {
               href="/archive"
               label="Archive"
               disabeld
+              addRef={addRef}
             />
             <MenuLink 
               // icon={<Umbrella size={20} /> }
@@ -131,6 +155,7 @@ const MenuDialog = () => {
               href="/digital-garden"
               label="Digital Garden"
               disabeld
+              addRef={addRef}
             />
           </MotionContent>
         </StyledContent>
@@ -145,6 +170,7 @@ type MenuLinkProps = {
   onClick: () => void,
   href: string,
   disabeld?: boolean,
+  addRef?: (path: string, link: LinkRef) => void
 }
 
 const MenuLink: React.FC<MenuLinkProps> = ({
@@ -152,16 +178,14 @@ const MenuLink: React.FC<MenuLinkProps> = ({
   label,
   onClick,
   href,
+  addRef,
   disabeld
 }) => {
   const linkRef = useRef<HTMLAnchorElement>(null);
-  const { pathname } = useRouter();
 
   useEffect(()=>{
-    if(pathname === href && linkRef){
-      linkRef.current.focus();
-    }
-  },[pathname, href])
+    addRef(href, linkRef)
+  },[href])
 
   const handleOnClick = () => {
     onClick();
