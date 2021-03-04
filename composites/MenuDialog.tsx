@@ -149,12 +149,10 @@ const MenuDialog = () => {
               addRef={addRef}
             />
             <MenuLink 
-              // icon={<Umbrella size={20} /> }
-              icon={<Tool size={20} /> }
+              icon={<Umbrella size={20} /> }
               onClick={handleOnClick}
               href="/digital-garden"
               label="Digital Garden"
-              disabeld
               addRef={addRef}
             />
           </MotionContent>

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useCombobox, useMultipleSelection } from 'downshift'
+import { IconButton } from '../components';
 import { styled } from '../stitches.config'
 import starWarsNames from 'starwars-names'
+import { X, ArrowDown } from 'react-feather';
 
 const items: string[] = starWarsNames.all.map((name: string) => name)
 
@@ -20,6 +22,11 @@ export const Combobox: React.FC = () => {
     item.toLowerCase().startsWith(inputValue.toLowerCase()),
   )
 
+  const filteredItems = items.filter(item =>
+    selectedItems.indexOf(item) < 0 &&
+    item.toLowerCase().startsWith(inputValue.toLowerCase()),
+  )
+
   const {
     isOpen,
     getToggleButtonProps,
@@ -33,7 +40,7 @@ export const Combobox: React.FC = () => {
     inputValue,
     defaultHighlightedIndex: 0, // after selection, highlight the first item.
     selectedItem: null,
-    items: getFilteredItems(),
+    items: filteredItems,
     stateReducer: (state, actionAndChanges) => {
       const { changes, type } = actionAndChanges
       switch (type) {
@@ -73,14 +80,16 @@ export const Combobox: React.FC = () => {
             key={`selected-item-${index}`}
             {...getSelectedItemProps({ selectedItem, index })}
           >
-            {selectedItem}
+            <SelectedItemLabel>
+              {selectedItem}
+            </SelectedItemLabel>
             <SelectedItemIcon
               onClick={e => {
                 e.stopPropagation()
                 removeSelectedItem(selectedItem)
               }}
             >
-              &#10005;
+              <X size={16} />
             </SelectedItemIcon>
           </SelectedItem>
         ))}
@@ -90,27 +99,24 @@ export const Combobox: React.FC = () => {
               getDropdownProps({ preventKeyAction: isOpen }),
             )}
           />
-          <InputButton {...getToggleButtonProps()} aria-label={'toggle menu'}>
-            &#8595;
-          </InputButton>
+          <IconButton {...getToggleButtonProps()} aria-label={'toggle menu'}>
+            <ArrowDown />
+          </IconButton>
         </StyledCombobox>
       </StyledBox>
-      <Menu {...getMenuProps()}>
-        {isOpen && getFilteredItems().map((item, index) => (
-            <MenuItem
-              // data-selected={highlightedIndex === index ? true : undefined}
-              style={
-                highlightedIndex === index
-                  ? { backgroundColor: '#bde4ff' }
-                  : {}
-              }
-              key={`${item}${index}`}
-              {...getItemProps({ item, index })}
-            >
-              {item}
-            </MenuItem>
-          ))}
-      </Menu>
+      {isOpen && filteredItems.length > 0 && (
+        <Menu {...getMenuProps()}>
+          {filteredItems.map((item, index) => (
+              <MenuItem
+                data-selected={highlightedIndex === index ? true : undefined}
+                key={`${item}${index}`}
+                {...getItemProps({ item, index })}
+              >
+                {item}
+              </MenuItem>
+            ))}
+        </Menu>
+      )}
     </Wrapper>
   )
 }
@@ -126,16 +132,19 @@ const StyledBox = styled('div', {
   alignItems: 'center',
   flexWrap: 'wrap',
   height: 56,
-  background: '#fff',
-  borderRadius: 16,
-  border: '1px solid #eaeaea',
+  background: '$loContrast',
+  borderRadius: 10,
+  border: '1px solid',
+  borderColor: '$gray4',
   fontSize: 'inherit',
-  color: 'black',
+  color: 'hiContrast',
   cursor: 'text',
   outline: 0,
   padding: 0,
+  paddingLeft: '$2',
+  paddingRight: '$2',
   '&:focus-within': {
-    borderColor: 'black'
+    borderColor: '$hiContrast',
   }
 })
 
@@ -157,44 +166,66 @@ const Input = styled('input', {
   outline: 'none'
 })
 
-const InputButton = styled('button', {
-  flexShrink: 0,
-})
-
 const SelectedItem = styled('span', {
   display: 'flex',
   alignItems: 'center',
-  marginLeft: '5px',
-  backgroundColor: 'aliceblue',
-  borderRadius: 999,
-  padding: '0 $2 0 $3',
+  marginRight: '5px',
+  backgroundColor: '$gray1',
+  borderRadius: 10,
   height: 32,
   flexShrink: 0,
+  overflow: 'hidden',
+  outline: 'none',
+  border: '1px solid',
+  borderColor: '$gray1',
+  '&:focus': {
+    backgroundColor: '$gray2',
+  }
+})
+
+const SelectedItemLabel = styled('span', {
+  paddingLeft: '$2',
+  paddingRight: '$1'
 })
 
 const SelectedItemIcon = styled('span', {
+  display: 'flex',
+  alignItems: 'center',
+  paddingLeft: '$1',
+  paddingRight: '$1',
   cursor: 'pointer',
-  marginLeft: '$2'
+  borderColor: '$gray4',
+  height: '100%',
+  '&:hover':{
+    backgroundColor: '$gray2',
+  },
+  // '*:focus &':{
+  //   backgroundColor: '$gray2',
+  // },
 })
 
 const Menu = styled('ul', {
   display: 'absolute',
-  maxHeight: '180px',
+  maxHeight: '300px',
   overflowY: 'auto',
   left: 0,
   right: 0,
+  top: 64,
   margin: 0,
-  borderTop: 0,
-  background: 'white',
+  border: 0,
+  backgroundColor: '$loContrast',
   position: 'absolute',
   zIndex: 1000,
   listStyle: 'none',
-  padding: 0,
-  borderRadius: 16,
+  borderRadius: 15,
+  padding: '$3',
+  boxShadow: '$medium'
 })
 
 const MenuItem = styled('li', {
-  // '&[data-selected]': {
-  //   backgroundColor: '#bde4ff' 
-  // }
+  borderRadius: 10,
+  padding: '$2 $2',
+  '&[data-selected]': {
+    backgroundColor: '$gray1' 
+  }
 })
