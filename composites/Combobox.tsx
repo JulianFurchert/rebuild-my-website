@@ -1,42 +1,43 @@
 import React, { useState } from 'react'
-import { useCombobox, useMultipleSelection } from 'downshift'
+import { useCombobox, useMultipleSelection, UseMultipleSelectionStateChange } from 'downshift'
 import { IconButton } from '../components';
 import { styled } from '../stitches.config'
-import starWarsNames from 'starwars-names'
 import { X, ArrowDown } from 'react-feather';
 
-const items: string[] = starWarsNames.all.map((name: string) => name)
+type Item = { name: string, id: string };
 
-export const Combobox: React.FC = () => {
+export type ComboboxProps = {
+ items: Item[],
+ onChange: (props: UseMultipleSelectionStateChange<Item>) => void,
+}
+
+export const Combobox: React.FC<ComboboxProps> = ({ items, onChange }) => {
   const [inputValue, setInputValue] = useState('');
+
   const {
     getSelectedItemProps,
     getDropdownProps,
     addSelectedItem,
     removeSelectedItem,
     selectedItems,
-  } = useMultipleSelection({ initialSelectedItems: [items[0], items[1]] })
-
-  const getFilteredItems = () => items.filter(item =>
-    selectedItems.indexOf(item) < 0 &&
-    item.toLowerCase().startsWith(inputValue.toLowerCase()),
-  )
+  } = useMultipleSelection<Item>({ 
+    onStateChange: onChange,
+  })
 
   const filteredItems = items.filter(item =>
-    selectedItems.indexOf(item) < 0 &&
-    item.toLowerCase().startsWith(inputValue.toLowerCase()),
+    item.name.toLowerCase().includes(inputValue.toLowerCase())
   )
 
   const {
     isOpen,
     getToggleButtonProps,
-    getLabelProps,
     getMenuProps,
     getInputProps,
     getComboboxProps,
     highlightedIndex,
     getItemProps,
   } = useCombobox({
+    id: "garden-search",
     inputValue,
     defaultHighlightedIndex: 0, // after selection, highlight the first item.
     selectedItem: null,
@@ -81,7 +82,7 @@ export const Combobox: React.FC = () => {
             {...getSelectedItemProps({ selectedItem, index })}
           >
             <SelectedItemLabel>
-              {selectedItem}
+              {selectedItem.name}
             </SelectedItemLabel>
             <SelectedItemIcon
               onClick={e => {
@@ -99,24 +100,22 @@ export const Combobox: React.FC = () => {
               getDropdownProps({ preventKeyAction: isOpen }),
             )}
           />
-          <IconButton {...getToggleButtonProps()} aria-label={'toggle menu'}>
+          <IconButton {...getToggleButtonProps()}>
             <ArrowDown />
           </IconButton>
         </StyledCombobox>
       </StyledBox>
-      {isOpen && filteredItems.length > 0 && (
-        <Menu {...getMenuProps()}>
-          {filteredItems.map((item, index) => (
-              <MenuItem
-                data-selected={highlightedIndex === index ? true : undefined}
-                key={`${item}${index}`}
-                {...getItemProps({ item, index })}
-              >
-                {item}
-              </MenuItem>
-            ))}
-        </Menu>
-      )}
+      <Menu {...getMenuProps()}>
+        {isOpen && filteredItems.map((item, index) => (
+            <MenuItem
+              data-selected={highlightedIndex === index ? true : undefined}
+              key={`${item.id}${index}`}
+              {...getItemProps({ item, index })}
+            >
+              {item.name}
+            </MenuItem>
+          ))}
+      </Menu>
     </Wrapper>
   )
 }
@@ -218,13 +217,20 @@ const Menu = styled('ul', {
   zIndex: 1000,
   listStyle: 'none',
   borderRadius: 15,
-  padding: '$3',
+  // padding: '$3',
   boxShadow: '$medium'
 })
 
 const MenuItem = styled('li', {
+  margin: '0 $3',
   borderRadius: 10,
   padding: '$2 $2',
+  '&:first-child': {
+    marginTop: '$3'
+  },
+  '&:last-child': {
+    marginTop: '$3'
+  },
   '&[data-selected]': {
     backgroundColor: '$gray1' 
   }
