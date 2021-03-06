@@ -37,6 +37,7 @@ export const Combobox: React.FC<ComboboxProps> = ({ items, onChange }) => {
     getComboboxProps,
     highlightedIndex,
     getItemProps,
+    openMenu,
   } = useCombobox({
     id: "garden-search",
     inputValue,
@@ -46,12 +47,13 @@ export const Combobox: React.FC<ComboboxProps> = ({ items, onChange }) => {
     stateReducer: (state, actionAndChanges) => {
       const { changes, type } = actionAndChanges
       switch (type) {
-        case useCombobox.stateChangeTypes.InputKeyDownEnter:
-        case useCombobox.stateChangeTypes.ItemClick:
-          return {
-            ...changes,
-            isOpen: true, // keep the menu open after selection.
-          }
+        // case useCombobox.stateChangeTypes.:
+        // case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        // case useCombobox.stateChangeTypes.ItemClick:
+        //   return {
+        //     ...changes,
+        //     isOpen: true, // keep the menu open after selection.
+        //   }
       }
       return changes
     },
@@ -98,7 +100,9 @@ export const Combobox: React.FC<ComboboxProps> = ({ items, onChange }) => {
         <StyledCombobox {...getComboboxProps()}>
           <Input
             {...getInputProps(
-              getDropdownProps({ preventKeyAction: isOpen }),
+              getDropdownProps({ 
+                preventKeyAction: isOpen,
+              }),
             )}
           />
           <IconButton {...getToggleButtonProps()}>
@@ -230,7 +234,7 @@ const MenuItem = styled('li', {
     marginTop: '$3'
   },
   '&:last-child': {
-    marginTop: '$3'
+    marginBottom: '$3'
   },
   '&[data-selected]': {
     backgroundColor: '$gray1' 
