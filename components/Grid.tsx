@@ -26,7 +26,18 @@ export const Grid = styled('div',{
       },
       2: {
         gridTemplateColumns: 'repeat(2, 1fr)',
+      },
+      3: {
+        gridTemplateColumns: 'repeat(3, 1fr)',
+      },
+      4: {
+        gridTemplateColumns: 'repeat(4, 1fr)',
       }
+    },
+    width: {
+      200: {
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))'      
+      },
     }
   }
 })

@@ -19,8 +19,9 @@ export async function fetchEntries() {
 export async function fetchEntriesWithIds(id: string[]) {
   const entries = await client.getEntries({ 
     'content_type':'item',
-    'fields.tags.sys.id': id,
-    'fields.tags.sys.id[all]': id.join()
+    ...(id && id.length > 0 ? { 
+      'fields.tags.sys.id[all]': id.join() 
+    } : {})
   })
   if (entries) return entries
   console.log(`Error getting Entries for.`)

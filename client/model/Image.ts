@@ -14,7 +14,9 @@ type Image = {
       }
     },
   },
-  sys: any,
+  sys: {
+    id: string
+  }
 }
 
 export default Image;

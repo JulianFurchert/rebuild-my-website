@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Combobox, ComboboxProps } from '../composites/Combobox'
-import { Container, Text, Box, Paragraph } from '../components'
+import { Container, Text, Box, Paragraph, GardenItem, Grid } from '../components'
 import { fetchEntries, fetchEntriesWithIds } from '../client/contentfulPosts'
 import { GetServerSideProps } from 'next'
 import Tag from '../client/model/Tag'
@@ -17,18 +17,20 @@ export default function DigitalGarden(props: Props) {
   
   const tagList = tags.map(tag => ({ 
     name: tag.fields.name, 
-    id: tag.fields.name,
+    id: tag.sys.id,
   }));
+
+  console.log({items, tags});
 
   const handleOnChange: ComboboxProps['onChange'] = props => {
     console.log(props);
     const id = props.selectedItems?.map(item => item.id);
-    // fetchEntriesWithIds(id).then(res => {
-    //   const tags = res?.includes?.Entry;
-    //   const items = res?.items;
-    //   //@ts-ignore
-    //   setItems(items); setTags(tags);
-    // })
+    fetchEntriesWithIds(id).then(res => {
+      const tags = res?.includes?.Entry || [];
+      const items = res?.items || [];
+      setItems(items as Item[]);
+      setTags(tags);
+    })
   }
 
   return (
@@ -44,6 +46,9 @@ export default function DigitalGarden(props: Props) {
       <Box css={{marginTop: '$7'}}>
         <Combobox items={tagList} onChange={handleOnChange} />
       </Box>
+      <Grid columns={3} css={{marginTop: '$5'}}>
+        {items.map(item => <GardenItem item={item} /> )}
+      </Grid>
     </Container>
   )
 }

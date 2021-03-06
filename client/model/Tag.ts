@@ -2,7 +2,9 @@ type Tag = {
   fields: {
     name: string,
   },
-  sys: any
+  sys: {
+    id: string
+  }
 }
 
 export default Tag;

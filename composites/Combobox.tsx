@@ -25,6 +25,7 @@ export const Combobox: React.FC<ComboboxProps> = ({ items, onChange }) => {
   })
 
   const filteredItems = items.filter(item =>
+    selectedItems.filter((i: Item)=> i.id === item.id).length < 1 &&
     item.name.toLowerCase().includes(inputValue.toLowerCase())
   )
 

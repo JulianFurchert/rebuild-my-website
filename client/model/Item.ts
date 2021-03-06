@@ -3,13 +3,15 @@ import Document from './Document';
 
 type Item = {
   fields: {
-    titel: string,
+    title: string,
     tags: string[],
     url?: string,
     image?: Image,
     notes?: Document
   },
-  sys: any
+  sys: {
+    id: string
+  }
 }
 
 export default Item;
