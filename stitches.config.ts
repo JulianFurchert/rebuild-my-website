@@ -1,4 +1,4 @@
-import { createStyled } from '@stitches/react'
+import { createStitches, createTheme } from '@stitches/react'
 
 export const colors = {
   $light_primary: '#007aff',
@@ -84,8 +84,8 @@ const theme = {
   }
 }
 
-export const { styled, css,  } = createStyled({
-  tokens: theme,
+export const { styled, css, globalCss, getCssText } = createStitches({
+  theme: theme,
   utils: {
     marginX: () => (
       value: keyof typeof theme['space'] | (string & {})
@@ -112,14 +112,14 @@ export const { styled, css,  } = createStyled({
       paddingBottom: value,
     }),
   },
-  breakpoints: {
-    bp1: (rule) => `@media (max-width: 760px) { ${rule} }`,
-    bp2: (rule) => `@media (max-width: 900px) { ${rule} }`,
-    bp3: (rule) => `@media (max-width: 110px) { ${rule} }`,
+  media: {
+    bp1: '(max-width: 760px)',
+    bp2: '(max-width: 900px)',
+    bp3: '(max-width: 110px)',
   },
 })
 
-export const darkTheme= css.theme({
+export const darkTheme= createTheme('dark-theme', {
   colors: {
     ...colors,
     $primary: colors.$dark_primary,
@@ -136,7 +136,7 @@ export const darkTheme= css.theme({
   },
 })
 
-css.global({
+export const globalStyles = globalCss({
   body: { 
     backgroundColor: '$loContrast',
     color: '$hiContrast',

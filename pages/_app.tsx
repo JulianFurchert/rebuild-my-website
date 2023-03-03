@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from '../composites/Layout';
 import { darkTheme } from '../stitches.config';
-import useDarkMode from 'use-dark-mode';
+// import useDarkMode from 'use-dark-mode';
 import '../styles.css'
 
 const darkModeConfig = {
@@ -10,10 +10,10 @@ const darkModeConfig = {
 }
 
 export default function MyApp({ Component, pageProps }) {
-  const darkMode = useDarkMode(false, darkModeConfig);
+  // const darkMode = useDarkMode(false, darkModeConfig);
   
   return (
-    <Layout toggleTheme={() =>  darkMode.toggle()}> 
+    <Layout toggleTheme={() =>  {}}> 
       <Component {...pageProps} />
     </Layout>
   )

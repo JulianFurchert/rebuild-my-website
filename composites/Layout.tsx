@@ -6,6 +6,7 @@ import { styled } from '../stitches.config'
 
 type LayoutProps = {
   toggleTheme: () => void
+  children?: React.ReactNode;
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children, toggleTheme }) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image' 
 import { Box } from '../Box' 
 import { Flex } from '../Flex' 
-import { useWindowSize } from "@reach/window-size";
+// import { useWindowSize } from "@reach/window-size";
 
 type ColumnsCount = number
 
@@ -34,7 +34,8 @@ export const ImagesCase: React.FC<ImagesCaseProps> = ({
   rows: rowsProps,
   ...props 
 }) =>  {
-  const { width } = useWindowSize();
+  // const { width } = useWindowSize();
+  const width = 1400
   let rows = rowsProps.initial;
 
   if(width <= 800 && rowsProps.bp2){
