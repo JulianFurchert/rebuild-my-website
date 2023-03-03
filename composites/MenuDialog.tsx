@@ -134,8 +134,8 @@ const MenuDialog = () => {
               // icon={<Book size={20} /> }
               icon={<Tool size={20} /> }
               onClick={handleOnClick}
-              href="/experience"
-              label="Experience"
+              href="/design-systems"
+              label="Design Systems"
               disabeld
               addRef={addRef}
             />
@@ -143,12 +143,12 @@ const MenuDialog = () => {
               // icon={<Archive size={20} /> }
               icon={<Tool size={20} /> }
               onClick={handleOnClick}
-              href="/archive"
-              label="Archive"
+              href="/create-coding"
+              label="Creative Coding"
               disabeld
               addRef={addRef}
             />
-            <MenuLink 
+            {/* <MenuLink 
               // icon={<Umbrella size={20} /> }
               icon={<Tool size={20} /> }
               onClick={handleOnClick}
@@ -156,7 +156,7 @@ const MenuDialog = () => {
               label="Digital Garden"
               disabeld
               addRef={addRef}
-            />
+            /> */}
           </MotionContent>
         </StyledContent>
       </Dialog.Root>
