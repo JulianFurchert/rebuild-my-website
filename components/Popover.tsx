@@ -58,7 +58,7 @@ const Content = styled(PopoverPrimitive.Content, {
   minWidth: 160
 })
 
-export const PopoverContent = React.forwardRef<React.Ref<HTMLDivElement>, PopoverPrimitive.PopoverContentOwnProps & { children: any }>(
+export const PopoverContent = React.forwardRef<React.Ref<HTMLDivElement>, PopoverPrimitive.PopoverContentProps & { children: any }>(
   ({ children, ...props }, forwardedRef) => (
     <Content avoidCollisions={false} sideOffset={5} {...props}>
       {children}
