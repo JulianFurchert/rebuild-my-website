@@ -8,7 +8,10 @@ export default function About() {
       </Text>
       <Box css={{ maxWidth: 1200 }}>
         <Paragraph>
-          Frontend developer and designer, mechanical keyboard enthusiast, practicing minimalist, and trance lover in search of flow. Writing about design and code. As I've grown as a developer, I've worked alongside senior designers and developers who have raised my standards for whats expected of any web application. Through these experiences, I've had the opportunity to create memorable products that are not only enjoyable to use but are written in code that's maintainable and easy to understand.
+        As a designer and software engineer based in Düsseldorf, I have a keen interest in creating solutions that align with user needs and business goals. I am experienced in design systems and user interfaces, and enjoy the challenge of understanding both the technical and creative aspects of the development process to bring those solutions to life.
+        </Paragraph>
+        <Paragraph>
+        My work on design systems enables me to utilize my skills in both design and development to create a unified and efficient system that can be implemented across a wide range of products.        
         </Paragraph>
       </Box>
     </Container>
