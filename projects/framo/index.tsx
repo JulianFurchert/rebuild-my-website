@@ -14,9 +14,7 @@ export default function Framo() {
       </Box>
       <Box css={{ marginTop: 24 }}>
         <ProjectInformation 
-          site="https://framo-playground.netlify.app/" 
-          siteName="Playground"
-          code="https://github.com/JulianFurchert/framo-playground" 
+          site="https://www.framo.studio/" 
           stack={[ 'React', 'Styled Components', 'React Pose', 'Snap.svg', 'Netlify', 'Prismic' ]}
         />
       </Box>

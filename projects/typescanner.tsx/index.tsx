@@ -19,7 +19,7 @@ export default function Framo() {
         <ProjectInformation 
           site="https://beta.typescanner.com/" 
           code="https://github.com/JulianFurchert/typeScanner/"
-          docs="https://docs.typescanner.com/" 
+          // docs="https://docs.typescanner.com/" 
           stack={[ 'React', 'Opentype.js', 'Paper.js', 'Snap.svg', 'Netlify' ]}
         />
       </Box>

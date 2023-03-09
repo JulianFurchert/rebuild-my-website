@@ -52,7 +52,7 @@ export const TypeScanner: React.FC<Partial<ThumbnailProps>> = props => {
 
   return(
     <Thumbnail 
-      name="TypeScanner - Experimental Type Generator"
+      name="TypeScanner - Typeface Tool"
       href='/projects/typescanner'
       {...props}
     >

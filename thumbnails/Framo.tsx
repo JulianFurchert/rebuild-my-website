@@ -124,7 +124,7 @@ export const Framo: React.FC<Partial<ThumbnailProps>> = props => {
   }, [index])
   return(
     <Thumbnail
-      name="Framo - Logo Tool"
+      name="Framo - Website & Logo"
       href='/projects/framo'
       {...props}
     >

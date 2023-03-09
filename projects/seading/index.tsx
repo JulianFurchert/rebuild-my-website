@@ -15,11 +15,11 @@ export default function Framo() {
         </Paragraph>
       </Box>
       <Box css={{marginTop: 32}}>
-        <ProjectInformation 
+        {/* <ProjectInformation 
           code="https://github.com/JulianFurchert/seading" 
           site="https://seading.vercel.app/" 
           stack={[ 'React', 'Typescript', 'Next.js', 'Framer Motion' ,'Stitches', 'Radix UI' ]}
-        />
+        /> */}
       </Box>
       <Box css={{marginTop: 40}}>
         <ImagesCase 
