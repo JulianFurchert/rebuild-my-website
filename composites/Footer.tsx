@@ -5,6 +5,7 @@ const data = [
   {label: 'E-Mail', href: 'mailto:mail@julianfurchert.com'},
   {label: 'Github', href: 'https://github.com/JulianFurchert'},
   {label: 'Twitter', href: 'https://twitter.com/JFurchert'},
+  {label: 'LinkedIn', href: 'https://www.linkedin.com/in/julian-furchert/'},
 ]
 
 export const Footer: React.FC = () => (
