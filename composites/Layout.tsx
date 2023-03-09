@@ -19,6 +19,18 @@ export const Layout: React.FC<LayoutProps> = ({ children, toggleTheme }) => {
     >
       <Head>
         <title>Julian Furchert</title>
+        <meta 
+          name="description" 
+          content="Software Engineer with a soft spot for design systems and user interfaces." 
+        />
+        <meta 
+          name="keywords" 
+          content="React, Design System, Creative Coding" 
+        />
+        <meta 
+          name="author" 
+          content="Julian Furchert" 
+        />
       </Head>
       <Header toggleTheme={toggleTheme} />
       <Container>
