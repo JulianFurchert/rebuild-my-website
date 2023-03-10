@@ -7,6 +7,7 @@ export default function Page() {
   return (
     <ProjectLayout
       title="Seading"
+      image="/og-img/og-image-seading.png"
       description="During our journey through Southeast Asia, Eve Jazmati and I decided to visit the first ever Interior Design School in the former capital city of Myanmar Yangon. "
       text={(
         <Fragment>

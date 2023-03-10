@@ -7,11 +7,12 @@ type PageLayoutProps = {
   description: string,
   text?: string | React.ReactNode
   children: React.ReactNode,
-  stack?: string[]
+  stack?: string[],
+  image?: string,
   links?: { name: string, url: string }[]
 }
 
-export default function ProjectLayout({ title, text, description, children, stack, links }: PageLayoutProps) {
+export default function ProjectLayout({ title, text, description, children, stack, links, image }: PageLayoutProps) {
   return (
     <React.Fragment>
       <Head>
@@ -20,10 +21,10 @@ export default function ProjectLayout({ title, text, description, children, stac
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />    
         <meta property="og:description" content={description} />
-        {/* <meta property="og:image" content="https://shud-og.vercel.app/api/og?title=Thoughts." /> */}
+        <meta property="og:image" content={image} />
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
-        {/* <meta property="twitter:image" content="https://shud-og.vercel.app/api/og?title=Thoughts." /> */}
+        <meta property="twitter:image" content={image} />
         {stack && (
           <meta name="keywords" content={stack.join(",")}  />
         )}
