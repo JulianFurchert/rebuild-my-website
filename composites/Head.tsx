@@ -29,7 +29,7 @@ export default function Head({
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={image} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@JFurchert" />
     </NextHeaed>
   )
