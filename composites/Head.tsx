@@ -14,6 +14,9 @@ export default function Head({
   image = '/og-img/og-image-home.png', 
   keywords = 'React, Design System, Creative Coding'
 }: HeadProps) {
+
+  image = 'https://www.julianfurchert.com' + image
+
   return (
     <NextHeaed>
       <title>{title}</title>
