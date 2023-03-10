@@ -4,37 +4,24 @@ import { Popover, PopoverContent, PopoverTrigger } from './Popover'
 import { ChevronDown } from 'react-feather'
 
 type Props = {
-  site?: string,
-  siteName?: string,
-  code?: string,
-  docs?: string,
+  links?: {
+    name: string,
+    url: string
+  }[]
   stack?: string[]
 }
 
 export const ProjectInformation: React.FC<Props> = ({
-  site,
-  siteName,
-  code,
-  docs,
+  links,
   stack,
 }) => {
   return(
     <Box>
-      {site && (
-        <Link external variant="subtle" css={{marginRight: '$3'}} href={site}>
-          {siteName ? siteName : 'Site'}
+      {links && links.map(link => (
+        <Link external variant="subtle" css={{marginRight: '$3'}} href={link.url}>
+          {link.name}
         </Link>
-      )}
-      {code && (
-        <Link external variant="subtle" css={{ marginRight: '$3' }} href={code}>
-          Code
-        </Link>
-      )}
-      {docs && (
-        <Link external variant="subtle" css={{marginRight: '$3'}} href={docs}>
-          Docs
-        </Link>
-      )}
+      ))}
       {stack && (
         <Popover>
           <PopoverTrigger variant="subtle">
