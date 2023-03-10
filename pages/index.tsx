@@ -1,26 +1,31 @@
-import { Flex, Container } from '../components'
+import { Container } from '../components'
 import { PrettyPaper } from '../thumbnails/PrettyPaper'
 import { TypeScanner } from '../thumbnails/TypeScanner'
 import { ReproFont } from '../thumbnails/ReproFont'
 import { Seading } from '../thumbnails/Seading'
 import { Framo } from '../thumbnails/Framo'
 import { styled } from '../stitches.config'
+import Head from '../composites/Head'
+import React from 'react'
 
 export default function Home() {
   return (
-    <Container>
-      <Row reverse="mobil">
-        <TypeScanner width={30} />
-        <PrettyPaper width={45} />
-      </Row>
-      <Row mt={160} center="horizontal">
-        <ReproFont width={50} />
-      </Row>
-      <Row mt={160}>
-        <Seading width={35} />
-        <Framo width={40} translateY={20} />
-      </Row>
-    </Container>
+    <React.Fragment>
+      <Head />
+      <Container>
+        <Row reverse="mobil">
+          <TypeScanner width={30} />
+          <PrettyPaper width={45} />
+        </Row>
+        <Row mt={160} center="horizontal">
+          <ReproFont width={50} />
+        </Row>
+        <Row mt={160}>
+          <Seading width={35} />
+          <Framo width={40} translateY={20} />
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 }
 

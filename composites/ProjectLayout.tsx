@@ -1,6 +1,6 @@
 import React from 'react'
-import Head from 'next/head'
 import { Container, Text, Box, Paragraph, ProjectInformation } from '../components'
+import Head from './Head'
 
 type PageLayoutProps = {
   title: string,
@@ -15,20 +15,12 @@ type PageLayoutProps = {
 export default function ProjectLayout({ title, text, description, children, stack, links, image }: PageLayoutProps) {
   return (
     <React.Fragment>
-      <Head>
-        <title>{title}</title>
-        <meta name="title" content={title} /> 
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />    
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content={description} />
-        <meta property="twitter:image" content={image} />
-        {stack && (
-          <meta name="keywords" content={stack.join(",")}  />
-        )}
-      </Head>
+      <Head 
+        title={title}
+        description={description}
+        image={image}
+        keywords={stack ? stack.join(",") : null}
+      />
       <Container>
         <Text as="h1" variant="headline" css={{marginBottom: 20}}>
             {title}
