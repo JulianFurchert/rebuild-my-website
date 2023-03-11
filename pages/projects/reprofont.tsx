@@ -7,8 +7,8 @@ export default function Page() {
       title="Repro Font"
       image="/og-img/og-image-repro.png"
       imageTwitter="/og-img/twitter-image-repro.png"
-      description="The idea for the Repro font family was born while working in Cinema4D."
-      text="The idea for the Repro font family was born while working in Cinema4D. In Cinema4D text paths and splines are divided into straight lines during post-processing. Different interpolation methods are available to calculate the intermediate points. This means that the shape of a letter is determined by the selection of the font as well as by the selection and settings of the interpolation method. This fact inspired me to write my own method for recalculating the glyphs. The method creates intermediate points along the paths and moves them to a virtual orthogonal grid. The glyphs of the Repro 100 are used as a starting point, and the grid becomes coarser and coarser from typeface to typeface (Repro 200-600) until the resulting characters are no longer readable."
+      description="The Repro typeface consists of six weights, all generated using an algorithm."
+      text="The Repro typeface consists of six weights, all generated using an algorithm. The idea for the project and the algorithm was born while working in Cinema4D, where text paths and splines are recalculated for export. There are several interpolation methods available that influence the appearance of the exported glyphs. This inspired me to develop my own method for recalculating glyphs, which creates intermediate points along the paths and moves them onto a virtual orthogonal grid. Repro Null serves as the base for the other font weights. The grid becomes coarser from weight to weight until the resulting characters are no longer legible."
       links={[
         { name: 'Site', url: 'https://reprofont.de/' },
         { name: 'Code', url: 'https://github.com/JulianFurchert/reprofont-website' },
