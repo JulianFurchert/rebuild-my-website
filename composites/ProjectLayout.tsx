@@ -9,16 +9,18 @@ type PageLayoutProps = {
   children: React.ReactNode,
   stack?: string[],
   image?: string,
+  imageTwitter?: string,
   links?: { name: string, url: string }[]
 }
 
-export default function ProjectLayout({ title, text, description, children, stack, links, image }: PageLayoutProps) {
+export default function ProjectLayout({ title, text, description, children, stack, links, image, imageTwitter }: PageLayoutProps) {
   return (
     <React.Fragment>
       <Head 
         title={title}
         description={description}
         image={image}
+        imageTwitter={imageTwitter}
         keywords={stack ? stack.join(",") : null}
       />
       <Container>
