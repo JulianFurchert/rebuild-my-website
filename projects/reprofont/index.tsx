@@ -47,18 +47,20 @@ export default function Framo() {
       <Row>
         <GalleryCase 
           src={[
-            "/img/reprofont-speciem/speciem2.jpg",
             "/img/reprofont-speciem/speciem3.jpg",
-            "/img/reprofont-speciem/speciem4.jpg",
-            "/img/reprofont-speciem/speciem5.jpg",
-            "/img/reprofont-speciem/speciem6.jpg",
-            "/img/reprofont-speciem/speciem7.jpg",
-            "/img/reprofont-speciem/speciem8.jpg",
-            "/img/reprofont-speciem/speciem9.jpg",
             "/img/reprofont-speciem/speciem10.jpg",
+            "/img/reprofont-speciem/speciem11.jpg",
+            "/img/reprofont-speciem/speciem14.jpg",
+            "/img/reprofont-speciem/speciem18.jpg",
+            "/img/reprofont-speciem/speciem19.jpg",
+            "/img/reprofont-speciem/speciem22.jpg",
+            "/img/reprofont-speciem/speciem23.jpg",
+            "/img/reprofont-speciem/speciem24.jpg",
+            "/img/reprofont-speciem/speciem29.jpg",
           ]}
           width={1280}
           height={889}
+          duration={2}
           mockup={{
             maxWidth: {initial: "90%", bp1: '100%'},
           }}

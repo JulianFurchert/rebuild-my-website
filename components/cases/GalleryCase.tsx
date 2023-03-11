@@ -10,7 +10,8 @@ type GalleryCaseProps = ShowcaseVariants & {
   src: string[],
   height: number
   width: number,
-  mockup?: MockupProps
+  mockup?: MockupProps,
+  duration?: number
 }
 
 export const GalleryCase: React.FC<GalleryCaseProps> = ({ 
@@ -18,6 +19,7 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
   height, 
   width, 
   mockup,
+  duration = 4,
   ...viewcase 
 }) =>  {
   const [index, setIndex] = useState(0);
@@ -56,7 +58,7 @@ export const GalleryCase: React.FC<GalleryCaseProps> = ({
       >
         <Timeline 
           number={src.length} 
-          duration={4} 
+          duration={duration} 
           onChange={handleOnChange}
         />
       </Box>
