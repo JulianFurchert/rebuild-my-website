@@ -18,6 +18,7 @@ export default function Head({
 }: HeadProps) {
 
   image = 'https://www.julianfurchert.com' + image
+  imageTwitter = 'https://www.julianfurchert.com' + imageTwitter
 
   return (
     <NextHeaed>
