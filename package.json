@@ -16,6 +16,7 @@
     "@radix-ui/react-tooltip": "0.0.4",
     "@reach/window-size": "^0.13.0",
     "@stitches/react": "0.0.2",
+    "@vercel/analytics": "^0.1.11",
     "framer-motion": "^2.9.4",
     "install": "^0.13.0",
     "lottie-web": "^5.7.5",
