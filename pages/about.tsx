@@ -12,16 +12,14 @@ export default function About() {
         </Text>
         <Box css={{ maxWidth: 1100 }}>
           <Paragraph>
-            I'm a Software Engineer based in Düsseldorf, and I have a soft spot in design systems and user interfaces. With over 6 years of experience in both design and development, I bring a unique and holistic perspective to creating digital products. My ability to comprehend both the technical and creative aspects of the development process enables me to develop elegant and effective solutions that meet the needs of users and business goals.        
-          </Paragraph>
+            As a Software Engineer based in Düsseldorf with 6 years of experience in design and development, I specialize in creating user interfaces and design systems for digital products. My expertise in both technical and creative aspects of the development process enables me to develop effective solutions that align with both user needs and business goals.          </Paragraph>
           <Paragraph>
-            I'm interested in a wide range of subjects including web development, creative coding, design systems and interaction design.         
-          </Paragraph>
+            At Raytion, I lead the development of a component library for search applications, responsible for its conception, design, and development. This library serves both our own product and provides support for custom interfaces for our clients.          </Paragraph>
           <Paragraph>
-            In my current role at Raytion, I am leading the development of a component library designed specifically for search applications. I am responsible for the conception, design, and development of this library, which not only serves our own product but also provides support for custom interfaces for our various clients.        
-          </Paragraph>
+            Besides web development, I have a diverse range of interests including creative programming, typography, and photography. Check out my website to view some of my personal projects.          </Paragraph>
         </Box>
       </Container>
     </React.Fragment>
   )
 }
+
