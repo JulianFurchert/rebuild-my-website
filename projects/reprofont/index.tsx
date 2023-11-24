@@ -11,7 +11,7 @@ export default function Framo() {
       </Text>
       <Box css={{ maxWidth: 1200 }}>
         <Paragraph>
-        The idea for the Repro font family was born while working in Cinema4D. In Cinema4D text paths and splines are divided into straight lines during post-processing. Different interpolation methods are available to calculate the intermediate points. This means that the shape of a letter is determined by the selection of the font as well as by the selection and settings of the interpolation method. This fact inspired me to write my own method for recalculating the glyphs. The method creates intermediate points along the paths and moves them to a virtual orthogonal grid. The glyphs of the Repro 100 are used as a starting point, and the grid becomes coarser and coarser from typeface to typeface (Repro 200-600) until the resulting characters are no longer readable.    
+          The idea for the Repro font family came about while working in Cinema4D. In Cinema4D, text paths are divided into straight lines when they are exported. Different interpolation methods are available for calculating the intermediary This means that the shape of a letter is affected by both the choice of font and the choice of interpolation method. This fact inspired me to write my own method for recalculating glyphs. The method creates intermediate points along the paths and shifts them onto a virtual orthogonal grid. The grid gets wider and wider from font to font until the resulting characters are no longer readable.
         </Paragraph>
       </Box>
       <Box css={{ marginTop: 32 }}>

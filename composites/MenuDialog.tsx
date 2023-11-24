@@ -136,7 +136,6 @@ const MenuDialog = () => {
               onClick={handleOnClick}
               href="/experience"
               label="Experience"
-              disabeld
               addRef={addRef}
             />
             <MenuLink 
